@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BayWynCouriersWPF", "BayWynCouriersWPF.csproj", "{146CC3F3-55C7-41DC-9653-AC2963A85CBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{146CC3F3-55C7-41DC-9653-AC2963A85CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146CC3F3-55C7-41DC-9653-AC2963A85CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146CC3F3-55C7-41DC-9653-AC2963A85CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146CC3F3-55C7-41DC-9653-AC2963A85CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0CADA44-C260-47D1-B7B3-39DA3134EE6E}
+	EndGlobalSection
+EndGlobal
