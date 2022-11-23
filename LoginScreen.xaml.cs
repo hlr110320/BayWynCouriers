@@ -26,7 +26,7 @@ namespace BayWynCouriersWPF
             InitializeComponent();
         }
 
-        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection = sqlCon = new SqlConnection(@"Data Source = localhost\?????? Initial Catalog=LoginDB; Integrated Security=True;");
             try
@@ -48,7 +48,7 @@ namespace BayWynCouriersWPF
                 }
                 else
                 {
-                    MessageBox.Show("Username or Password is incorrect.")
+                    MessageBox.Show("Username or Password is incorrect.");
                 }
 
             catch (Exception ex)
