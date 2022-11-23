@@ -10,7 +10,7 @@
             <TextBox Name="txtUsername" Background="Gray" Foreground ="HotPink" FontSize="18"/>
             <Label Content="Password" Foreground="White"/>
             <PasswordBox Name="txtPassword" Background="Gray" Foreground ="White" FontSize="18"/>
-            <Button Name ="btnLogin" Content="Submit" Margin="60 10" Background="Gray" Foreground ="White" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Microsoft Sans Serif" Height="38" Width="157">
+            <Button Name ="btnLogin" Click="btnSubmit_Click" Content="Submit" Margin="60 10" Background="Gray" Foreground ="White" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Microsoft Sans Serif" Height="38" Width="157">
             </Button>
         </StackPanel>
     </Border>
