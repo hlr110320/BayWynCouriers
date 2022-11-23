@@ -1,8 +1,8 @@
 ﻿<Window x:Class="BayWynCouriersWPF.LoginScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
-        Title="Login" Height="308" Width="445" FontSize="14" Background="SlateGray">
-    <Border Background="DarkSlateGray" CornerRadius="20" Margin="20">
+        Title="Login" Height="308" Width="445" FontSize="14" Background="DimGray">
+    <Border Background="DarkSlateGray" Margin="10">
         <StackPanel Margin="20">
             <Label Content="Login" Foreground="White" FontSize="30" HorizontalAlignment="Center" FontFamily="Microsoft Sans Serif"/>
             <Separator></Separator>
