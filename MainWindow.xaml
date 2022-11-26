@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Dashboard"/>
+        <Label Margin="0,0,725,0">
+            <Button x:Name="btnLogout" Content="Logout" Click="btnLogout_Click" BorderBrush="{x:Null}" ClickMode="Press" FontFamily="Microsoft Sans Serif" Background="#FF760C23" Foreground="White" Height="31" Width="65" TabIndex="1" UseLayoutRounding="False">
+                <Button.Style>
+                    <Style/>
+                </Button.Style>
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+            </Button>
+        </Label>
     </Grid>
 </Window>

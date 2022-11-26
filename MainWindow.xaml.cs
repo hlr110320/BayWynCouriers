@@ -24,5 +24,12 @@ namespace BayWynCouriersWPF
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginScreen dashboard = new LoginScreen();
+            dashboard.Show();
+            this.Close();
+        }
     }
 }
