@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:BayWynCouriersWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label Margin="0,0,725,0">
+    <Grid Background="#FFF1EFE2">
+        <Label Margin="0,0,725,0" Background="#FF44909E">
             <Button x:Name="btnLogout" Content="Logout" Click="btnLogout_Click" BorderBrush="{x:Null}" ClickMode="Press" FontFamily="Microsoft Sans Serif" Background="#FF760C23" Foreground="White" Height="31" Width="65" TabIndex="1" UseLayoutRounding="False">
                 <Button.Style>
                     <Style/>
