@@ -26,6 +26,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -47,17 +48,17 @@
             Text="Information"/>
         <TextBlock Grid.Column="5" Grid.Row="1"
             Text="Monthly Cost"/>
-        <TextBlock Grid.Column="5" Grid.Row="1"
+        <TextBlock Grid.Column="5" Grid.Row="2"
             Text="Run Cost"/>
 
 
-        <TextBox x:Name="TxtBusName" Grid.Column="3" Grid.Row="1" Width="100"/>
-        <TextBox x:Name="TxtAddress" Grid.Column="3" Grid.Row="2" Width="100"/>
-        <TextBox x:Name="TxtPhone" Grid.Column="3" Grid.Row="3" Width="100"/>
-        <TextBox x:Name="TxtEmail" Grid.Column="3" Grid.Row="4" Width="100"/>
-        <TextBox x:Name="TxtInfo" Grid.Column="3" Grid.Row="5" Width="100"/>
+        <TextBox x:Name="TxtBusName" Grid.Column="3" Grid.Row="1" Width="200"/>
+        <TextBox x:Name="TxtAddress" Grid.Column="3" Grid.Row="2" Width="200"/>
+        <TextBox x:Name="TxtPhone" Grid.Column="3" Grid.Row="3" Width="200"/>
+        <TextBox x:Name="TxtEmail" Grid.Column="3" Grid.Row="4" Width="200"/>
+        <TextBox x:Name="TxtInfo" Grid.Column="3" Grid.Row="5" Width="400" Grid.ColumnSpan="3" Grid.RowSpan="6" Margin="0,0,243,370"/>
 
-        <Button x:Name="BtnClearClients" Grid.Column="4" Content="Clear" Click="BtnClearClients_Click" Grid.Row="7"/>
-        <Button x:Name="BtnSaveClients" Grid.Column="4" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="7"/>
+        <Button x:Name="BtnClearClients" Grid.Column="5" Content="Clear" Click="BtnClearClients_Click" Grid.Row="8"/>
+        <Button x:Name="BtnSaveClients" Grid.Column="6" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="8"/>
     </Grid>
 </Window>
