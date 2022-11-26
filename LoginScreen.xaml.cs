@@ -40,7 +40,7 @@ namespace BayWynCouriersWPF
         //Event handler for the password box to call the login method when pressing the ENTER key
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            //IF statement checks that the ENTER key is pressed and then calls the method/
+            //IF statement checks that the ENTER key is pressed and then calls the method to login
             if (e.Key == Key.Return)
             {
                LoginCon();
@@ -55,7 +55,8 @@ namespace BayWynCouriersWPF
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
                     sqlCon.Open();
-
+                
+                //Query to the users table for username and password
                 String query = "SELECT COUNT(1) FROM tblUsers WHERE Username=@Username AND Password=@Password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon)
                 {

@@ -4,18 +4,60 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BayWynCouriersWPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFF1EFE2">
-        <Label Margin="0,0,725,0" Background="#FF44909E">
-            <Button x:Name="btnLogout" Content="Logout" Click="btnLogout_Click" BorderBrush="{x:Null}" ClickMode="Press" FontFamily="Microsoft Sans Serif" Background="#FF760C23" Foreground="White" Height="31" Width="65" TabIndex="1" UseLayoutRounding="False">
-                <Button.Style>
-                    <Style/>
-                </Button.Style>
-                <Button.FocusVisualStyle>
-                    <Style/>
-                </Button.FocusVisualStyle>
-            </Button>
-        </Label>
+        mc:Ignorable="d" FontSize="12" FontFamily="Segoe UI Light"
+        Title="MainWindow" Width="800" Height="600">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button x:Name="BtnLogout" Content="Logout" Click="BtnLogout_Click"/>
+            <Button x:Name="BtnClients" Content="Clients" Click="BtnLogout_Click"/>
+        </StackPanel>
+
+        <TextBlock Grid.Column="2" Grid.Row="1"
+            Text="Business Name"/>
+        <TextBlock Grid.Column="2" Grid.Row="2"
+            Text="Address"/>
+        <TextBlock Grid.Column="2" Grid.Row="3"
+            Text="Phone Number"/>
+        <TextBlock Grid.Column="2" Grid.Row="4"
+            Text="Email"/>
+        <TextBlock Grid.Column="2" Grid.Row="5"
+            Text="Information"/>
+        <TextBlock Grid.Column="5" Grid.Row="1"
+            Text="Monthly Cost"/>
+        <TextBlock Grid.Column="5" Grid.Row="1"
+            Text="Run Cost"/>
+
+
+        <TextBox x:Name="TxtBusName" Grid.Column="3" Grid.Row="1" Width="100"/>
+        <TextBox x:Name="TxtAddress" Grid.Column="3" Grid.Row="2" Width="100"/>
+        <TextBox x:Name="TxtPhone" Grid.Column="3" Grid.Row="3" Width="100"/>
+        <TextBox x:Name="TxtEmail" Grid.Column="3" Grid.Row="4" Width="100"/>
+        <TextBox x:Name="TxtInfo" Grid.Column="3" Grid.Row="5" Width="100"/>
+
+        <Button x:Name="BtnClearClients" Grid.Column="4" Content="Clear" Click="BtnClearClients_Click" Grid.Row="7"/>
+        <Button x:Name="BtnSaveClients" Grid.Column="4" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="7"/>
     </Grid>
 </Window>
