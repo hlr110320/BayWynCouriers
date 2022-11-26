@@ -7,10 +7,10 @@
             <Label Content="Login" Foreground="White" FontSize="30" HorizontalAlignment="Center" FontFamily="Microsoft Sans Serif"/>
             <Separator></Separator>
             <Label Content="Username" Foreground="White"/>
-            <TextBox Name="txtUsername" Background="Gray" Foreground ="HotPink" FontSize="18"/>
+            <TextBox Name="txtUsername" Foreground = "Black" FontSize="18" TabIndex="1"/>
             <Label Content="Password" Foreground="White"/>
-            <PasswordBox Name="txtPassword" Background="Gray" Foreground ="White" FontSize="18"/>
-            <Button Name ="btnLogin" Click="BtnSubmit_Click" Content="Submit" Margin="60 10" Background="#FFC4BE9E" Foreground ="White" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Microsoft Sans Serif" Height="38" Width="157">
+            <PasswordBox Name="txtPassword" Foreground ="White" FontSize="18" TabIndex="2" KeyDown="txtPassword_KeyDown"/>
+            <Button Name ="btnLogin" Click="BtnSubmit_Click"  Content="Submit" Margin="60 10" Background="#FFC4BE9E" Foreground ="White" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Microsoft Sans Serif" Height="38" Width="157" TabIndex="3">
             </Button>
         </StackPanel>
     </Border>
