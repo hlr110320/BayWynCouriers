@@ -31,6 +31,25 @@ namespace BayWynCouriersWPF
             InitializeComponent();
         }
 
+        //Method to allow the login window to be moved using the left click mouse button
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        //Method to minimize the login window on minimize button click.
+        private void BtnLoginMin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        //Method to close the login window on close button click.
+        private void BtnLoginClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
         //Event handler for clicking the submit button to call the login method
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
@@ -87,6 +106,11 @@ namespace BayWynCouriersWPF
             {
                 sqlCon.Close();
             }
+        }
+
+        private void BtnLoginMin_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

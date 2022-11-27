@@ -10,7 +10,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="40.823"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -34,36 +35,37 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Background="Teal" Grid.Column="1" Grid.Row="1">
+        <StackPanel Background="Purple" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,77,18" Grid.RowSpan="2">
             <Button x:Name="BtnLogout" Content="Logout" Click="BtnLogout_Click" Margin="5"/>
             <Button x:Name="BtnClients" Content="Clients" Click="BtnLogout_Click" Margin="5"/>
             <Button x:Name="BtnCouriers" Content="Couriers" Click="BtnLogout_Click" Margin="5"/>
             <Button x:Name="BtnReports" Content="Reports" Click="BtnLogout_Click" Margin="5"/>
         </StackPanel>
+        
+        <ContentControl Content="ContentControl"/>
+        <TextBlock Grid.Column="3" Grid.Row="1"
+            Text="Business Name" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="3" Grid.Row="2"
+            Text="Address" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="3" Grid.Row="3"
+            Text="Phone Number" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="3" Grid.Row="4"
+            Text="Email" Grid.ColumnSpan="2" Margin="0,0,325,16" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="3" Grid.Row="5"
+            Text="Information" Grid.ColumnSpan="2" Margin="0,0,325,20" Grid.RowSpan="4"/>
+        <TextBlock Grid.Column="6" Grid.Row="1"
+            Text="Monthly Cost" Grid.ColumnSpan="2" Margin="0,0,27,18" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="6" Grid.Row="2"
+            Text="Run Cost" Grid.ColumnSpan="2" Margin="0,0,27,18" Grid.RowSpan="2"/>
 
-        <TextBlock Grid.Column="2" Grid.Row="1"
-            Text="Business Name"/>
-        <TextBlock Grid.Column="2" Grid.Row="2"
-            Text="Address"/>
-        <TextBlock Grid.Column="2" Grid.Row="3"
-            Text="Phone Number"/>
-        <TextBlock Grid.Column="2" Grid.Row="4"
-            Text="Email"/>
-        <TextBlock Grid.Column="2" Grid.Row="5"
-            Text="Information"/>
-        <TextBlock Grid.Column="5" Grid.Row="1"
-            Text="Monthly Cost"/>
-        <TextBlock Grid.Column="5" Grid.Row="2"
-            Text="Run Cost"/>
 
+        <TextBox x:Name="TxtBusName" Grid.Column="4" Grid.Row="1" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
+        <TextBox x:Name="TxtAddress" Grid.Column="4" Grid.Row="2" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
+        <TextBox x:Name="TxtPhone" Grid.Column="4" Grid.Row="3" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
+        <TextBox x:Name="TxtEmail" Grid.Column="4" Grid.Row="4" Width="200" Margin="63,0,62,16" Grid.RowSpan="2"/>
+        <TextBox x:Name="TxtInfo" Grid.Column="4" Grid.Row="5" Width="400" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,0,51,16"/>
 
-        <TextBox x:Name="TxtBusName" Grid.Column="3" Grid.Row="1" Width="200"/>
-        <TextBox x:Name="TxtAddress" Grid.Column="3" Grid.Row="2" Width="200"/>
-        <TextBox x:Name="TxtPhone" Grid.Column="3" Grid.Row="3" Width="200"/>
-        <TextBox x:Name="TxtEmail" Grid.Column="3" Grid.Row="4" Width="200"/>
-        <TextBox x:Name="TxtInfo" Grid.Column="3" Grid.Row="5" Width="400" Grid.ColumnSpan="3" Grid.RowSpan="6" Margin="0,0,243,370"/>
-
-        <Button x:Name="BtnClearClients" Grid.Column="5" Content="Clear" Click="BtnClearClients_Click" Grid.Row="8"/>
-        <Button x:Name="BtnSaveClients" Grid.Column="6" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="8"/>
+        <Button x:Name="BtnClearClients" Grid.Column="6" Content="Clear" Click="BtnClearClients_Click" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,0,27,334" Grid.RowSpan="2"/>
+        <Button x:Name="BtnSaveClients" Grid.Column="7" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="8" Margin="0,0,0,334" Grid.RowSpan="2"/>
     </Grid>
 </Window>
