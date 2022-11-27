@@ -14,6 +14,9 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -31,9 +34,11 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <Button x:Name="BtnLogout" Content="Logout" Click="BtnLogout_Click"/>
-            <Button x:Name="BtnClients" Content="Clients" Click="BtnLogout_Click"/>
+        <StackPanel Background="Teal" Grid.Column="1" Grid.Row="1">
+            <Button x:Name="BtnLogout" Content="Logout" Click="BtnLogout_Click" Margin="5"/>
+            <Button x:Name="BtnClients" Content="Clients" Click="BtnLogout_Click" Margin="5"/>
+            <Button x:Name="BtnCouriers" Content="Couriers" Click="BtnLogout_Click" Margin="5"/>
+            <Button x:Name="BtnReports" Content="Reports" Click="BtnLogout_Click" Margin="5"/>
         </StackPanel>
 
         <TextBlock Grid.Column="2" Grid.Row="1"
