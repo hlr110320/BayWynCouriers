@@ -8,9 +8,9 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
-    
-    <Border CornerRadius="50"
-            BorderThickness="5">
+
+    <Border CornerRadius="25"
+            BorderThickness="3">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="SlateBlue" Offset="0"/>
@@ -22,27 +22,26 @@
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                 <GradientStop Color="Indigo" Offset="0"/>
-                <GradientStop Color="Teal" Offset="1.00"/>
+                <GradientStop Color="teal" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
             <Grid>
-                <Grid.RowDefinitions>
-                     <RowDefinition Height="30"/>
-                     <RowDefinition/>
-                </Grid.RowDefinitions>
-                
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="5"/>
-                    
-                    </Grid.ColumnDefinitions>
-                    
-                <TextBlock  Text="lOGIN"
-                            Background="DarkSlateGray"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  Text="LOGIN"
+                            Foreground="DarkGray"
                             FontSize="18"
                             FontFamily="Segoe UI"
                             Grid.Column="0"
@@ -50,41 +49,162 @@
                             Margin="10,0,0,0"/>
 
                 <Button x:Name="BtnLoginMin"
-                        Background="Teal"
+                        Background="DarkBlue"
                         BorderThickness="0"
                         Content="-"
                         Foreground="White"
-                        FontSize="16"
+                        FontSize="12"
                         FontFamily="Segoe UI"
                         Cursor="Hand"
                         Grid.Column="1"
                         Click="BtnLoginMin_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Cyan"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Cyan"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="25" Height="25"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment ="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
 
                 <Button x:Name="BtnLoginClose"
                         Background="DarkMagenta"
                         BorderThickness="0"
-                        Content="X"
+                        Content="x"
                         Foreground="White"
                         FontSize="16"
                         FontFamily="Segoe UI"
                         Cursor="Hand"
                         Grid.Column="2"
                         Click="BtnLoginClose_Click">
-                </Button>
-            
-                </Grid>
-            </Grid>
 
-        <!--<StackPanel Margin="20">
-            <Label Content="Login" Foreground="White" FontSize="30" HorizontalAlignment="Center" FontFamily="Microsoft Sans Serif"/>
-            <Separator></Separator>
-            <Label Content="Username" Foreground="White"/>
-            <TextBox Name="txtUsername" Foreground = "Black" FontSize="18" TabIndex="1"/>
-            <Label Content="Password" Foreground="White"/>
-            <PasswordBox Name="txtPassword" Foreground ="White" FontSize="18" TabIndex="2" KeyDown="txtPassword_KeyDown"/>
-            <Button Name ="btnLogin" Click="BtnSubmit_Click"  Content="Submit" Margin="60 10" Background="#FFC4BE9E" Foreground ="White" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Microsoft Sans Serif" Height="38" Width="157" TabIndex="3">
-            </Button>
-        </StackPanel>-->
-   </Border>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Cyan"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Cyan"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="25" Height="25"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment ="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+           </Grid>
+
+            <StackPanel Width="250"
+                        Grid.Row="2"
+                        Orientation="Vertical"
+                        Margin="0,35,0,0">
+                <Image Source="/Images/Icon1.ico"
+                       Width="100" Height="100"/>
+                <TextBlock Text="BAY WYN COURIERS"
+                           Foreground="WHITE"
+                           FontSize="25"
+                           FontWeight="Medium"
+                           FontFamily="Segoe UI"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Username"
+                       Foreground="DarkGray"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Segoe UI"
+                       Margin="0,35,0,0"/>
+
+                <TextBox x:Name="txtUsername"
+                         FontSize="18" 
+                         FontWeight="Medium"
+                         FontFamily="Segoe UI"
+                         Background="Transparent"
+                         Foreground="White"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,1"
+                         Height="28"
+                         VerticalContentAlignment="Center"
+                         Margin="0,5,0,0"/>
+
+                <TextBlock Text="Password"
+                       Foreground="DarkGray"
+                       FontSize="12"
+                       FontWeight="Medium"
+                       FontFamily="Segoe UI"
+                       Margin="0,35,0,0"/>
+
+                <PasswordBox x:Name="txtPassword"
+                         FontSize="18" 
+                         FontWeight="Medium"
+                         FontFamily="Segoe UI"
+                         Background="Transparent"
+                         Foreground="White"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,1"
+                         Height="28"
+                         VerticalContentAlignment="Center"
+                         Margin="0,5,0,0">
+                </PasswordBox>
+    
+
+                <Button x:Name="btnLogin"
+                        Background="Purple"
+                        BorderThickness="0"
+                        Content="LOGIN"
+                        Foreground="White"
+                        FontSize="12"
+                        FontFamily="Segoe UI"
+                        Cursor="Hand"
+                        Margin="0,50,0,0"
+                        Grid.Column="2"
+                        Click="BtnSubmit_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Cyan"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Cyan"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="25"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment ="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Window>

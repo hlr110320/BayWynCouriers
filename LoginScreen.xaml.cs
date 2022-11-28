@@ -107,10 +107,5 @@ namespace BayWynCouriersWPF
                 sqlCon.Close();
             }
         }
-
-        private void BtnLoginMin_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
