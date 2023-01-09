@@ -120,7 +120,7 @@
                         Grid.Row="2"
                         Orientation="Vertical"
                         Margin="0,35,0,0">
-                <Image Source="/Images/Icon1.ico"
+                <Image Source="/Images/logo.bmp"
                        Width="100" Height="100"/>
                 <TextBlock Text="BAY WYN COURIERS"
                            Foreground="WHITE"
