@@ -1,4 +1,4 @@
-﻿//BayWynCouriers tracking system
+//BayWynCouriers tracking system
 //Hayley Roberts
 //110320
 
@@ -68,6 +68,10 @@ namespace BayWynCouriersWPF
             {
                 LoginCon();
             }
+            else if (e.Key == Key.Enter)
+            {
+                LoginCon();
+            }
         }
 
         //The login method for connecting to the Users table and checking login details.
@@ -101,11 +105,14 @@ namespace BayWynCouriersWPF
                     MessageBox.Show("Username or Password is incorrect.");
                 }
             }
+            
+            //Error message display for incorrect username OR password
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+            //Closes the SQL connection after Login attempt
             finally
             {
                 sqlCon.Close();
