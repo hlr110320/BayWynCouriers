@@ -9,20 +9,20 @@
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
 
-    <Border CornerRadius="25"
-            BorderThickness="3">
+    <Border CornerRadius="10"
+            BorderThickness="2">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="SlateBlue" Offset="0"/>
-                <GradientStop Color="Purple" Offset="0.75"/>
-                <GradientStop Color="DarkCyan" Offset="1"/>
+                <GradientStop Color="{StaticResource WinBorderColour1}" Offset="0"/>
+                <GradientStop Color="{StaticResource WinBorderColour2}" Offset="0.75"/>
+                <GradientStop Color="{StaticResource WinBorderColour3}" Offset="1"/>
             </LinearGradientBrush>
-        </Border.BorderBrush>
+        </Border.BorderBrush> 
 
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                <GradientStop Color="Indigo" Offset="0"/>
-                <GradientStop Color="teal" Offset="1"/>
+                <GradientStop Color="{StaticResource primaryBackColour1}" Offset="0"/>
+                <GradientStop Color="{StaticResource primaryBackColour2}" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -84,9 +84,9 @@
                 <Button x:Name="BtnLoginClose"
                         Background="DarkMagenta"
                         BorderThickness="0"
-                        Content="x"
+                        Content="X"
                         Foreground="White"
-                        FontSize="16"
+                        FontSize="12"
                         FontFamily="Segoe UI"
                         Cursor="Hand"
                         Grid.Column="2"
@@ -121,13 +121,7 @@
                         Orientation="Vertical"
                         Margin="0,35,0,0">
                 <Image Source="/Images/logo.bmp"
-                       Width="100" Height="100"/>
-                <TextBlock Text="BAY WYN COURIERS"
-                           Foreground="WHITE"
-                           FontSize="25"
-                           FontWeight="Medium"
-                           FontFamily="Segoe UI"
-                           HorizontalAlignment="Center"/>
+                       Width="200" Height="100"/>
                 <TextBlock Text="Username"
                        Foreground="DarkGray"
                        FontSize="12"

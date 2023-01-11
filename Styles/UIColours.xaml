@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Background Colours-->
+    <Color x:Key="primaryBackColour1">#4B0082</Color>
+    <Color x:Key="primaryBackColour2">#008080</Color>
+
+
+    <!--Border Colours-->
+    <Color x:Key="WinBorderColour1">#6a5acd</Color>
+    <Color x:Key="WinBorderColour2">#800080</Color>
+    <Color x:Key="WinBorderColour3">#008b8b</Color>
+    
+    <!--Colour Palette-->
+    <SolidColorBrush x:Key="colour1" Color="SlateBlue"/>
+    <SolidColorBrush x:Key="colour2" Color="Purple"/>
+    <SolidColorBrush x:Key="colour3" Color="DarkCyan"/>
+    
+    <!--Fonts-->
+    <Color x:Key="titleFont1">#ffffffff</Color>
+
+</ResourceDictionary>
