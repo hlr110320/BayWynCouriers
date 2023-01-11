@@ -5,67 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BayWynCouriersWPF"
         mc:Ignorable="d" FontSize="12" FontFamily="Segoe UI Light"
-        Title="MainWindow" Width="800" Height="600">
+        Title="MainWindow" Width="800" Height="600"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="40.823"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
+    <Border CornerRadius="10"
+            BorderThickness="1">
 
-        <StackPanel Background="Purple" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,77,18" Grid.RowSpan="2">
-            <Button x:Name="BtnLogout" Content="Logout" Click="BtnLogout_Click" Margin="5"/>
-            <Button x:Name="BtnClients" Content="Clients" Click="BtnLogout_Click" Margin="5"/>
-            <Button x:Name="BtnCouriers" Content="Couriers" Click="BtnLogout_Click" Margin="5"/>
-            <Button x:Name="BtnReports" Content="Reports" Click="BtnLogout_Click" Margin="5"/>
-        </StackPanel>
-        
-        <ContentControl Content="ContentControl"/>
-        <TextBlock Grid.Column="3" Grid.Row="1"
-            Text="Business Name" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
-        <TextBlock Grid.Column="3" Grid.Row="2"
-            Text="Address" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
-        <TextBlock Grid.Column="3" Grid.Row="3"
-            Text="Phone Number" Grid.ColumnSpan="2" Margin="0,0,325,18" Grid.RowSpan="2"/>
-        <TextBlock Grid.Column="3" Grid.Row="4"
-            Text="Email" Grid.ColumnSpan="2" Margin="0,0,325,16" Grid.RowSpan="2"/>
-        <TextBlock Grid.Column="3" Grid.Row="5"
-            Text="Information" Grid.ColumnSpan="2" Margin="0,0,325,20" Grid.RowSpan="4"/>
-        <TextBlock Grid.Column="6" Grid.Row="1"
-            Text="Monthly Cost" Grid.ColumnSpan="2" Margin="0,0,27,18" Grid.RowSpan="2"/>
-        <TextBlock Grid.Column="6" Grid.Row="2"
-            Text="Run Cost" Grid.ColumnSpan="2" Margin="0,0,27,18" Grid.RowSpan="2"/>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource WinBorderColour1}" Offset="0"/>
+                <GradientStop Color="{StaticResource WinBorderColour2}" Offset="0.75"/>
+                <GradientStop Color="{StaticResource WinBorderColour3}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Nav menu-->
+                <ColumnDefinition Width="250"/>
+                <!--Content section-->
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="TxtBusName" Grid.Column="4" Grid.Row="1" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
-        <TextBox x:Name="TxtAddress" Grid.Column="4" Grid.Row="2" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
-        <TextBox x:Name="TxtPhone" Grid.Column="4" Grid.Row="3" Width="200" Margin="63,0,62,18" Grid.RowSpan="2"/>
-        <TextBox x:Name="TxtEmail" Grid.Column="4" Grid.Row="4" Width="200" Margin="63,0,62,16" Grid.RowSpan="2"/>
-        <TextBox x:Name="TxtInfo" Grid.Column="4" Grid.Row="5" Width="400" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,0,51,16"/>
+            <!--Nav menu-->
+            <Border CornerRadius="10,0,0,10"
+                    Grid.Column="0">
 
-        <Button x:Name="BtnClearClients" Grid.Column="6" Content="Clear" Click="BtnClearClients_Click" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,0,27,334" Grid.RowSpan="2"/>
-        <Button x:Name="BtnSaveClients" Grid.Column="7" Content="Save" Click="BtnSaveClients_Click"  Grid.Row="8" Margin="0,0,0,334" Grid.RowSpan="2"/>
-    </Grid>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="1,1.5">
+                        <GradientStop Color="{StaticResource primaryBackColour1}" Offset="0"/>
+                        <GradientStop Color="{StaticResource primaryBackColour2}" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <!--Logox-->
+                    <StackPanel Orientation="Horizontal"
+                                Height="35"
+                                Margin="15,25,0,30"
+                        <Image Source="/Images/logo.bmp" Height="30"/>
+                        <TextBlock Text="BAYWYN COURIERS"
+                                   Foreground="{StaticResource titleFont1}"
+                                   FontSize="10"
+                                   FontFamily="Montserrat"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!--Main section-->
+
+             <Border CornerRadius="0,10,10,0"
+                     Grid.Column="1">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="3,0">
+                        <GradientStop Color="{StaticResource primaryBackColour1}" Offset="0"/>
+                        <GradientStop Color="{StaticResource primaryBackColour2}" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            
+        </Grid>
+    </Border>
 </Window>

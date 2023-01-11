@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:BayWynCouriersWPF"
              StartupUri="LoginScreen.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary Source="/Styles/UIColours.xaml"/>
+
     </Application.Resources>
 </Application>

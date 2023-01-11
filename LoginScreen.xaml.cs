@@ -1,4 +1,4 @@
-﻿//BayWynCouriers tracking system
+//BayWynCouriers tracking system
 //Hayley Roberts
 //110320
 
@@ -62,7 +62,11 @@ namespace BayWynCouriersWPF
             //IF statement checks that the ENTER key is pressed and then calls the method to login
             if (e.Key == Key.Return)
             {
-               LoginCon();
+                LoginCon();
+            }
+            else if (e.Key == Key.Enter)
+            {
+                LoginCon();
             }
             else if (e.Key == Key.Enter)
             {
@@ -114,6 +118,5 @@ namespace BayWynCouriersWPF
                 sqlCon.Close();
             }
         }
-
     }
 }
