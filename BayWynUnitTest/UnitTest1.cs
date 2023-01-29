@@ -1,14 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+namespace BayWynUnitTest;
 
-namespace BayWynUnitTest
+[TestClass]
+public class UnitTest1
 {
-    [TestClass]
-    public class UnitTest1
+    [TestMethod]
+    public void TestMethod1()
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
     }
 }
