@@ -115,23 +115,23 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-           </Grid>
+            </Grid>
 
             <StackPanel Width="250"
                         Grid.Row="2"
                         Orientation="Vertical"
                         Margin="0,35,0,0">
 
-                     <Image Source="/Images/logo.bmp"
+                <!--<Image Source="/Images/logo.bmp"
                        Width="200" Height="100"/>
 
-                    <Image.OpacityMask>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Image.OpacityMask>
-                </Image>
+                <Image.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+                </Image>-->
                 <TextBlock Text="BAY WYN COURIERS"
                            Foreground="WHITE"
                            FontSize="25"
@@ -179,7 +179,7 @@
                          VerticalContentAlignment="Center"
                          Margin="0,5,0,0" KeyDown="txtPassword_KeyDown">
                 </PasswordBox>
-    
+
 
                 <Button x:Name="btnLogin"
                         Background="Purple"

@@ -41,13 +41,13 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <StackPanel>
-                    <!--Logox-->
+                    <!--Logo-->
                     <StackPanel Orientation="Horizontal"
                                 Height="35"
                                 Margin="15,25,0,30"
-                        <Image Source="/Images/logo.bmp" Height="30"/>
+                        >        <!--<Image Source="/Images/logo.bmp" Height="30"/>-->
                         <TextBlock Text="BAYWYN COURIERS"
-                                   Foreground="{StaticResource titleFont1}"
+                                   Foreground ="White"
                                    FontSize="10"
                                    FontFamily="Montserrat"
                                    FontWeight="Medium"
