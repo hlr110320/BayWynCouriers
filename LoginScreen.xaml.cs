@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -76,8 +77,8 @@ namespace BayWynCouriersWPF
 
         //The login method for connecting to the Users table and checking login details.
         void LoginCon()
-        { 
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=mystic-haylo; Initial Catalog = LoginDB; Integrated Security = True");          
+        {
+            SqlConnection sqlCon = new SqlConnection ("Data Source = (LocalDB)/MSSQLLocalDB; AttachDbFilename = C:/Users/Toxic/source/repos/hlr110320/BayWynCouriers/LoginDB.mdf; Integrated Security = True; Connect Timeout = 30");
             try
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
