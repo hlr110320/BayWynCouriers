@@ -18,6 +18,12 @@ namespace BayWynCouriersWinForm
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }
+
+
+        public static int AccessLevel
+        {
+            get; set;
+        }
     }
 
 

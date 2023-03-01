@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BayWynCouriersWinForm
 {
-    public class global
+    internal class Reports
     {
-        public static int AccessLevel { get; set; }
     }
 }
