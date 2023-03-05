@@ -54,7 +54,6 @@ namespace BayWynCouriersWinForm
             // If the count is 1 the login is successful
             if (dt.Rows.Count == 1)
             {
-
                 User.UserName = dr["UserName"].ToString();
                 User.AccessLevel = Convert.ToInt32(dr["AccessLevel"]);
                 this.Hide();
@@ -75,8 +74,5 @@ namespace BayWynCouriersWinForm
             con.Close();
 
         }
-
-
-
     }
 }

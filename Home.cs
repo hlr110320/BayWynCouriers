@@ -21,7 +21,6 @@ namespace BayWynCouriersWinForm
             InitializeComponent();
 
             con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.accdb";
-
         }
 
         private void Home_Load(object sender, EventArgs e)
