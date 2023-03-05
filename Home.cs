@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
@@ -14,16 +15,18 @@ namespace BayWynCouriersWinForm
 {
     public partial class Home : Form
     {
-
+        private OleDbConnection con = new OleDbConnection();
         public Home()
         {
             InitializeComponent();
+
+            con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.accdb";
+
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
-            string ual = global.AccessLevel.ToString();
-            lbTest.Text = ual;
+        {;
+            lbTest.Text = User.AccessLevel.ToString();
             panelReports.Hide();
             panelDeliveries.Hide();
             panelClients.Hide();

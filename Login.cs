@@ -2,53 +2,81 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
+using System.Data.OleDb;
+using System.Drawing;
 
 namespace BayWynCouriersWinForm
 {
     public partial class Login : Form
     {
-
+       
+        private OleDbConnection con = new OleDbConnection();
+        int ual = 0;
         public Login()
         {
             InitializeComponent();
+
+            // Initialisation of the database connection string
+            con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.accdb";
         }
 
-        public static string UserAccess;
-        public static string UA
-        {
-            get { return UserAccess; }
-            set { UserAccess = value; }
-        }
 
-        //The login method for connecting to the Users table and checking login details.
+        /// Login Method
+        /// 
+        /// Opens the connection to the BWC database which holds the login data.
+        /// Queries the database using the Username and Password data inputted.
+        /// If the data matches the Users table, the home page will open. otherwise an error message will be displayed.
+        /// The database connection is closed.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\Software Engineering\BayWynCouriersWinForm\LoginDB.mdf; Integrated Security = True; Connect Timeout = 30";
+            // Open connection to the database
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * FROM tblUsers WHERE UserName='" + tbUserName.Text + "'AND Password='" + tbPassword.Text + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //Initialises database command and query
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = con;
+
+            // The query is populated using the username and password inputs
+            cmd.CommandText = "select * FROM Users WHERE UserName='" + tbUserName.Text + "'AND Password='" + tbPassword.Text + "'";
+
+
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            SqlDataReader sdr = cmd.ExecuteReader();
-                
-            if (dt.Rows.Count > 0)
-            {   
-                dt.Load(sdr);
+                // The number of matching values is read from the database
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                dt.Load(reader);
                 DataRow dr = dt.Rows[0];
-                global.AccessLevel = Convert.ToInt32(dr["AccessLevel"]);
+
+
+            // If the count is 1 the login is successful
+            if (dt.Rows.Count == 1)
+            {
+
+                User.UserName = dr["UserName"].ToString();
+                User.AccessLevel = Convert.ToInt32(dr["AccessLevel"]);
+                this.Hide();
                 Home h = new Home();
                 h.Show();
-            } 
+            }
+
+            // If there are 0 matches, login is unsuccessful
             else
             {
+                //Error message displays and input text boxes are cleared
                 MessageBox.Show("Username or Password is incorrect.");
                 tbUserName.Text = "";
                 tbPassword.Text = "";
             }
+            
+            // Close connection
+            con.Close();
+
         }
+
+
+
     }
 }
