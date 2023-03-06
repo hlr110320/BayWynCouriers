@@ -59,15 +59,5 @@ namespace BayWynCouriersWinForm.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delivery_truck {
-            get {
-                object obj = ResourceManager.GetObject("delivery-truck", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
