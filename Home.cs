@@ -1,5 +1,4 @@
-﻿using BayWynCouriersWinForm;
-using System;
+﻿using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -11,13 +10,12 @@ namespace BayWynCouriersWinForm
         public Home()
         {
             InitializeComponent();
-
             con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.accdb";
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {            
-            MessageBox.Show(User.AccessLevel.ToString());
+        {
+
             panelReports.Hide();
             panelDeliveries.Hide();
             panelClients.Hide();
@@ -57,20 +55,20 @@ namespace BayWynCouriersWinForm
 
         private void cbReports_SelectedIndexChanged(object sender, EventArgs e)
         {
-           string reportDaily = "Day Courier Assignments";
-         string reportMonthly = "Month Courier Assignments";
-         string reportAll = "All assignments for given month";
-         string reportValue = "Value of contracts for given month";
+            string reportDaily = "Day Courier Assignments";
+            string reportMonthly = "Month Courier Assignments";
+            string reportAll = "All assignments for given month";
+            string reportValue = "Value of contracts for given month";
 
             if (User.AccessLevel == 1)
-            { 
+            {
                 cbReports.DataSource = (new string[] { reportDaily, reportMonthly, reportAll, reportValue });
             }
             else if (User.AccessLevel == 2)
             {
                 MessageBox.Show("htest");
-                cbReports.DataSource = (new string[] { "hello", "EGG"});
-               // cbReports.Items.Add(reportAll);
+                cbReports.DataSource = (new string[] { "hello", "EGG" });
+                // cbReports.Items.Add(reportAll);
             }
             else if (User.AccessLevel == 3)
             {
@@ -81,7 +79,7 @@ namespace BayWynCouriersWinForm
 
         private void dataGridReports_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-  
+
         }
 
         private void btnGenReport_Click(object sender, EventArgs e)

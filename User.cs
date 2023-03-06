@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.OleDb;
-
-namespace BayWynCouriersWinForm
+﻿namespace BayWynCouriersWinForm
 {
     internal class User
     {
-        public static string UserName
-        {
-            get; set; }
+        private static int _AccessLevel;
         public static int AccessLevel
-        { get; set; }
+        {
+            get
+            {
+                return _AccessLevel;
+            }
+
+            set
+            {
+                _AccessLevel = value;
+            }
+        }
 
     }
 }

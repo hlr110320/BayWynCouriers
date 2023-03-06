@@ -1,9 +1,9 @@
-﻿using System;
+﻿using BayWynCouriersWinForm.bwcDataSetTableAdapters;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Drawing;
+using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
 {
@@ -16,7 +16,7 @@ namespace BayWynCouriersWinForm
             InitializeComponent();
 
             // Initialisation of the database connection string
-            con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.accdb";
+            con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.mdb";
         }
 
 
@@ -35,26 +35,25 @@ namespace BayWynCouriersWinForm
             con.Open();
 
             //Initialises database command and query
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.Connection = con;
+            OleDbCommand cmdLogin = new OleDbCommand();
+            cmdLogin.Connection = con;
 
             // The query is populated using the username and password inputs
-            cmd.CommandText = "select * FROM Users WHERE UserName='" + tbUserName.Text + "'AND Password='" + tbPassword.Text + "'";
-
+            cmdLogin.CommandText = "select * FROM Users WHERE UserName='" + tbUserName.Text + "'AND Password='" + tbPassword.Text + "'";
 
             DataTable dt = new DataTable();
-                // The number of matching values is read from the database
-                OleDbDataReader reader = cmd.ExecuteReader();
 
-                dt.Load(reader);
-                DataRow dr = dt.Rows[0];
+            // The number of matching values is read from the database
+            OleDbDataReader reader = cmdLogin.ExecuteReader();
+            dt.Load(reader);
+            DataRow dr = dt.Rows[0];
 
 
             // If the count is 1 the login is successful
             if (dt.Rows.Count == 1)
             {
-                User.AccessLevel = Convert.ToInt32(dt.Rows[0]["AccessLevel"]);
-                //User.AccessLevel = Convert.ToInt32(dt.Rows[0]["AccessLevel"].ToString());
+                string ul = dr[3].ToString();
+                User.AccessLevel = Convert.ToInt32(ul);
                 this.Hide();
                 Home h = new Home();
                 h.Show();
@@ -68,7 +67,7 @@ namespace BayWynCouriersWinForm
                 tbUserName.Text = "";
                 tbPassword.Text = "";
             }
-            
+
             // Close connection
             con.Close();
 
