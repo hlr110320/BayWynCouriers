@@ -44,10 +44,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Lavender;
-            this.btnLogin.Location = new System.Drawing.Point(546, 458);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnLogin.Location = new System.Drawing.Point(292, 161);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(149, 78);
+            this.btnLogin.Size = new System.Drawing.Size(64, 33);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -58,10 +58,10 @@
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbUserName.ForeColor = System.Drawing.Color.Black;
-            this.tbUserName.Location = new System.Drawing.Point(456, 202);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbUserName.Location = new System.Drawing.Point(240, 75);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(5);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(339, 27);
+            this.tbUserName.Size = new System.Drawing.Size(175, 18);
             this.tbUserName.TabIndex = 1;
             // 
             // tbPassword
@@ -69,11 +69,11 @@
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbPassword.Location = new System.Drawing.Point(454, 326);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbPassword.Location = new System.Drawing.Point(240, 122);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(5);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(339, 27);
+            this.tbPassword.Size = new System.Drawing.Size(175, 18);
             this.tbPassword.TabIndex = 2;
             // 
             // lbUserName
@@ -81,10 +81,10 @@
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lbUserName.ForeColor = System.Drawing.Color.Black;
-            this.lbUserName.Location = new System.Drawing.Point(450, 150);
+            this.lbUserName.Location = new System.Drawing.Point(288, 51);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(99, 28);
+            this.lbUserName.Size = new System.Drawing.Size(71, 19);
             this.lbUserName.TabIndex = 3;
             this.lbUserName.Text = "Username";
             // 
@@ -93,10 +93,10 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lbPassword.ForeColor = System.Drawing.Color.Black;
-            this.lbPassword.Location = new System.Drawing.Point(448, 274);
+            this.lbPassword.Location = new System.Drawing.Point(292, 101);
             this.lbPassword.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(93, 28);
+            this.lbPassword.Size = new System.Drawing.Size(67, 19);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             // 
@@ -105,9 +105,9 @@
             this.panelColour.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelColour.Controls.Add(this.label1);
             this.panelColour.Location = new System.Drawing.Point(0, 0);
-            this.panelColour.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelColour.Margin = new System.Windows.Forms.Padding(5);
             this.panelColour.Name = "panelColour";
-            this.panelColour.Size = new System.Drawing.Size(347, 682);
+            this.panelColour.Size = new System.Drawing.Size(151, 305);
             this.panelColour.TabIndex = 5;
             // 
             // label1
@@ -115,19 +115,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(40, 93);
+            this.label1.Location = new System.Drawing.Point(14, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 32);
+            this.label1.Size = new System.Drawing.Size(133, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "BayWyn Couriers";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(898, 674);
+            this.ClientSize = new System.Drawing.Size(487, 221);
             this.Controls.Add(this.panelColour);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbUserName);
@@ -136,8 +136,13 @@
             this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Menu;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(300, 56);
             this.Name = "Login";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BayWyn Couriers";
             this.panelColour.ResumeLayout(false);
             this.panelColour.PerformLayout();

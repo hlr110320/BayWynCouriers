@@ -34,7 +34,6 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.IconPanel = new System.Windows.Forms.Panel();
-            this.lbTest = new System.Windows.Forms.Label();
             this.panelClients = new System.Windows.Forms.Panel();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.ContractDatePick = new System.Windows.Forms.DateTimePicker();
@@ -153,17 +152,6 @@
             this.IconPanel.Size = new System.Drawing.Size(220, 100);
             this.IconPanel.TabIndex = 0;
             // 
-            // lbTest
-            // 
-            this.lbTest.AutoSize = true;
-            this.lbTest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTest.Location = new System.Drawing.Point(277, 190);
-            this.lbTest.MaximumSize = new System.Drawing.Size(90, 40);
-            this.lbTest.MinimumSize = new System.Drawing.Size(90, 40);
-            this.lbTest.Name = "lbTest";
-            this.lbTest.Size = new System.Drawing.Size(90, 40);
-            this.lbTest.TabIndex = 1;
-            // 
             // panelClients
             // 
             this.panelClients.Controls.Add(this.btnAddClient);
@@ -205,7 +193,7 @@
             this.ContractDatePick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ContractDatePick.Location = new System.Drawing.Point(462, 75);
             this.ContractDatePick.Name = "ContractDatePick";
-            this.ContractDatePick.Size = new System.Drawing.Size(121, 34);
+            this.ContractDatePick.Size = new System.Drawing.Size(121, 25);
             this.ContractDatePick.TabIndex = 14;
             // 
             // lbClientRef
@@ -213,7 +201,7 @@
             this.lbClientRef.AutoSize = true;
             this.lbClientRef.Location = new System.Drawing.Point(86, 61);
             this.lbClientRef.Name = "lbClientRef";
-            this.lbClientRef.Size = new System.Drawing.Size(155, 28);
+            this.lbClientRef.Size = new System.Drawing.Size(110, 19);
             this.lbClientRef.TabIndex = 13;
             this.lbClientRef.Text = "Client Reference:";
             // 
@@ -223,7 +211,7 @@
             this.tbBEmail.Location = new System.Drawing.Point(343, 279);
             this.tbBEmail.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBEmail.Name = "tbBEmail";
-            this.tbBEmail.Size = new System.Drawing.Size(240, 27);
+            this.tbBEmail.Size = new System.Drawing.Size(240, 18);
             this.tbBEmail.TabIndex = 12;
             // 
             // tbBTel
@@ -232,7 +220,7 @@
             this.tbBTel.Location = new System.Drawing.Point(90, 279);
             this.tbBTel.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBTel.Name = "tbBTel";
-            this.tbBTel.Size = new System.Drawing.Size(240, 27);
+            this.tbBTel.Size = new System.Drawing.Size(240, 18);
             this.tbBTel.TabIndex = 11;
             // 
             // tbBNotes
@@ -260,7 +248,7 @@
             this.tbBName.Location = new System.Drawing.Point(90, 130);
             this.tbBName.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBName.Name = "tbBName";
-            this.tbBName.Size = new System.Drawing.Size(493, 27);
+            this.tbBName.Size = new System.Drawing.Size(493, 18);
             this.tbBName.TabIndex = 7;
             // 
             // cbClientType
@@ -273,7 +261,7 @@
             "Non Contracted"});
             this.cbClientType.Location = new System.Drawing.Point(320, 75);
             this.cbClientType.Name = "cbClientType";
-            this.cbClientType.Size = new System.Drawing.Size(121, 36);
+            this.cbClientType.Size = new System.Drawing.Size(121, 25);
             this.cbClientType.TabIndex = 6;
             this.cbClientType.Text = "Client Type";
             // 
@@ -293,7 +281,7 @@
             this.lbNotes.AutoSize = true;
             this.lbNotes.Location = new System.Drawing.Point(86, 317);
             this.lbNotes.Name = "lbNotes";
-            this.lbNotes.Size = new System.Drawing.Size(68, 28);
+            this.lbNotes.Size = new System.Drawing.Size(48, 19);
             this.lbNotes.TabIndex = 4;
             this.lbNotes.Text = "Notes:";
             // 
@@ -302,7 +290,7 @@
             this.lbTel.AutoSize = true;
             this.lbTel.Location = new System.Drawing.Point(86, 257);
             this.lbTel.Name = "lbTel";
-            this.lbTel.Size = new System.Drawing.Size(105, 28);
+            this.lbTel.Size = new System.Drawing.Size(74, 19);
             this.lbTel.TabIndex = 3;
             this.lbTel.Text = "Telephone:";
             // 
@@ -311,7 +299,7 @@
             this.lbBEmail.AutoSize = true;
             this.lbBEmail.Location = new System.Drawing.Point(339, 257);
             this.lbBEmail.Name = "lbBEmail";
-            this.lbBEmail.Size = new System.Drawing.Size(63, 28);
+            this.lbBEmail.Size = new System.Drawing.Size(44, 19);
             this.lbBEmail.TabIndex = 2;
             this.lbBEmail.Text = "Email:";
             // 
@@ -320,7 +308,7 @@
             this.lbBAdd.AutoSize = true;
             this.lbBAdd.Location = new System.Drawing.Point(86, 168);
             this.lbBAdd.Name = "lbBAdd";
-            this.lbBAdd.Size = new System.Drawing.Size(163, 28);
+            this.lbBAdd.Size = new System.Drawing.Size(117, 19);
             this.lbBAdd.TabIndex = 1;
             this.lbBAdd.Text = "Business Address:";
             // 
@@ -329,7 +317,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Location = new System.Drawing.Point(86, 108);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(145, 28);
+            this.lbName.Size = new System.Drawing.Size(104, 19);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Business Name:";
             // 
@@ -362,7 +350,7 @@
             "Non Contracted"});
             this.cbCourier.Location = new System.Drawing.Point(462, 75);
             this.cbCourier.Name = "cbCourier";
-            this.cbCourier.Size = new System.Drawing.Size(121, 36);
+            this.cbCourier.Size = new System.Drawing.Size(121, 25);
             this.cbCourier.TabIndex = 14;
             this.cbCourier.Text = "Courier";
             // 
@@ -384,7 +372,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(86, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 28);
+            this.label1.Size = new System.Drawing.Size(110, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Client Reference:";
             // 
@@ -394,7 +382,7 @@
             this.textBox1.Location = new System.Drawing.Point(343, 279);
             this.textBox1.MinimumSize = new System.Drawing.Size(100, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 27);
+            this.textBox1.Size = new System.Drawing.Size(240, 18);
             this.textBox1.TabIndex = 12;
             // 
             // textBox2
@@ -403,7 +391,7 @@
             this.textBox2.Location = new System.Drawing.Point(90, 279);
             this.textBox2.MinimumSize = new System.Drawing.Size(100, 25);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 27);
+            this.textBox2.Size = new System.Drawing.Size(240, 18);
             this.textBox2.TabIndex = 11;
             // 
             // textBox4
@@ -421,7 +409,7 @@
             this.textBox5.Location = new System.Drawing.Point(90, 130);
             this.textBox5.MinimumSize = new System.Drawing.Size(100, 25);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(493, 27);
+            this.textBox5.Size = new System.Drawing.Size(493, 18);
             this.textBox5.TabIndex = 7;
             // 
             // cbDeliverySlot
@@ -434,7 +422,7 @@
             "Non Contracted"});
             this.cbDeliverySlot.Location = new System.Drawing.Point(320, 75);
             this.cbDeliverySlot.Name = "cbDeliverySlot";
-            this.cbDeliverySlot.Size = new System.Drawing.Size(121, 36);
+            this.cbDeliverySlot.Size = new System.Drawing.Size(121, 25);
             this.cbDeliverySlot.TabIndex = 6;
             this.cbDeliverySlot.Text = "Delivery Slot";
             // 
@@ -454,7 +442,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(86, 257);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 28);
+            this.label4.Size = new System.Drawing.Size(74, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Telephone:";
             // 
@@ -463,7 +451,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(339, 257);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 28);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "Email:";
             // 
@@ -472,14 +460,13 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(86, 108);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 28);
+            this.label7.Size = new System.Drawing.Size(104, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Business Name:";
             // 
             // panelReports
             // 
             this.panelReports.BackColor = System.Drawing.Color.Lavender;
-            this.panelReports.Controls.Add(this.lbTest);
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
@@ -500,6 +487,7 @@
             this.btnGenReport.TabIndex = 5;
             this.btnGenReport.Text = "Generate";
             this.btnGenReport.UseVisualStyleBackColor = false;
+            this.btnGenReport.Click += new System.EventHandler(this.btnGenReport_Click);
             // 
             // cbReports
             // 
@@ -508,7 +496,7 @@
             this.cbReports.FormattingEnabled = true;
             this.cbReports.Location = new System.Drawing.Point(52, 53);
             this.cbReports.Name = "cbReports";
-            this.cbReports.Size = new System.Drawing.Size(426, 36);
+            this.cbReports.Size = new System.Drawing.Size(426, 25);
             this.cbReports.TabIndex = 15;
             this.cbReports.Text = "Reports";
             this.cbReports.SelectedIndexChanged += new System.EventHandler(this.cbReports_SelectedIndexChanged);
@@ -530,7 +518,7 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(933, 588);
@@ -548,7 +536,6 @@
             this.panelDeliveries.ResumeLayout(false);
             this.panelDeliveries.PerformLayout();
             this.panelReports.ResumeLayout(false);
-            this.panelReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
             this.ResumeLayout(false);
 
@@ -592,7 +579,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbTest;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbReports;
         private System.Windows.Forms.Button btnGenReport;

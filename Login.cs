@@ -9,9 +9,8 @@ namespace BayWynCouriersWinForm
 {
     public partial class Login : Form
     {
-       
-        private OleDbConnection con = new OleDbConnection();
-        int ual = 0;
+
+        public OleDbConnection con = new OleDbConnection();
         public Login()
         {
             InitializeComponent();
@@ -54,15 +53,15 @@ namespace BayWynCouriersWinForm
             // If the count is 1 the login is successful
             if (dt.Rows.Count == 1)
             {
-                User.UserName = dr["UserName"].ToString();
-                User.AccessLevel = Convert.ToInt32(dr["AccessLevel"]);
+                User.AccessLevel = Convert.ToInt32(dt.Rows[0]["AccessLevel"]);
+                //User.AccessLevel = Convert.ToInt32(dt.Rows[0]["AccessLevel"].ToString());
                 this.Hide();
                 Home h = new Home();
                 h.Show();
             }
 
             // If there are 0 matches, login is unsuccessful
-            else
+            else if (dt.Rows.Count == 0)
             {
                 //Error message displays and input text boxes are cleared
                 MessageBox.Show("Username or Password is incorrect.");

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using BayWynCouriersWinForm;
+using System;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BayWynCouriersWinForm;
 
 namespace BayWynCouriersWinForm
 {
@@ -24,8 +16,8 @@ namespace BayWynCouriersWinForm
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {;
-            lbTest.Text = User.AccessLevel.ToString();
+        {            
+            MessageBox.Show(User.AccessLevel.ToString());
             panelReports.Hide();
             panelDeliveries.Hide();
             panelClients.Hide();
@@ -65,22 +57,24 @@ namespace BayWynCouriersWinForm
 
         private void cbReports_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int AccessLevel = 2;
-            string reportDaily = "Day Courier Assignments";
-            string reportMonthly = "Month Courier Assignments";
-            string reportAll = "All assignments for given month";
-            string reportValue = "Value of contracts for given month";
+           string reportDaily = "Day Courier Assignments";
+         string reportMonthly = "Month Courier Assignments";
+         string reportAll = "All assignments for given month";
+         string reportValue = "Value of contracts for given month";
 
-            if (AccessLevel == 1)
+            if (User.AccessLevel == 1)
             { 
-                cbReports.Items.AddRange(new string[] { reportDaily, reportMonthly, reportAll, reportValue });
+                cbReports.DataSource = (new string[] { reportDaily, reportMonthly, reportAll, reportValue });
             }
-            else if (AccessLevel == 2)
+            else if (User.AccessLevel == 2)
             {
-                cbReports.Items.Add(reportAll);
+                MessageBox.Show("htest");
+                cbReports.DataSource = (new string[] { "hello", "EGG"});
+               // cbReports.Items.Add(reportAll);
             }
-            else if (AccessLevel == 3)
+            else if (User.AccessLevel == 3)
             {
+
                 cbReports.Items.AddRange(new string[] { reportDaily, reportMonthly });
             }
         }
@@ -88,6 +82,11 @@ namespace BayWynCouriersWinForm
         private void dataGridReports_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
   
+        }
+
+        private void btnGenReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
