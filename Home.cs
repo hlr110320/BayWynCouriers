@@ -62,7 +62,11 @@ namespace BayWynCouriersWinForm
 
             if (User.AccessLevel == 1)
             {
-                cbReports.DataSource = (new string[] { reportDaily, reportMonthly, reportAll, reportValue });
+                cbReports.Items.Add(reportDaily).ToString();
+                cbReports.Items.Add(reportMonthly).ToString();
+                cbReports.Items.Add(reportAll).ToString();
+                cbReports.Items.Add(reportValue).ToString();
+  
             }
             else if (User.AccessLevel == 2)
             {
