@@ -64,10 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bwcDataSet.Designer.cs">
+    <Compile Include="bwcDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+      <DependentUpon>bwcDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clients.cs" />
     <Compile Include="Couriers.cs" />
@@ -103,16 +103,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="bwcDataSet.xsc">
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+    <None Include="bwcDS.xsc">
+      <DependentUpon>bwcDS.xsd</DependentUpon>
     </None>
-    <None Include="bwcDataSet.xsd">
+    <None Include="bwcDS.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bwcDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>bwcDS.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bwcDataSet.xss">
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+    <None Include="bwcDS.xss">
+      <DependentUpon>bwcDS.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,6 +138,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bwc.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

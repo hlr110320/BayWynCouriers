@@ -1,4 +1,4 @@
-﻿using BayWynCouriersWinForm.bwcDataSetTableAdapters;
+﻿using BayWynCouriersWinForm.bwcDSTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +16,7 @@ namespace BayWynCouriersWinForm
             InitializeComponent();
 
             // Initialisation of the database connection string
-            con.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.mdb";
+            con.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Toxic\source\repos\hlr110320\BayWynCouriers\bwc.mdb";
         }
 
 
