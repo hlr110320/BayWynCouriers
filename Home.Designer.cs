@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.panelBar = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,8 +36,6 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnDeliveries = new System.Windows.Forms.Button();
             this.btnAssignments = new System.Windows.Forms.Button();
-            this.IconPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelClients = new System.Windows.Forms.Panel();
             this.tabContracts = new System.Windows.Forms.TabControl();
             this.tabC1 = new System.Windows.Forms.TabPage();
@@ -66,6 +63,7 @@
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridBookSlots = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnBookDel = new System.Windows.Forms.Button();
             this.deliveryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +71,6 @@
             this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBookDel = new System.Windows.Forms.Button();
             this.panelReports = new System.Windows.Forms.Panel();
             this.btnGenReport = new System.Windows.Forms.Button();
             this.cbReports = new System.Windows.Forms.ComboBox();
@@ -83,6 +80,23 @@
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.IconPanel = new System.Windows.Forms.Panel();
+            this.panelBar.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelClients.SuspendLayout();
+            this.tabContracts.SuspendLayout();
+            this.tabC1.SuspendLayout();
+            this.panelDeliveries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelReports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
+            this.panelAssignments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.IconPanel.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panelBar
             // 
@@ -98,7 +112,7 @@
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(220, 1050);
+            this.panelBar.Size = new System.Drawing.Size(220, 900);
             this.panelBar.TabIndex = 0;
             // 
             // btnLogout
@@ -106,9 +120,12 @@
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.Location = new System.Drawing.Point(0, 565);
+            this.btnLogout.Location = new System.Drawing.Point(0, 654);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(220, 60);
             this.btnLogout.TabIndex = 0;
@@ -121,7 +138,7 @@
             // 
             this.panel1.Controls.Add(this.lbUser);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 400);
+            this.panel1.Location = new System.Drawing.Point(0, 489);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 165);
@@ -141,9 +158,12 @@
             // 
             this.btnContracts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnContracts.FlatAppearance.BorderSize = 0;
+            this.btnContracts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnContracts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContracts.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContracts.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnContracts.Location = new System.Drawing.Point(0, 340);
+            this.btnContracts.Location = new System.Drawing.Point(0, 429);
             this.btnContracts.Name = "btnContracts";
             this.btnContracts.Size = new System.Drawing.Size(220, 60);
             this.btnContracts.TabIndex = 4;
@@ -156,9 +176,12 @@
             // 
             this.btnReports.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnReports.Location = new System.Drawing.Point(0, 280);
+            this.btnReports.Location = new System.Drawing.Point(0, 369);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(220, 60);
             this.btnReports.TabIndex = 3;
@@ -170,9 +193,12 @@
             // 
             this.btnDeliveries.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDeliveries.FlatAppearance.BorderSize = 0;
+            this.btnDeliveries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDeliveries.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDeliveries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeliveries.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeliveries.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeliveries.Location = new System.Drawing.Point(0, 220);
+            this.btnDeliveries.Location = new System.Drawing.Point(0, 309);
             this.btnDeliveries.Name = "btnDeliveries";
             this.btnDeliveries.Size = new System.Drawing.Size(220, 60);
             this.btnDeliveries.TabIndex = 2;
@@ -184,9 +210,12 @@
             // 
             this.btnAssignments.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAssignments.FlatAppearance.BorderSize = 0;
+            this.btnAssignments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAssignments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAssignments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignments.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssignments.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAssignments.Location = new System.Drawing.Point(0, 160);
+            this.btnAssignments.Location = new System.Drawing.Point(0, 249);
             this.btnAssignments.Name = "btnAssignments";
             this.btnAssignments.Size = new System.Drawing.Size(220, 60);
             this.btnAssignments.TabIndex = 1;
@@ -195,22 +224,13 @@
             this.btnAssignments.UseVisualStyleBackColor = true;
             this.btnAssignments.Click += new System.EventHandler(this.BtnAssignments_Click);
             // 
-            // IconPanel
-            // 
-            this.IconPanel.Controls.Add(this.pictureBox1);
-            this.IconPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IconPanel.Location = new System.Drawing.Point(0, 0);
-            this.IconPanel.Name = "IconPanel";
-            this.IconPanel.Size = new System.Drawing.Size(220, 160);
-            this.IconPanel.TabIndex = 0;
-            // 
             // panelClients
             // 
             this.panelClients.Controls.Add(this.tabContracts);
             this.panelClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelClients.Location = new System.Drawing.Point(220, 0);
             this.panelClients.Name = "panelClients";
-            this.panelClients.Size = new System.Drawing.Size(1358, 1050);
+            this.panelClients.Size = new System.Drawing.Size(1187, 900);
             this.panelClients.TabIndex = 2;
             // 
             // tabContracts
@@ -222,7 +242,7 @@
             this.tabContracts.Location = new System.Drawing.Point(0, 0);
             this.tabContracts.Name = "tabContracts";
             this.tabContracts.SelectedIndex = 0;
-            this.tabContracts.Size = new System.Drawing.Size(1327, 1050);
+            this.tabContracts.Size = new System.Drawing.Size(1327, 900);
             this.tabContracts.TabIndex = 7;
             // 
             // tabC1
@@ -247,7 +267,7 @@
             this.tabC1.Location = new System.Drawing.Point(4, 37);
             this.tabC1.Name = "tabC1";
             this.tabC1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC1.Size = new System.Drawing.Size(1319, 1009);
+            this.tabC1.Size = new System.Drawing.Size(1319, 859);
             this.tabC1.TabIndex = 0;
             this.tabC1.Text = "Create New Contract";
             // 
@@ -287,12 +307,11 @@
             this.tbCourierRuns.Name = "tbCourierRuns";
             this.tbCourierRuns.Size = new System.Drawing.Size(263, 27);
             this.tbCourierRuns.TabIndex = 9;
-
             // 
             // ContractRuns
             // 
             this.ContractRuns.AutoSize = true;
-            this.ContractRuns.Location = new System.Drawing.Point(90, 56);
+            this.ContractRuns.Location = new System.Drawing.Point(93, 59);
             this.ContractRuns.Name = "ContractRuns";
             this.ContractRuns.Size = new System.Drawing.Size(127, 28);
             this.ContractRuns.TabIndex = 15;
@@ -361,7 +380,7 @@
             // lbNotes
             // 
             this.lbNotes.AutoSize = true;
-            this.lbNotes.Location = new System.Drawing.Point(90, 356);
+            this.lbNotes.Location = new System.Drawing.Point(93, 359);
             this.lbNotes.Name = "lbNotes";
             this.lbNotes.Size = new System.Drawing.Size(68, 28);
             this.lbNotes.TabIndex = 4;
@@ -370,7 +389,7 @@
             // lbTel
             // 
             this.lbTel.AutoSize = true;
-            this.lbTel.Location = new System.Drawing.Point(90, 246);
+            this.lbTel.Location = new System.Drawing.Point(93, 249);
             this.lbTel.Name = "lbTel";
             this.lbTel.Size = new System.Drawing.Size(105, 28);
             this.lbTel.TabIndex = 3;
@@ -379,7 +398,7 @@
             // lbBEmail
             // 
             this.lbBEmail.AutoSize = true;
-            this.lbBEmail.Location = new System.Drawing.Point(90, 301);
+            this.lbBEmail.Location = new System.Drawing.Point(93, 304);
             this.lbBEmail.Name = "lbBEmail";
             this.lbBEmail.Size = new System.Drawing.Size(63, 28);
             this.lbBEmail.TabIndex = 2;
@@ -388,7 +407,7 @@
             // lbBAdd
             // 
             this.lbBAdd.AutoSize = true;
-            this.lbBAdd.Location = new System.Drawing.Point(90, 166);
+            this.lbBAdd.Location = new System.Drawing.Point(93, 169);
             this.lbBAdd.Name = "lbBAdd";
             this.lbBAdd.Size = new System.Drawing.Size(163, 28);
             this.lbBAdd.TabIndex = 1;
@@ -397,7 +416,7 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(90, 111);
+            this.lbName.Location = new System.Drawing.Point(93, 114);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(145, 28);
             this.lbName.TabIndex = 0;
@@ -431,6 +450,13 @@
             this.lbClientRef.TabIndex = 13;
             this.lbClientRef.Text = "Client Reference:";
             // 
+            // lbCRN
+            // 
+            this.lbCRN.Location = new System.Drawing.Point(0, 0);
+            this.lbCRN.Name = "lbCRN";
+            this.lbCRN.Size = new System.Drawing.Size(100, 23);
+            this.lbCRN.TabIndex = 18;
+            // 
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
@@ -442,7 +468,7 @@
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
             this.panelDeliveries.Name = "panelDeliveries";
-            this.panelDeliveries.Size = new System.Drawing.Size(1358, 1050);
+            this.panelDeliveries.Size = new System.Drawing.Size(1187, 900);
             this.panelDeliveries.TabIndex = 15;
             // 
             // cbBName
@@ -461,6 +487,38 @@
             this.DatePicker.Size = new System.Drawing.Size(200, 34);
             this.DatePicker.TabIndex = 7;
             this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
+            // 
+            // dataGridBookSlots
+            // 
+            this.dataGridBookSlots.ColumnHeadersHeight = 34;
+            this.dataGridBookSlots.Location = new System.Drawing.Point(0, 0);
+            this.dataGridBookSlots.Name = "dataGridBookSlots";
+            this.dataGridBookSlots.RowHeadersWidth = 62;
+            this.dataGridBookSlots.Size = new System.Drawing.Size(240, 150);
+            this.dataGridBookSlots.TabIndex = 8;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeight = 34;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // btnBookDel
+            // 
+            this.btnBookDel.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnBookDel.FlatAppearance.BorderSize = 0;
+            this.btnBookDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookDel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBookDel.Location = new System.Drawing.Point(794, 322);
+            this.btnBookDel.Name = "btnBookDel";
+            this.btnBookDel.Size = new System.Drawing.Size(120, 45);
+            this.btnBookDel.TabIndex = 8;
+            this.btnBookDel.Text = "Book Delivery";
+            this.btnBookDel.UseVisualStyleBackColor = false;
+            this.btnBookDel.Click += new System.EventHandler(this.btnBookDel_Click);
             // 
             // deliveryIDDataGridViewTextBoxColumn
             // 
@@ -518,20 +576,6 @@
             this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
             this.destinationDataGridViewTextBoxColumn.Width = 150;
             // 
-            // btnBookDel
-            // 
-            this.btnBookDel.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnBookDel.FlatAppearance.BorderSize = 0;
-            this.btnBookDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookDel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBookDel.Location = new System.Drawing.Point(794, 322);
-            this.btnBookDel.Name = "btnBookDel";
-            this.btnBookDel.Size = new System.Drawing.Size(120, 45);
-            this.btnBookDel.TabIndex = 8;
-            this.btnBookDel.Text = "Book Delivery";
-            this.btnBookDel.UseVisualStyleBackColor = false;
-            this.btnBookDel.Click += new System.EventHandler(this.btnBookDel_Click);
-            // 
             // panelReports
             // 
             this.panelReports.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -539,7 +583,7 @@
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
-            this.panelReports.Location = new System.Drawing.Point(220, 0);
+            this.panelReports.Location = new System.Drawing.Point(134, 0);
             this.panelReports.Name = "panelReports";
             this.panelReports.Size = new System.Drawing.Size(1358, 1050);
             this.panelReports.TabIndex = 16;
@@ -573,8 +617,8 @@
             // 
             this.dataGridReports.AllowUserToDeleteRows = false;
             this.dataGridReports.AllowUserToOrderColumns = true;
-            this.dataGridReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridReports.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -584,7 +628,7 @@
             this.dataGridReports.Name = "dataGridReports";
             this.dataGridReports.ReadOnly = true;
             this.dataGridReports.RowHeadersWidth = 62;
-            this.dataGridReports.Size = new System.Drawing.Size(1248, 888);
+            this.dataGridReports.Size = new System.Drawing.Size(2406, 1838);
             this.dataGridReports.TabIndex = 6;
             // 
             // panelAssignments
@@ -597,7 +641,7 @@
             this.panelAssignments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAssignments.Location = new System.Drawing.Point(220, 0);
             this.panelAssignments.Name = "panelAssignments";
-            this.panelAssignments.Size = new System.Drawing.Size(1358, 1050);
+            this.panelAssignments.Size = new System.Drawing.Size(1187, 900);
             this.panelAssignments.TabIndex = 17;
             // 
             // cbAssignments
@@ -651,13 +695,33 @@
             this.dataGridAssignments.Size = new System.Drawing.Size(607, 427);
             this.dataGridAssignments.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.Image = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.InitialImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 154);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // IconPanel
+            // 
+            this.IconPanel.Controls.Add(this.pictureBox1);
+            this.IconPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IconPanel.Location = new System.Drawing.Point(0, 0);
+            this.IconPanel.Name = "IconPanel";
+            this.IconPanel.Size = new System.Drawing.Size(220, 249);
+            this.IconPanel.TabIndex = 0;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1578, 1050);
+            this.ClientSize = new System.Drawing.Size(1407, 900);
             this.Controls.Add(this.panelClients);
             this.Controls.Add(this.panelDeliveries);
             this.Controls.Add(this.panelAssignments);
@@ -672,6 +736,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bay Wyn Couriers";
             this.Load += new System.EventHandler(this.Home_Load);
+            this.panelBar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelClients.ResumeLayout(false);
+            this.tabContracts.ResumeLayout(false);
+            this.tabC1.ResumeLayout(false);
+            this.tabC1.PerformLayout();
+            this.panelDeliveries.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelReports.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
+            this.panelAssignments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.IconPanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
         #endregion
 
@@ -680,7 +763,6 @@
         private System.Windows.Forms.Button btnDeliveries;
         private System.Windows.Forms.Button btnAssignments;
         private System.Windows.Forms.Button btnContracts;
-        private System.Windows.Forms.Panel IconPanel;
         private System.Windows.Forms.Panel panelClients;
         private System.Windows.Forms.Label lbClientRef;
         private System.Windows.Forms.TextBox tbBEmail;
@@ -737,10 +819,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridBookSlots;
         private System.Windows.Forms.DateTimePicker DatePicker;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbBName;
         private System.Windows.Forms.Button btnCreateContract;
-
+        private System.Windows.Forms.Panel IconPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
