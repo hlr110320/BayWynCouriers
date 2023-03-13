@@ -5,6 +5,21 @@
     /// </summary>
     internal class User
     {
+        private static string _UserName;
+        public static string UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+
+            set
+            {
+                _UserName = value;
+            }
+
+        }
+
         private static int _AccessLevel;
         public static int AccessLevel
         {

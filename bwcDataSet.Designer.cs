@@ -20,9 +20,9 @@ namespace BayWynCouriersWinForm {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("bwcDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("bwcDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class bwcDS : global::System.Data.DataSet {
+    public partial class bwcDataSet : global::System.Data.DataSet {
         
         private ClientsDataTable tableClients;
         
@@ -36,8 +36,6 @@ namespace BayWynCouriersWinForm {
         
         private UsersDataTable tableUsers;
         
-        private Clients_QueryDataTable tableClients_Query;
-        
         private global::System.Data.DataRelation relationCostsClients;
         
         private global::System.Data.DataRelation relationDeliverySlotsCouriers;
@@ -50,7 +48,7 @@ namespace BayWynCouriersWinForm {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bwcDS() {
+        public bwcDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -61,7 +59,7 @@ namespace BayWynCouriersWinForm {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected bwcDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected bwcDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -91,9 +89,6 @@ namespace BayWynCouriersWinForm {
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
-                }
-                if ((ds.Tables["Clients Query"] != null)) {
-                    base.Tables.Add(new Clients_QueryDataTable(ds.Tables["Clients Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -175,16 +170,6 @@ namespace BayWynCouriersWinForm {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Clients_QueryDataTable Clients_Query {
-            get {
-                return this.tableClients_Query;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -225,7 +210,7 @@ namespace BayWynCouriersWinForm {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            bwcDS cln = ((bwcDS)(base.Clone()));
+            bwcDataSet cln = ((bwcDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -267,9 +252,6 @@ namespace BayWynCouriersWinForm {
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
-                }
-                if ((ds.Tables["Clients Query"] != null)) {
-                    base.Tables.Add(new Clients_QueryDataTable(ds.Tables["Clients Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -340,12 +322,6 @@ namespace BayWynCouriersWinForm {
                     this.tableUsers.InitVars();
                 }
             }
-            this.tableClients_Query = ((Clients_QueryDataTable)(base.Tables["Clients Query"]));
-            if ((initTable == true)) {
-                if ((this.tableClients_Query != null)) {
-                    this.tableClients_Query.InitVars();
-                }
-            }
             this.relationCostsClients = this.Relations["CostsClients"];
             this.relationDeliverySlotsCouriers = this.Relations["DeliverySlotsCouriers"];
             this.relationClientsDeliveries = this.Relations["ClientsDeliveries"];
@@ -355,9 +331,9 @@ namespace BayWynCouriersWinForm {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "bwcDS";
+            this.DataSetName = "bwcDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/bwcDS.xsd";
+            this.Namespace = "http://tempuri.org/bwcDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableClients = new ClientsDataTable();
@@ -372,8 +348,6 @@ namespace BayWynCouriersWinForm {
             base.Tables.Add(this.tableDeliverySlots);
             this.tableUsers = new UsersDataTable();
             base.Tables.Add(this.tableUsers);
-            this.tableClients_Query = new Clients_QueryDataTable();
-            base.Tables.Add(this.tableClients_Query);
             this.relationCostsClients = new global::System.Data.DataRelation("CostsClients", new global::System.Data.DataColumn[] {
                         this.tableCosts.ContractTypeColumn}, new global::System.Data.DataColumn[] {
                         this.tableClients.ContractTypeColumn}, false);
@@ -430,12 +404,6 @@ namespace BayWynCouriersWinForm {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeClients_Query() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -445,7 +413,7 @@ namespace BayWynCouriersWinForm {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            bwcDS ds = new bwcDS();
+            bwcDataSet ds = new bwcDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -507,9 +475,6 @@ namespace BayWynCouriersWinForm {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void Clients_QueryRowChangeEventHandler(object sender, Clients_QueryRowChangeEvent e);
-        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -534,10 +499,6 @@ namespace BayWynCouriersWinForm {
             private global::System.Data.DataColumn columnClientStartDate;
             
             private global::System.Data.DataColumn columnClientRunTotal;
-            
-            private global::System.Data.DataColumn columnClientMonthlyCost;
-            
-            private global::System.Data.DataColumn columnClientRunCost;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -646,22 +607,6 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ClientMonthlyCostColumn {
-                get {
-                    return this.columnClientMonthlyCost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ClientRunCostColumn {
-                get {
-                    return this.columnClientRunCost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -697,7 +642,7 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ClientsRow AddClientsRow(string ClientName, string ClientAdd, string ClientPhone, string ClientEmail, string ClientInfo, CostsRow parentCostsRowByCostsClients, System.DateTime ClientStartDate, int ClientRunTotal, string ClientMonthlyCost, string ClientRunCost) {
+            public ClientsRow AddClientsRow(string ClientName, string ClientAdd, string ClientPhone, string ClientEmail, string ClientInfo, CostsRow parentCostsRowByCostsClients, System.DateTime ClientStartDate, int ClientRunTotal) {
                 ClientsRow rowClientsRow = ((ClientsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -708,9 +653,7 @@ namespace BayWynCouriersWinForm {
                         ClientInfo,
                         null,
                         ClientStartDate,
-                        ClientRunTotal,
-                        ClientMonthlyCost,
-                        ClientRunCost};
+                        ClientRunTotal};
                 if ((parentCostsRowByCostsClients != null)) {
                     columnValuesArray[6] = parentCostsRowByCostsClients[0];
                 }
@@ -752,8 +695,6 @@ namespace BayWynCouriersWinForm {
                 this.columnContractType = base.Columns["ContractType"];
                 this.columnClientStartDate = base.Columns["ClientStartDate"];
                 this.columnClientRunTotal = base.Columns["ClientRunTotal"];
-                this.columnClientMonthlyCost = base.Columns["ClientMonthlyCost"];
-                this.columnClientRunCost = base.Columns["ClientRunCost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -777,10 +718,6 @@ namespace BayWynCouriersWinForm {
                 base.Columns.Add(this.columnClientStartDate);
                 this.columnClientRunTotal = new global::System.Data.DataColumn("ClientRunTotal", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClientRunTotal);
-                this.columnClientMonthlyCost = new global::System.Data.DataColumn("ClientMonthlyCost", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientMonthlyCost);
-                this.columnClientRunCost = new global::System.Data.DataColumn("ClientRunCost", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientRunCost);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnClientID}, true));
                 this.columnClientID.AutoIncrement = true;
@@ -794,8 +731,6 @@ namespace BayWynCouriersWinForm {
                 this.columnClientEmail.MaxLength = 255;
                 this.columnClientInfo.MaxLength = 536870910;
                 this.columnContractType.MaxLength = 255;
-                this.columnClientMonthlyCost.MaxLength = 255;
-                this.columnClientRunCost.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -863,7 +798,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1150,7 +1085,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1414,7 +1349,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1480,6 +1415,8 @@ namespace BayWynCouriersWinForm {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DeliveriesDataTable : global::System.Data.TypedTableBase<DeliveriesRow> {
             
+            private global::System.Data.DataColumn columnDeliveryID;
+            
             private global::System.Data.DataColumn columnDate;
             
             private global::System.Data.DataColumn columnTime;
@@ -1487,6 +1424,10 @@ namespace BayWynCouriersWinForm {
             private global::System.Data.DataColumn columnCourierID;
             
             private global::System.Data.DataColumn columnClientID;
+            
+            private global::System.Data.DataColumn columnDeliveryDate;
+            
+            private global::System.Data.DataColumn columnDestination;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1523,6 +1464,14 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DeliveryIDColumn {
+                get {
+                    return this.columnDeliveryID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn DateColumn {
                 get {
                     return this.columnDate;
@@ -1550,6 +1499,22 @@ namespace BayWynCouriersWinForm {
             public global::System.Data.DataColumn ClientIDColumn {
                 get {
                     return this.columnClientID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DeliveryDateColumn {
+                get {
+                    return this.columnDeliveryDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DestinationColumn {
+                get {
+                    return this.columnDestination;
                 }
             }
             
@@ -1590,18 +1555,21 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DeliveriesRow AddDeliveriesRow(System.DateTime Date, System.DateTime Time, CouriersRow parentCouriersRowByCouriersDeliveries, ClientsRow parentClientsRowByClientsDeliveries) {
+            public DeliveriesRow AddDeliveriesRow(System.DateTime Date, System.DateTime Time, CouriersRow parentCouriersRowByCouriersDeliveries, ClientsRow parentClientsRowByClientsDeliveries, System.DateTime DeliveryDate, string Destination) {
                 DeliveriesRow rowDeliveriesRow = ((DeliveriesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         Date,
                         Time,
                         null,
-                        null};
+                        null,
+                        DeliveryDate,
+                        Destination};
                 if ((parentCouriersRowByCouriersDeliveries != null)) {
-                    columnValuesArray[2] = parentCouriersRowByCouriersDeliveries[0];
+                    columnValuesArray[3] = parentCouriersRowByCouriersDeliveries[0];
                 }
                 if ((parentClientsRowByClientsDeliveries != null)) {
-                    columnValuesArray[3] = parentClientsRowByClientsDeliveries[0];
+                    columnValuesArray[4] = parentClientsRowByClientsDeliveries[0];
                 }
                 rowDeliveriesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeliveriesRow);
@@ -1610,9 +1578,9 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DeliveriesRow FindByDate(System.DateTime Date) {
+            public DeliveriesRow FindByDeliveryID(int DeliveryID) {
                 return ((DeliveriesRow)(this.Rows.Find(new object[] {
-                            Date})));
+                            DeliveryID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1632,15 +1600,20 @@ namespace BayWynCouriersWinForm {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnDeliveryID = base.Columns["DeliveryID"];
                 this.columnDate = base.Columns["Date"];
                 this.columnTime = base.Columns["Time"];
                 this.columnCourierID = base.Columns["CourierID"];
                 this.columnClientID = base.Columns["ClientID"];
+                this.columnDeliveryDate = base.Columns["DeliveryDate"];
+                this.columnDestination = base.Columns["Destination"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnDeliveryID = new global::System.Data.DataColumn("DeliveryID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeliveryID);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
                 this.columnTime = new global::System.Data.DataColumn("Time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1649,10 +1622,18 @@ namespace BayWynCouriersWinForm {
                 base.Columns.Add(this.columnCourierID);
                 this.columnClientID = new global::System.Data.DataColumn("ClientID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClientID);
+                this.columnDeliveryDate = new global::System.Data.DataColumn("DeliveryDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeliveryDate);
+                this.columnDestination = new global::System.Data.DataColumn("Destination", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDestination);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDate}, true));
-                this.columnDate.AllowDBNull = false;
-                this.columnDate.Unique = true;
+                                this.columnDeliveryID}, true));
+                this.columnDeliveryID.AutoIncrement = true;
+                this.columnDeliveryID.AutoIncrementSeed = -1;
+                this.columnDeliveryID.AutoIncrementStep = -1;
+                this.columnDeliveryID.AllowDBNull = false;
+                this.columnDeliveryID.Unique = true;
+                this.columnDestination.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1720,7 +1701,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2512,7 +2493,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2817,7 +2798,7 @@ namespace BayWynCouriersWinForm {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
+                bwcDataSet ds = new bwcDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2836,326 +2817,6 @@ namespace BayWynCouriersWinForm {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "UsersDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Clients_QueryDataTable : global::System.Data.TypedTableBase<Clients_QueryRow> {
-            
-            private global::System.Data.DataColumn columnClientRunTotal;
-            
-            private global::System.Data.DataColumn columnClients_ContractType;
-            
-            private global::System.Data.DataColumn columnClientMonthlyCost;
-            
-            private global::System.Data.DataColumn columnCosts_ContractType;
-            
-            private global::System.Data.DataColumn columnMonthlyCost;
-            
-            private global::System.Data.DataColumn columnRunCost;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryDataTable() {
-                this.TableName = "Clients Query";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Clients_QueryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected Clients_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ClientRunTotalColumn {
-                get {
-                    return this.columnClientRunTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Clients_ContractTypeColumn {
-                get {
-                    return this.columnClients_ContractType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ClientMonthlyCostColumn {
-                get {
-                    return this.columnClientMonthlyCost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Costs_ContractTypeColumn {
-                get {
-                    return this.columnCosts_ContractType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MonthlyCostColumn {
-                get {
-                    return this.columnMonthlyCost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RunCostColumn {
-                get {
-                    return this.columnRunCost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryRow this[int index] {
-                get {
-                    return ((Clients_QueryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Clients_QueryRowChangeEventHandler Clients_QueryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Clients_QueryRowChangeEventHandler Clients_QueryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Clients_QueryRowChangeEventHandler Clients_QueryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Clients_QueryRowChangeEventHandler Clients_QueryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddClients_QueryRow(Clients_QueryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryRow AddClients_QueryRow(int ClientRunTotal, string Clients_ContractType, string ClientMonthlyCost, string Costs_ContractType, decimal MonthlyCost, decimal RunCost) {
-                Clients_QueryRow rowClients_QueryRow = ((Clients_QueryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ClientRunTotal,
-                        Clients_ContractType,
-                        ClientMonthlyCost,
-                        Costs_ContractType,
-                        MonthlyCost,
-                        RunCost};
-                rowClients_QueryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowClients_QueryRow);
-                return rowClients_QueryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Clients_QueryDataTable cln = ((Clients_QueryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Clients_QueryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnClientRunTotal = base.Columns["ClientRunTotal"];
-                this.columnClients_ContractType = base.Columns["Clients_ContractType"];
-                this.columnClientMonthlyCost = base.Columns["ClientMonthlyCost"];
-                this.columnCosts_ContractType = base.Columns["Costs_ContractType"];
-                this.columnMonthlyCost = base.Columns["MonthlyCost"];
-                this.columnRunCost = base.Columns["RunCost"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnClientRunTotal = new global::System.Data.DataColumn("ClientRunTotal", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientRunTotal);
-                this.columnClients_ContractType = new global::System.Data.DataColumn("Clients_ContractType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClients_ContractType);
-                this.columnClientMonthlyCost = new global::System.Data.DataColumn("ClientMonthlyCost", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientMonthlyCost);
-                this.columnCosts_ContractType = new global::System.Data.DataColumn("Costs_ContractType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCosts_ContractType);
-                this.columnMonthlyCost = new global::System.Data.DataColumn("MonthlyCost", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMonthlyCost);
-                this.columnRunCost = new global::System.Data.DataColumn("RunCost", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRunCost);
-                this.columnClients_ContractType.MaxLength = 255;
-                this.columnClientMonthlyCost.MaxLength = 255;
-                this.columnCosts_ContractType.MaxLength = 255;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryRow NewClients_QueryRow() {
-                return ((Clients_QueryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Clients_QueryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Clients_QueryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Clients_QueryRowChanged != null)) {
-                    this.Clients_QueryRowChanged(this, new Clients_QueryRowChangeEvent(((Clients_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Clients_QueryRowChanging != null)) {
-                    this.Clients_QueryRowChanging(this, new Clients_QueryRowChangeEvent(((Clients_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Clients_QueryRowDeleted != null)) {
-                    this.Clients_QueryRowDeleted(this, new Clients_QueryRowChangeEvent(((Clients_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Clients_QueryRowDeleting != null)) {
-                    this.Clients_QueryRowDeleting(this, new Clients_QueryRowChangeEvent(((Clients_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveClients_QueryRow(Clients_QueryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bwcDS ds = new bwcDS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Clients_QueryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3351,38 +3012,6 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ClientMonthlyCost {
-                get {
-                    try {
-                        return ((string)(this[this.tableClients.ClientMonthlyCostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientMonthlyCost\' in table \'Clients\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients.ClientMonthlyCostColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ClientRunCost {
-                get {
-                    try {
-                        return ((string)(this[this.tableClients.ClientRunCostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientRunCost\' in table \'Clients\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients.ClientRunCostColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CostsRow CostsRow {
                 get {
                     return ((CostsRow)(this.GetParentRow(this.Table.ParentRelations["CostsClients"])));
@@ -3486,30 +3115,6 @@ namespace BayWynCouriersWinForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetClientRunTotalNull() {
                 this[this.tableClients.ClientRunTotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClientMonthlyCostNull() {
-                return this.IsNull(this.tableClients.ClientMonthlyCostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClientMonthlyCostNull() {
-                this[this.tableClients.ClientMonthlyCostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClientRunCostNull() {
-                return this.IsNull(this.tableClients.ClientRunCostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClientRunCostNull() {
-                this[this.tableClients.ClientRunCostColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3726,9 +3331,25 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int DeliveryID {
+                get {
+                    return ((int)(this[this.tableDeliveries.DeliveryIDColumn]));
+                }
+                set {
+                    this[this.tableDeliveries.DeliveryIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDeliveries.DateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDeliveries.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Deliveries\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDeliveries.DateColumn] = value;
@@ -3785,6 +3406,38 @@ namespace BayWynCouriersWinForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime DeliveryDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDeliveries.DeliveryDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeliveryDate\' in table \'Deliveries\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeliveries.DeliveryDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Destination {
+                get {
+                    try {
+                        return ((string)(this[this.tableDeliveries.DestinationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Destination\' in table \'Deliveries\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeliveries.DestinationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ClientsRow ClientsRow {
                 get {
                     return ((ClientsRow)(this.GetParentRow(this.Table.ParentRelations["ClientsDeliveries"])));
@@ -3803,6 +3456,18 @@ namespace BayWynCouriersWinForm {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["CouriersDeliveries"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableDeliveries.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableDeliveries.DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3839,6 +3504,30 @@ namespace BayWynCouriersWinForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetClientIDNull() {
                 this[this.tableDeliveries.ClientIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDeliveryDateNull() {
+                return this.IsNull(this.tableDeliveries.DeliveryDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDeliveryDateNull() {
+                this[this.tableDeliveries.DeliveryDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDestinationNull() {
+                return this.IsNull(this.tableDeliveries.DestinationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDestinationNull() {
+                this[this.tableDeliveries.DestinationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4903,189 +4592,6 @@ namespace BayWynCouriersWinForm {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class Clients_QueryRow : global::System.Data.DataRow {
-            
-            private Clients_QueryDataTable tableClients_Query;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Clients_QueryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableClients_Query = ((Clients_QueryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ClientRunTotal {
-                get {
-                    try {
-                        return ((int)(this[this.tableClients_Query.ClientRunTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientRunTotal\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.ClientRunTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Clients_ContractType {
-                get {
-                    try {
-                        return ((string)(this[this.tableClients_Query.Clients_ContractTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Clients_ContractType\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.Clients_ContractTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ClientMonthlyCost {
-                get {
-                    try {
-                        return ((string)(this[this.tableClients_Query.ClientMonthlyCostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientMonthlyCost\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.ClientMonthlyCostColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Costs_ContractType {
-                get {
-                    try {
-                        return ((string)(this[this.tableClients_Query.Costs_ContractTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Costs_ContractType\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.Costs_ContractTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal MonthlyCost {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableClients_Query.MonthlyCostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MonthlyCost\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.MonthlyCostColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal RunCost {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableClients_Query.RunCostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RunCost\' in table \'Clients Query\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClients_Query.RunCostColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClientRunTotalNull() {
-                return this.IsNull(this.tableClients_Query.ClientRunTotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClientRunTotalNull() {
-                this[this.tableClients_Query.ClientRunTotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClients_ContractTypeNull() {
-                return this.IsNull(this.tableClients_Query.Clients_ContractTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClients_ContractTypeNull() {
-                this[this.tableClients_Query.Clients_ContractTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClientMonthlyCostNull() {
-                return this.IsNull(this.tableClients_Query.ClientMonthlyCostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClientMonthlyCostNull() {
-                this[this.tableClients_Query.ClientMonthlyCostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCosts_ContractTypeNull() {
-                return this.IsNull(this.tableClients_Query.Costs_ContractTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCosts_ContractTypeNull() {
-                this[this.tableClients_Query.Costs_ContractTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMonthlyCostNull() {
-                return this.IsNull(this.tableClients_Query.MonthlyCostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMonthlyCostNull() {
-                this[this.tableClients_Query.MonthlyCostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRunCostNull() {
-                return this.IsNull(this.tableClients_Query.RunCostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRunCostNull() {
-                this[this.tableClients_Query.RunCostColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -5288,43 +4794,9 @@ namespace BayWynCouriersWinForm {
                 }
             }
         }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class Clients_QueryRowChangeEvent : global::System.EventArgs {
-            
-            private Clients_QueryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryRowChangeEvent(Clients_QueryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clients_QueryRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
     }
 }
-namespace BayWynCouriersWinForm.bwcDSTableAdapters {
+namespace BayWynCouriersWinForm.bwcDataSetTableAdapters {
     
     
     /// <summary>
@@ -5457,12 +4929,10 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             tableMapping.ColumnMappings.Add("ContractType", "ContractType");
             tableMapping.ColumnMappings.Add("ClientStartDate", "ClientStartDate");
             tableMapping.ColumnMappings.Add("ClientRunTotal", "ClientRunTotal");
-            tableMapping.ColumnMappings.Add("ClientMonthlyCost", "ClientMonthlyCost");
-            tableMapping.ColumnMappings.Add("ClientRunCost", "ClientRunCost");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Clients` WHERE ((`ClientID` = ?) AND ((? = 1 AND `ClientName` IS NULL) OR (`ClientName` = ?)) AND ((? = 1 AND `ClientAdd` IS NULL) OR (`ClientAdd` = ?)) AND ((? = 1 AND `ClientPhone` IS NULL) OR (`ClientPhone` = ?)) AND ((? = 1 AND `ClientEmail` IS NULL) OR (`ClientEmail` = ?)) AND ((? = 1 AND `ContractType` IS NULL) OR (`ContractType` = ?)) AND ((? = 1 AND `ClientStartDate` IS NULL) OR (`ClientStartDate` = ?)) AND ((? = 1 AND `ClientRunTotal` IS NULL) OR (`ClientRunTotal` = ?)) AND ((? = 1 AND `ClientMonthlyCost` IS NULL) OR (`ClientMonthlyCost` = ?)) AND ((? = 1 AND `ClientRunCost` IS NULL) OR (`ClientRunCost` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Clients` WHERE ((`ClientID` = ?) AND ((? = 1 AND `ClientName` IS NULL) OR (`ClientName` = ?)) AND ((? = 1 AND `ClientAdd` IS NULL) OR (`ClientAdd` = ?)) AND ((? = 1 AND `ClientPhone` IS NULL) OR (`ClientPhone` = ?)) AND ((? = 1 AND `ClientEmail` IS NULL) OR (`ClientEmail` = ?)) AND ((? = 1 AND `ContractType` IS NULL) OR (`ContractType` = ?)) AND ((? = 1 AND `ClientStartDate` IS NULL) OR (`ClientStartDate` = ?)) AND ((? = 1 AND `ClientRunTotal` IS NULL) OR (`ClientRunTotal` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientName", global::System.Data.DataRowVersion.Original, true, null));
@@ -5479,15 +4949,11 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientStartDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientStartDate", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientMonthlyCost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientMonthlyCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientRunCost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientRunCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Clients` (`ClientName`, `ClientAdd`, `ClientPhone`, `ClientEmail`, `" +
-                "ClientInfo`, `ContractType`, `ClientStartDate`, `ClientRunTotal`, `ClientMonthly" +
-                "Cost`, `ClientRunCost`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "ClientInfo`, `ContractType`, `ClientStartDate`, `ClientRunTotal`) VALUES (?, ?, " +
+                "?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientAdd", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientAdd", global::System.Data.DataRowVersion.Current, false, null));
@@ -5497,11 +4963,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ContractType", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ContractType", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientStartDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientStartDate", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientMonthlyCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientRunCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Clients` SET `ClientName` = ?, `ClientAdd` = ?, `ClientPhone` = ?, `ClientEmail` = ?, `ClientInfo` = ?, `ContractType` = ?, `ClientStartDate` = ?, `ClientRunTotal` = ?, `ClientMonthlyCost` = ?, `ClientRunCost` = ? WHERE ((`ClientID` = ?) AND ((? = 1 AND `ClientName` IS NULL) OR (`ClientName` = ?)) AND ((? = 1 AND `ClientAdd` IS NULL) OR (`ClientAdd` = ?)) AND ((? = 1 AND `ClientPhone` IS NULL) OR (`ClientPhone` = ?)) AND ((? = 1 AND `ClientEmail` IS NULL) OR (`ClientEmail` = ?)) AND ((? = 1 AND `ContractType` IS NULL) OR (`ContractType` = ?)) AND ((? = 1 AND `ClientStartDate` IS NULL) OR (`ClientStartDate` = ?)) AND ((? = 1 AND `ClientRunTotal` IS NULL) OR (`ClientRunTotal` = ?)) AND ((? = 1 AND `ClientMonthlyCost` IS NULL) OR (`ClientMonthlyCost` = ?)) AND ((? = 1 AND `ClientRunCost` IS NULL) OR (`ClientRunCost` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Clients` SET `ClientName` = ?, `ClientAdd` = ?, `ClientPhone` = ?, `ClientEmail` = ?, `ClientInfo` = ?, `ContractType` = ?, `ClientStartDate` = ?, `ClientRunTotal` = ? WHERE ((`ClientID` = ?) AND ((? = 1 AND `ClientName` IS NULL) OR (`ClientName` = ?)) AND ((? = 1 AND `ClientAdd` IS NULL) OR (`ClientAdd` = ?)) AND ((? = 1 AND `ClientPhone` IS NULL) OR (`ClientPhone` = ?)) AND ((? = 1 AND `ClientEmail` IS NULL) OR (`ClientEmail` = ?)) AND ((? = 1 AND `ContractType` IS NULL) OR (`ContractType` = ?)) AND ((? = 1 AND `ClientStartDate` IS NULL) OR (`ClientStartDate` = ?)) AND ((? = 1 AND `ClientRunTotal` IS NULL) OR (`ClientRunTotal` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientName", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientAdd", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientAdd", global::System.Data.DataRowVersion.Current, false, null));
@@ -5511,8 +4975,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ContractType", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ContractType", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientStartDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientStartDate", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientMonthlyCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientRunCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientName", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientName", global::System.Data.DataRowVersion.Original, false, null));
@@ -5528,10 +4990,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientStartDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientStartDate", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientRunTotal", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunTotal", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientMonthlyCost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientMonthlyCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientMonthlyCost", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientRunCost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientRunCost", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientRunCost", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5548,8 +5006,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ClientID, ClientName, ClientAdd, ClientPhone, ClientEmail, ClientInfo, Con" +
-                "tractType, ClientStartDate, ClientRunTotal, ClientMonthlyCost, ClientRunCost FRO" +
-                "M Clients";
+                "tractType, ClientStartDate, ClientRunTotal FROM Clients";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5557,7 +5014,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.ClientsDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.ClientsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5570,9 +5027,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.ClientsDataTable GetData() {
+        public virtual bwcDataSet.ClientsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.ClientsDataTable dataTable = new bwcDS.ClientsDataTable();
+            bwcDataSet.ClientsDataTable dataTable = new bwcDataSet.ClientsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5580,14 +5037,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.ClientsDataTable dataTable) {
+        public virtual int Update(bwcDataSet.ClientsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Clients");
         }
         
@@ -5610,7 +5067,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ClientID, string Original_ClientName, string Original_ClientAdd, string Original_ClientPhone, string Original_ClientEmail, string Original_ContractType, global::System.Nullable<global::System.DateTime> Original_ClientStartDate, int Original_ClientRunTotal, string Original_ClientMonthlyCost, string Original_ClientRunCost) {
+        public virtual int Delete(int Original_ClientID, string Original_ClientName, string Original_ClientAdd, string Original_ClientPhone, string Original_ClientEmail, string Original_ContractType, global::System.Nullable<global::System.DateTime> Original_ClientStartDate, int Original_ClientRunTotal) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ClientID));
             if ((Original_ClientName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -5662,21 +5119,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             }
             this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
             this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_ClientRunTotal));
-            if ((Original_ClientMonthlyCost == null)) {
-                throw new global::System.ArgumentNullException("Original_ClientMonthlyCost");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_ClientMonthlyCost));
-            }
-            if ((Original_ClientRunCost == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_ClientRunCost));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5697,7 +5139,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ClientName, string ClientAdd, string ClientPhone, string ClientEmail, string ClientInfo, string ContractType, global::System.Nullable<global::System.DateTime> ClientStartDate, int ClientRunTotal, string ClientMonthlyCost, string ClientRunCost) {
+        public virtual int Insert(string ClientName, string ClientAdd, string ClientPhone, string ClientEmail, string ClientInfo, string ContractType, global::System.Nullable<global::System.DateTime> ClientStartDate, int ClientRunTotal) {
             if ((ClientName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5741,18 +5183,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[7].Value = ((int)(ClientRunTotal));
-            if ((ClientMonthlyCost == null)) {
-                throw new global::System.ArgumentNullException("ClientMonthlyCost");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(ClientMonthlyCost));
-            }
-            if ((ClientRunCost == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(ClientRunCost));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5782,8 +5212,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                     string ContractType, 
                     global::System.Nullable<global::System.DateTime> ClientStartDate, 
                     int ClientRunTotal, 
-                    string ClientMonthlyCost, 
-                    string ClientRunCost, 
                     int Original_ClientID, 
                     string Original_ClientName, 
                     string Original_ClientAdd, 
@@ -5791,9 +5219,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                     string Original_ClientEmail, 
                     string Original_ContractType, 
                     global::System.Nullable<global::System.DateTime> Original_ClientStartDate, 
-                    int Original_ClientRunTotal, 
-                    string Original_ClientMonthlyCost, 
-                    string Original_ClientRunCost) {
+                    int Original_ClientRunTotal) {
             if ((ClientName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5837,84 +5263,57 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ClientRunTotal));
-            if ((ClientMonthlyCost == null)) {
-                throw new global::System.ArgumentNullException("ClientMonthlyCost");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(ClientMonthlyCost));
-            }
-            if ((ClientRunCost == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(ClientRunCost));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ClientID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ClientID));
             if ((Original_ClientName == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ClientName));
+            }
+            if ((Original_ClientAdd == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ClientName));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ClientAdd));
             }
-            if ((Original_ClientAdd == null)) {
+            if ((Original_ClientPhone == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ClientAdd));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ClientPhone));
             }
-            if ((Original_ClientPhone == null)) {
+            if ((Original_ClientEmail == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ClientPhone));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ClientEmail));
             }
-            if ((Original_ClientEmail == null)) {
+            if ((Original_ContractType == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ClientEmail));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ContractType));
             }
-            if ((Original_ContractType == null)) {
+            if ((Original_ClientStartDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_ClientStartDate.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_ContractType));
-            }
-            if ((Original_ClientStartDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_ClientStartDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ClientRunTotal));
-            if ((Original_ClientMonthlyCost == null)) {
-                throw new global::System.ArgumentNullException("Original_ClientMonthlyCost");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_ClientMonthlyCost));
-            }
-            if ((Original_ClientRunCost == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_ClientRunCost));
-            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_ClientRunTotal));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6112,7 +5511,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.CostsDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.CostsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6125,9 +5524,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.CostsDataTable GetData() {
+        public virtual bwcDataSet.CostsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.CostsDataTable dataTable = new bwcDS.CostsDataTable();
+            bwcDataSet.CostsDataTable dataTable = new bwcDataSet.CostsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6135,14 +5534,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.CostsDataTable dataTable) {
+        public virtual int Update(bwcDataSet.CostsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Costs");
         }
         
@@ -6466,7 +5865,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.CouriersDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.CouriersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6479,9 +5878,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.CouriersDataTable GetData() {
+        public virtual bwcDataSet.CouriersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.CouriersDataTable dataTable = new bwcDS.CouriersDataTable();
+            bwcDataSet.CouriersDataTable dataTable = new bwcDataSet.CouriersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6489,14 +5888,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.CouriersDataTable dataTable) {
+        public virtual int Update(bwcDataSet.CouriersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Couriers");
         }
         
@@ -6665,17 +6064,20 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Deliveries";
+            tableMapping.ColumnMappings.Add("DeliveryID", "DeliveryID");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Time", "Time");
             tableMapping.ColumnMappings.Add("CourierID", "CourierID");
             tableMapping.ColumnMappings.Add("ClientID", "ClientID");
+            tableMapping.ColumnMappings.Add("DeliveryDate", "DeliveryDate");
+            tableMapping.ColumnMappings.Add("Destination", "Destination");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Deliveries` WHERE ((`Date` = ?) AND ((? = 1 AND `Time` IS NULL) OR (" +
-                "`Time` = ?)) AND ((? = 1 AND `CourierID` IS NULL) OR (`CourierID` = ?)) AND ((? " +
-                "= 1 AND `ClientID` IS NULL) OR (`ClientID` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Deliveries` WHERE ((`DeliveryID` = ?) AND ((? = 1 AND `Date` IS NULL) OR (`Date` = ?)) AND ((? = 1 AND `Time` IS NULL) OR (`Time` = ?)) AND ((? = 1 AND `CourierID` IS NULL) OR (`CourierID` = ?)) AND ((? = 1 AND `ClientID` IS NULL) OR (`ClientID` = ?)) AND ((? = 1 AND `DeliveryDate` IS NULL) OR (`DeliveryDate` = ?)) AND ((? = 1 AND `Destination` IS NULL) OR (`Destination` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DeliveryID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Date", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Time", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Original, false, null));
@@ -6683,23 +6085,33 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CourierID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CourierID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DeliveryDate", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DeliveryDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Destination", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Destination", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Deliveries` (`Date`, `Time`, `CourierID`, `ClientID`) VALUES (?, ?, " +
-                "?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Deliveries` (`Date`, `Time`, `CourierID`, `ClientID`, `DeliveryDate`" +
+                ", `Destination`) VALUES (?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CourierID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CourierID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DeliveryDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Destination", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Deliveries` SET `Date` = ?, `Time` = ?, `CourierID` = ?, `ClientID` = ? WHERE ((`Date` = ?) AND ((? = 1 AND `Time` IS NULL) OR (`Time` = ?)) AND ((? = 1 AND `CourierID` IS NULL) OR (`CourierID` = ?)) AND ((? = 1 AND `ClientID` IS NULL) OR (`ClientID` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Deliveries` SET `Date` = ?, `Time` = ?, `CourierID` = ?, `ClientID` = ?, `DeliveryDate` = ?, `Destination` = ? WHERE ((`DeliveryID` = ?) AND ((? = 1 AND `Date` IS NULL) OR (`Date` = ?)) AND ((? = 1 AND `Time` IS NULL) OR (`Time` = ?)) AND ((? = 1 AND `CourierID` IS NULL) OR (`CourierID` = ?)) AND ((? = 1 AND `ClientID` IS NULL) OR (`ClientID` = ?)) AND ((? = 1 AND `DeliveryDate` IS NULL) OR (`DeliveryDate` = ?)) AND ((? = 1 AND `Destination` IS NULL) OR (`Destination` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CourierID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CourierID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DeliveryDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Destination", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DeliveryID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Date", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Time", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Time", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time", global::System.Data.DataRowVersion.Original, false, null));
@@ -6707,6 +6119,10 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CourierID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CourierID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ClientID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ClientID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DeliveryDate", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DeliveryDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DeliveryDate", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Destination", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Destination", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Destination", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6722,7 +6138,8 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Date], [Time], CourierID, ClientID FROM Deliveries";
+            this._commandCollection[0].CommandText = "SELECT DeliveryID, [Date], [Time], CourierID, ClientID, DeliveryDate, Destination" +
+                " FROM Deliveries";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6730,7 +6147,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.DeliveriesDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.DeliveriesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6743,9 +6160,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.DeliveriesDataTable GetData() {
+        public virtual bwcDataSet.DeliveriesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.DeliveriesDataTable dataTable = new bwcDS.DeliveriesDataTable();
+            bwcDataSet.DeliveriesDataTable dataTable = new bwcDataSet.DeliveriesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6753,14 +6170,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.DeliveriesDataTable dataTable) {
+        public virtual int Update(bwcDataSet.DeliveriesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Deliveries");
         }
         
@@ -6783,31 +6200,49 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(System.DateTime Original_Date, global::System.Nullable<global::System.DateTime> Original_Time, global::System.Nullable<int> Original_CourierID, global::System.Nullable<int> Original_ClientID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.DateTime)(Original_Date));
+        public virtual int Delete(int Original_DeliveryID, System.DateTime Original_Date, global::System.Nullable<global::System.DateTime> Original_Time, global::System.Nullable<int> Original_CourierID, global::System.Nullable<int> Original_ClientID, global::System.Nullable<global::System.DateTime> Original_DeliveryDate, string Original_Destination) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_DeliveryID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Date));
             if ((Original_Time.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Time.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CourierID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_CourierID.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Time.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_ClientID.HasValue == true)) {
+            if ((Original_CourierID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ClientID.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_CourierID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ClientID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ClientID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DeliveryDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_DeliveryDate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Destination == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Destination));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6829,7 +6264,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime Date, global::System.Nullable<global::System.DateTime> Time, global::System.Nullable<int> CourierID, global::System.Nullable<int> ClientID) {
+        public virtual int Insert(System.DateTime Date, global::System.Nullable<global::System.DateTime> Time, global::System.Nullable<int> CourierID, global::System.Nullable<int> ClientID, global::System.Nullable<global::System.DateTime> DeliveryDate, string Destination) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Date));
             if ((Time.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Time.Value));
@@ -6848,6 +6283,18 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((DeliveryDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DeliveryDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Destination == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Destination));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6869,7 +6316,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime Date, global::System.Nullable<global::System.DateTime> Time, global::System.Nullable<int> CourierID, global::System.Nullable<int> ClientID, System.DateTime Original_Date, global::System.Nullable<global::System.DateTime> Original_Time, global::System.Nullable<int> Original_CourierID, global::System.Nullable<int> Original_ClientID) {
+        public virtual int Update(System.DateTime Date, global::System.Nullable<global::System.DateTime> Time, global::System.Nullable<int> CourierID, global::System.Nullable<int> ClientID, global::System.Nullable<global::System.DateTime> DeliveryDate, string Destination, int Original_DeliveryID, System.DateTime Original_Date, global::System.Nullable<global::System.DateTime> Original_Time, global::System.Nullable<int> Original_CourierID, global::System.Nullable<int> Original_ClientID, global::System.Nullable<global::System.DateTime> Original_DeliveryDate, string Original_Destination) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Date));
             if ((Time.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Time.Value));
@@ -6889,30 +6336,60 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
+            if ((DeliveryDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DeliveryDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Destination == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Destination));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_DeliveryID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_Date));
             if ((Original_Time.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Time.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CourierID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_CourierID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ClientID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ClientID.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Time.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CourierID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_CourierID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ClientID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ClientID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DeliveryDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_DeliveryDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Destination == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Destination));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6928,14 +6405,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Time, global::System.Nullable<int> CourierID, global::System.Nullable<int> ClientID, System.DateTime Original_Date, global::System.Nullable<global::System.DateTime> Original_Time, global::System.Nullable<int> Original_CourierID, global::System.Nullable<int> Original_ClientID) {
-            return this.Update(Original_Date, Time, CourierID, ClientID, Original_Date, Original_Time, Original_CourierID, Original_ClientID);
         }
     }
     
@@ -7154,7 +6623,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.DeliverySlotsDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.DeliverySlotsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7167,9 +6636,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.DeliverySlotsDataTable GetData() {
+        public virtual bwcDataSet.DeliverySlotsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.DeliverySlotsDataTable dataTable = new bwcDS.DeliverySlotsDataTable();
+            bwcDataSet.DeliverySlotsDataTable dataTable = new bwcDataSet.DeliverySlotsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7177,14 +6646,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.DeliverySlotsDataTable dataTable) {
+        public virtual int Update(bwcDataSet.DeliverySlotsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "DeliverySlots");
         }
         
@@ -7474,7 +6943,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.UsersDataTable dataTable) {
+        public virtual int Fill(bwcDataSet.UsersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7487,9 +6956,9 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.UsersDataTable GetData() {
+        public virtual bwcDataSet.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.UsersDataTable dataTable = new bwcDS.UsersDataTable();
+            bwcDataSet.UsersDataTable dataTable = new bwcDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7497,14 +6966,14 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS.UsersDataTable dataTable) {
+        public virtual int Update(bwcDataSet.UsersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bwcDS dataSet) {
+        public virtual int Update(bwcDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Users");
         }
         
@@ -7648,179 +7117,6 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Clients_QueryTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Clients_QueryTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Clients Query";
-            tableMapping.ColumnMappings.Add("ClientRunTotal", "ClientRunTotal");
-            tableMapping.ColumnMappings.Add("Clients_ContractType", "Clients_ContractType");
-            tableMapping.ColumnMappings.Add("ClientMonthlyCost", "ClientMonthlyCost");
-            tableMapping.ColumnMappings.Add("Costs_ContractType", "Costs_ContractType");
-            tableMapping.ColumnMappings.Add("MonthlyCost", "MonthlyCost");
-            tableMapping.ColumnMappings.Add("RunCost", "RunCost");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BayWynCouriersWinForm.Properties.Settings.Default.bwcCon;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ClientRunTotal, Clients_ContractType, ClientMonthlyCost, Costs_ContractTyp" +
-                "e, MonthlyCost, RunCost FROM [Clients Query]";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bwcDS.Clients_QueryDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bwcDS.Clients_QueryDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            bwcDS.Clients_QueryDataTable dataTable = new bwcDS.Clients_QueryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
@@ -8030,7 +7326,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(bwcDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(bwcDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._costsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Costs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -8094,7 +7390,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(bwcDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(bwcDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._costsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Costs.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -8152,7 +7448,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(bwcDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(bwcDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -8234,7 +7530,7 @@ namespace BayWynCouriersWinForm.bwcDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(bwcDS dataSet) {
+        public virtual int UpdateAll(bwcDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
