@@ -3,6 +3,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace BayWynCouriersWinForm
 {
@@ -387,11 +388,6 @@ namespace BayWynCouriersWinForm
 
         private void Home_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'deilveryTimeDate.Slots' table. You can move, or remove it, as needed.
-            this.slotsTableAdapter.Fill(this.deilveryTimeDate.Slots);
-            // TODO: This line of code loads data into the 'getClienttsDS.Clients' table. You can move, or remove it, as needed.
-            this.clientsTableAdapter1.Fill(this.getClienttsDS.Clients);
-
 
         }
     }
