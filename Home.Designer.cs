@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.panelBar = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,8 +45,6 @@
             this.btnCreateContract = new System.Windows.Forms.Button();
             this.cbClientType = new System.Windows.Forms.ComboBox();
             this.tbCourierRuns = new System.Windows.Forms.TextBox();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bwcDataSet = new BayWynCouriersWinForm.bwcDataSet();
             this.ContractRuns = new System.Windows.Forms.Label();
             this.btnCClear = new System.Windows.Forms.Button();
             this.tbBEmail = new System.Windows.Forms.TextBox();
@@ -65,45 +58,13 @@
             this.lbBAdd = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.tabC2 = new System.Windows.Forms.TabPage();
-            this.dataGridViewContracts = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contractedCourierRunsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courierRunsToDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courierRunsCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.getClienttsDS = new BayWynCouriersWinForm.GetClienttsDS();
             this.tabC3 = new System.Windows.Forms.TabPage();
-            this.dataGridEditContracts = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lbClientRef = new System.Windows.Forms.Label();
             this.lbCRN = new System.Windows.Forms.Label();
             this.panelDeliveries = new System.Windows.Forms.Panel();
-            this.cbTime = new System.Windows.Forms.ComboBox();
-            this.slotsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deilveryTimeDate = new BayWynCouriersWinForm.deilveryTimeDate();
             this.cbBName = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridBookSlots = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deliveryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,9 +74,6 @@
             this.deliveryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBookDel = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.deliverySlotsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bwcDataSetViewSlots = new BayWynCouriersWinForm.bwcDataSetViewSlots();
             this.panelReports = new System.Windows.Forms.Panel();
             this.btnGenReport = new System.Windows.Forms.Button();
             this.cbReports = new System.Windows.Forms.ComboBox();
@@ -125,50 +83,6 @@
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
-            this.clientsTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.ClientsTableAdapter();
-            this.bwcDataSet1 = new BayWynCouriersWinForm.bwcDataSet();
-            this.clientsDeliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deliveriesTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.DeliveriesTableAdapter();
-            this.clientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.deliverySlotsTableAdapter = new BayWynCouriersWinForm.bwcDataSetViewSlotsTableAdapters.DeliverySlotsTableAdapter();
-            this.clientsTableAdapter1 = new BayWynCouriersWinForm.GetClienttsDSTableAdapters.ClientsTableAdapter();
-            this.getClienttsDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.slotsTableAdapter = new BayWynCouriersWinForm.deilveryTimeDateTableAdapters.SlotsTableAdapter();
-            this.masterDataSet = new BayWynCouriersWinForm.MasterDataSet();
-            this.panelBar.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.IconPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelClients.SuspendLayout();
-            this.tabContracts.SuspendLayout();
-            this.tabC1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).BeginInit();
-            this.tabC2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClienttsDS)).BeginInit();
-            this.tabC3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEditContracts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
-            this.panelDeliveries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slotsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deilveryTimeDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliverySlotsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSetViewSlots)).BeginInit();
-            this.panelReports.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
-            this.panelAssignments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClienttsDSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
-            this.SuspendLayout();
             // 
             // panelBar
             // 
@@ -290,15 +204,6 @@
             this.IconPanel.Size = new System.Drawing.Size(220, 160);
             this.IconPanel.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 147);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelClients
             // 
             this.panelClients.Controls.Add(this.tabContracts);
@@ -377,22 +282,12 @@
             // tbCourierRuns
             // 
             this.tbCourierRuns.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCourierRuns.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "ClientName", true));
             this.tbCourierRuns.Location = new System.Drawing.Point(90, 84);
             this.tbCourierRuns.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbCourierRuns.Name = "tbCourierRuns";
             this.tbCourierRuns.Size = new System.Drawing.Size(263, 27);
             this.tbCourierRuns.TabIndex = 9;
-            // 
-            // clientsBindingSource
-            // 
-            this.clientsBindingSource.DataMember = "Clients";
-            this.clientsBindingSource.DataSource = this.bwcDataSet;
-            // 
-            // bwcDataSet
-            // 
-            this.bwcDataSet.DataSetName = "bwcDataSet";
-            this.bwcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // ContractRuns
             // 
@@ -457,7 +352,6 @@
             // tbBName
             // 
             this.tbBName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbBName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsBindingSource, "ClientName", true));
             this.tbBName.Location = new System.Drawing.Point(90, 139);
             this.tbBName.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBName.Name = "tbBName";
@@ -520,273 +414,14 @@
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
             // 
-            // dataGridViewContracts
-            // 
-            this.dataGridViewContracts.AllowUserToAddRows = false;
-            this.dataGridViewContracts.AllowUserToDeleteRows = false;
-            this.dataGridViewContracts.AllowUserToOrderColumns = true;
-            this.dataGridViewContracts.AutoGenerateColumns = false;
-            this.dataGridViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewContracts.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dataGridViewContracts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewContracts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.contractedCourierRunsDataGridViewTextBoxColumn,
-            this.courierRunsToDateDataGridViewTextBoxColumn,
-            this.courierRunsCostDataGridViewTextBoxColumn});
-            this.dataGridViewContracts.DataSource = this.clientsBindingSource3;
-            this.dataGridViewContracts.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewContracts.Name = "dataGridViewContracts";
-            this.dataGridViewContracts.ReadOnly = true;
-            this.dataGridViewContracts.RowHeadersWidth = 62;
-            this.dataGridViewContracts.RowTemplate.Height = 28;
-            this.dataGridViewContracts.Size = new System.Drawing.Size(1038, 1003);
-            this.dataGridViewContracts.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ClientID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "ClientID";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 117;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ClientName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ClientName";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "ClientAdd";
-            this.dataGridViewTextBoxColumn12.HeaderText = "ClientAdd";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ClientPhone";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ClientPhone";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 153;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "ClientEmail";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ClientEmail";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 145;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "ClientInfo";
-            this.dataGridViewTextBoxColumn16.HeaderText = "ClientInfo";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 132;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "ContractType";
-            this.dataGridViewTextBoxColumn17.HeaderText = "ContractType";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 164;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "ClientStartDate";
-            this.dataGridViewTextBoxColumn18.HeaderText = "ClientStartDate";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 180;
-            // 
-            // contractedCourierRunsDataGridViewTextBoxColumn
-            // 
-            this.contractedCourierRunsDataGridViewTextBoxColumn.DataPropertyName = "ContractedCourierRuns";
-            this.contractedCourierRunsDataGridViewTextBoxColumn.HeaderText = "ContractedCourierRuns";
-            this.contractedCourierRunsDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.contractedCourierRunsDataGridViewTextBoxColumn.Name = "contractedCourierRunsDataGridViewTextBoxColumn";
-            this.contractedCourierRunsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contractedCourierRunsDataGridViewTextBoxColumn.Width = 251;
-            // 
-            // courierRunsToDateDataGridViewTextBoxColumn
-            // 
-            this.courierRunsToDateDataGridViewTextBoxColumn.DataPropertyName = "CourierRunsToDate";
-            this.courierRunsToDateDataGridViewTextBoxColumn.HeaderText = "CourierRunsToDate";
-            this.courierRunsToDateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.courierRunsToDateDataGridViewTextBoxColumn.Name = "courierRunsToDateDataGridViewTextBoxColumn";
-            this.courierRunsToDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.courierRunsToDateDataGridViewTextBoxColumn.Width = 215;
-            // 
-            // courierRunsCostDataGridViewTextBoxColumn
-            // 
-            this.courierRunsCostDataGridViewTextBoxColumn.DataPropertyName = "CourierRunsCost";
-            this.courierRunsCostDataGridViewTextBoxColumn.HeaderText = "CourierRunsCost";
-            this.courierRunsCostDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.courierRunsCostDataGridViewTextBoxColumn.Name = "courierRunsCostDataGridViewTextBoxColumn";
-            this.courierRunsCostDataGridViewTextBoxColumn.ReadOnly = true;
-            this.courierRunsCostDataGridViewTextBoxColumn.Width = 193;
-            // 
-            // clientsBindingSource3
-            // 
-            this.clientsBindingSource3.DataMember = "Clients";
-            this.clientsBindingSource3.DataSource = this.getClienttsDS;
-            // 
-            // getClienttsDS
-            // 
-            this.getClienttsDS.DataSetName = "GetClienttsDS";
-            this.getClienttsDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tabC3
             // 
-            this.tabC3.Controls.Add(this.dataGridEditContracts);
             this.tabC3.Location = new System.Drawing.Point(4, 37);
             this.tabC3.Name = "tabC3";
             this.tabC3.Size = new System.Drawing.Size(1319, 1009);
             this.tabC3.TabIndex = 2;
             this.tabC3.Text = "Edit Contracts";
             this.tabC3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridEditContracts
-            // 
-            this.dataGridEditContracts.AllowUserToAddRows = false;
-            this.dataGridEditContracts.AllowUserToDeleteRows = false;
-            this.dataGridEditContracts.AllowUserToOrderColumns = true;
-            this.dataGridEditContracts.AutoGenerateColumns = false;
-            this.dataGridEditContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridEditContracts.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dataGridEditContracts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridEditContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridEditContracts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.dataGridEditContracts.DataSource = this.clientsBindingSource3;
-            this.dataGridEditContracts.Location = new System.Drawing.Point(3, 3);
-            this.dataGridEditContracts.Name = "dataGridEditContracts";
-            this.dataGridEditContracts.RowHeadersWidth = 62;
-            this.dataGridEditContracts.RowTemplate.Height = 28;
-            this.dataGridEditContracts.Size = new System.Drawing.Size(1038, 1003);
-            this.dataGridEditContracts.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "ClientID";
-            this.dataGridViewTextBoxColumn19.HeaderText = "ClientID";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 117;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "ClientName";
-            this.dataGridViewTextBoxColumn20.HeaderText = "ClientName";
-            this.dataGridViewTextBoxColumn20.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "ClientAdd";
-            this.dataGridViewTextBoxColumn21.HeaderText = "ClientAdd";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "ClientPhone";
-            this.dataGridViewTextBoxColumn22.HeaderText = "ClientPhone";
-            this.dataGridViewTextBoxColumn22.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 153;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "ClientEmail";
-            this.dataGridViewTextBoxColumn23.HeaderText = "ClientEmail";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 145;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "ClientInfo";
-            this.dataGridViewTextBoxColumn24.HeaderText = "ClientInfo";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 132;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "ContractType";
-            this.dataGridViewTextBoxColumn25.HeaderText = "ContractType";
-            this.dataGridViewTextBoxColumn25.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 164;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "ClientStartDate";
-            this.dataGridViewTextBoxColumn26.HeaderText = "ClientStartDate";
-            this.dataGridViewTextBoxColumn26.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "ContractedCourierRuns";
-            this.dataGridViewTextBoxColumn27.HeaderText = "ContractedCourierRuns";
-            this.dataGridViewTextBoxColumn27.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Width = 251;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "CourierRunsToDate";
-            this.dataGridViewTextBoxColumn28.HeaderText = "CourierRunsToDate";
-            this.dataGridViewTextBoxColumn28.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 215;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "CourierRunsCost";
-            this.dataGridViewTextBoxColumn29.HeaderText = "CourierRunsCost";
-            this.dataGridViewTextBoxColumn29.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Width = 193;
             // 
             // lbClientRef
             // 
@@ -811,7 +446,6 @@
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
-            this.panelDeliveries.Controls.Add(this.cbTime);
             this.panelDeliveries.Controls.Add(this.cbBName);
             this.panelDeliveries.Controls.Add(this.DatePicker);
             this.panelDeliveries.Controls.Add(this.dataGridBookSlots);
@@ -823,25 +457,6 @@
             this.panelDeliveries.Name = "panelDeliveries";
             this.panelDeliveries.Size = new System.Drawing.Size(1358, 1050);
             this.panelDeliveries.TabIndex = 15;
-            // 
-            // cbTime
-            // 
-            this.cbTime.DataSource = this.slotsBindingSource;
-            this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(509, 121);
-            this.cbTime.Name = "cbTime";
-            this.cbTime.Size = new System.Drawing.Size(127, 36);
-            this.cbTime.TabIndex = 6;
-            // 
-            // slotsBindingSource
-            // 
-            this.slotsBindingSource.DataMember = "Slots";
-            this.slotsBindingSource.DataSource = this.deilveryTimeDate;
-            // 
-            // deilveryTimeDate
-            // 
-            this.deilveryTimeDate.DataSetName = "deilveryTimeDate";
-            this.deilveryTimeDate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbBName
             // 
@@ -859,89 +474,6 @@
             this.DatePicker.Size = new System.Drawing.Size(200, 34);
             this.DatePicker.TabIndex = 7;
             this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
-            // 
-            // dataGridBookSlots
-            // 
-            this.dataGridBookSlots.AutoGenerateColumns = false;
-            this.dataGridBookSlots.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBookSlots.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridBookSlots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBookSlots.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn15});
-            this.dataGridBookSlots.DataSource = this.deliveriesBindingSource;
-            this.dataGridBookSlots.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dataGridBookSlots.Location = new System.Drawing.Point(73, 373);
-            this.dataGridBookSlots.Name = "dataGridBookSlots";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBookSlots.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridBookSlots.RowHeadersWidth = 62;
-            this.dataGridBookSlots.RowTemplate.Height = 28;
-            this.dataGridBookSlots.Size = new System.Drawing.Size(1216, 163);
-            this.dataGridBookSlots.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "DeliveryDate";
-            this.dataGridViewTextBoxColumn15.HeaderText = "DeliveryDate";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 150;
-            // 
-            // deliveriesBindingSource
-            // 
-            this.deliveriesBindingSource.DataMember = "Deliveries";
-            this.deliveriesBindingSource.DataSource = typeof(BayWynCouriersWinForm.bwcDataSet);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.deliveryIDDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.timeDataGridViewTextBoxColumn,
-            this.courierIDDataGridViewTextBoxColumn,
-            this.clientIDDataGridViewTextBoxColumn1,
-            this.deliveryDateDataGridViewTextBoxColumn,
-            this.destinationDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.deliveriesBindingSource;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dataGridView1.Location = new System.Drawing.Point(73, 562);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1216, 436);
-            this.dataGridView1.TabIndex = 10;
             // 
             // deliveryIDDataGridViewTextBoxColumn
             // 
@@ -1013,25 +545,6 @@
             this.btnBookDel.UseVisualStyleBackColor = false;
             this.btnBookDel.Click += new System.EventHandler(this.btnBookDel_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 28);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Business Name:";
-            // 
-            // deliverySlotsBindingSource
-            // 
-            this.deliverySlotsBindingSource.DataMember = "DeliverySlots";
-            this.deliverySlotsBindingSource.DataSource = this.bwcDataSetViewSlots;
-            // 
-            // bwcDataSetViewSlots
-            // 
-            this.bwcDataSetViewSlots.DataSetName = "bwcDataSetViewSlots";
-            this.bwcDataSetViewSlots.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panelReports
             // 
             this.panelReports.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1073,8 +586,8 @@
             // 
             this.dataGridReports.AllowUserToDeleteRows = false;
             this.dataGridReports.AllowUserToOrderColumns = true;
-            this.dataGridReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridReports.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1151,51 +664,6 @@
             this.dataGridAssignments.Size = new System.Drawing.Size(607, 427);
             this.dataGridAssignments.TabIndex = 6;
             // 
-            // clientsTableAdapter
-            // 
-            this.clientsTableAdapter.ClearBeforeFill = true;
-            // 
-            // bwcDataSet1
-            // 
-            this.bwcDataSet1.DataSetName = "bwcDataSet";
-            this.bwcDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientsDeliveriesBindingSource
-            // 
-            this.clientsDeliveriesBindingSource.DataMember = "ClientsDeliveries";
-            this.clientsDeliveriesBindingSource.DataSource = this.clientsBindingSource;
-            // 
-            // deliveriesTableAdapter
-            // 
-            this.deliveriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientsBindingSource2
-            // 
-            this.clientsBindingSource2.DataMember = "Clients";
-            this.clientsBindingSource2.DataSource = this.bwcDataSet;
-            // 
-            // deliverySlotsTableAdapter
-            // 
-            this.deliverySlotsTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientsTableAdapter1
-            // 
-            this.clientsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // getClienttsDSBindingSource
-            // 
-            this.getClienttsDSBindingSource.DataSource = this.getClienttsDS;
-            this.getClienttsDSBindingSource.Position = 0;
-            // 
-            // slotsTableAdapter
-            // 
-            this.slotsTableAdapter.ClearBeforeFill = true;
-            // 
-            // masterDataSet
-            // 
-            this.masterDataSet.DataSetName = "MasterDataSet";
-            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1217,47 +685,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bay Wyn Couriers";
             this.Load += new System.EventHandler(this.Home_Load);
-            this.panelBar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.IconPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelClients.ResumeLayout(false);
-            this.tabContracts.ResumeLayout(false);
-            this.tabC1.ResumeLayout(false);
-            this.tabC1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).EndInit();
-            this.tabC2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClienttsDS)).EndInit();
-            this.tabC3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEditContracts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
-            this.panelDeliveries.ResumeLayout(false);
-            this.panelDeliveries.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slotsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deilveryTimeDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliverySlotsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSetViewSlots)).EndInit();
-            this.panelReports.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
-            this.panelAssignments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClienttsDSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
-
         #endregion
 
         private System.Windows.Forms.Panel panelBar;
@@ -1292,9 +720,6 @@
         private System.Windows.Forms.Button btnAssignmentsSave;
         private System.Windows.Forms.Button btnAssignmentsLoad;
         private System.Windows.Forms.ComboBox cbAssignments;
-        private bwcDataSet bwcDataSet;
-        private System.Windows.Forms.BindingSource clientsBindingSource;
-        private bwcDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
         private System.Windows.Forms.Button btnCClear;
         private System.Windows.Forms.ComboBox cbClientType;
         private System.Windows.Forms.TextBox tbCourierRuns;
@@ -1302,9 +727,7 @@
         private System.Windows.Forms.TabControl tabContracts;
         private System.Windows.Forms.TabPage tabC1;
         private System.Windows.Forms.TabPage tabC2;
-        private bwcDataSet bwcDataSet1;
         private System.Windows.Forms.DataGridView dataGridViewContracts;
-        private System.Windows.Forms.BindingSource clientsBindingSource1;
         private System.Windows.Forms.TabPage tabC3;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
@@ -1325,60 +748,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource deliveriesBindingSource;
         private System.Windows.Forms.DataGridView dataGridBookSlots;
         private System.Windows.Forms.DateTimePicker DatePicker;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbBName;
-        private System.Windows.Forms.BindingSource clientsDeliveriesBindingSource;
-        private bwcDataSetTableAdapters.DeliveriesTableAdapter deliveriesTableAdapter;
-        private System.Windows.Forms.BindingSource clientsBindingSource2;
-        private bwcDataSetViewSlots bwcDataSetViewSlots;
-        private System.Windows.Forms.BindingSource deliverySlotsBindingSource;
-        private bwcDataSetViewSlotsTableAdapters.DeliverySlotsTableAdapter deliverySlotsTableAdapter;
         private System.Windows.Forms.Button btnCreateContract;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private GetClienttsDS getClienttsDS;
-        private System.Windows.Forms.BindingSource clientsBindingSource3;
-        private GetClienttsDSTableAdapters.ClientsTableAdapter clientsTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contractedCourierRunsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courierRunsToDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courierRunsCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource getClienttsDSBindingSource;
-        private System.Windows.Forms.DataGridView dataGridEditContracts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.ComboBox cbTime;
-        private deilveryTimeDate deilveryTimeDate;
-        private System.Windows.Forms.BindingSource slotsBindingSource;
-        private deilveryTimeDateTableAdapters.SlotsTableAdapter slotsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private MasterDataSet masterDataSet;
+
     }
 }
 
