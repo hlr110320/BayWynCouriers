@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -78,45 +78,17 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8.1\System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assignments.cs" />
-    <Compile Include="bwcDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="bwcDataSetDeliveries.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bwcDataSetDeliveries.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="bwcDataSetDeliveryDate.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bwcDataSetDeliveryDate.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="bwcDataSetViewSlots.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bwcDataSetViewSlots.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Clients.cs" />
     <Compile Include="Couriers.cs" />
-    <Compile Include="deilveryTimeDate.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>deilveryTimeDate.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Deliveries.cs" />
-    <Compile Include="GetClienttsDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetClienttsDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +100,6 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MasterDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MasterDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,127 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="bwcDataSet.xsc">
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bwcDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bwcDataSet.xss">
-      <DependentUpon>bwcDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetDeliveries.xsc">
-      <DependentUpon>bwcDataSetDeliveries.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetDeliveries.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bwcDataSetDeliveries.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bwcDataSetDeliveries.xss">
-      <DependentUpon>bwcDataSetDeliveries.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetDeliveryDate.xsc">
-      <DependentUpon>bwcDataSetDeliveryDate.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetDeliveryDate.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bwcDataSetDeliveryDate.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bwcDataSetDeliveryDate.xss">
-      <DependentUpon>bwcDataSetDeliveryDate.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetViewSlots.xsc">
-      <DependentUpon>bwcDataSetViewSlots.xsd</DependentUpon>
-    </None>
-    <None Include="bwcDataSetViewSlots.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bwcDataSetViewSlots.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bwcDataSetViewSlots.xss">
-      <DependentUpon>bwcDataSetViewSlots.xsd</DependentUpon>
-    </None>
-    <None Include="deilveryTimeDate.xsc">
-      <DependentUpon>deilveryTimeDate.xsd</DependentUpon>
-    </None>
-    <None Include="deilveryTimeDate.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>deilveryTimeDate.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="deilveryTimeDate.xss">
-      <DependentUpon>deilveryTimeDate.xsd</DependentUpon>
-    </None>
-    <None Include="GetClienttsDS.xsc">
-      <DependentUpon>GetClienttsDS.xsd</DependentUpon>
-    </None>
-    <None Include="GetClienttsDS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GetClienttsDS.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GetClienttsDS.xss">
-      <DependentUpon>GetClienttsDS.xsd</DependentUpon>
-    </None>
-    <None Include="MasterDataSet.xsc">
-      <DependentUpon>MasterDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MasterDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MasterDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MasterDataSet.xss">
-      <DependentUpon>MasterDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Assignments.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.ClientsTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.CostsTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.CouriersTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.DeliveriesTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.DeliverySlotsTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.TableAdapterManager.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.bwcDataSetTableAdapters.UsersTableAdapter.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\BayWynCouriersWinForm.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.ClientsDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.ClientsRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.ClientsRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.ClientsRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CostsDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CostsRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CostsRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CostsRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CouriersDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CouriersRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CouriersRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.CouriersRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliveriesDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliveriesRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliveriesRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliveriesRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliverySlotsDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliverySlotsRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliverySlotsRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.DeliverySlotsRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.UsersDataTable.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.UsersRow.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.UsersRowChangeEvent.datasource" />
-    <None Include="Properties\DataSources\bwcDataSet.UsersRowChangeEventHandler.datasource" />
-    <None Include="Properties\DataSources\Clients.datasource" />
-    <None Include="Properties\DataSources\Couriers.datasource" />
-    <None Include="Properties\DataSources\Home.datasource" />
-    <None Include="Properties\DataSources\Login.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\Reports.datasource" />
-    <None Include="Properties\DataSources\User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -308,10 +155,7 @@
     <None Include="Resources\LOGO.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\bwcTest\bwcTest.csproj">
-      <Project>{601d99c4-697e-4d1e-9629-b2d8abfbc4ef}</Project>
-      <Name>bwcTest</Name>
-    </ProjectReference>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

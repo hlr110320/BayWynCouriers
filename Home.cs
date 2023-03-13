@@ -5,7 +5,7 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
-{ 
+{
     public partial class Home : Form
     {
         Assignments objA;
@@ -380,7 +380,7 @@ namespace BayWynCouriersWinForm
                 //objD._ClientName = cbBName.Text;
                 //objD._Date = DatePicker.Value;
                 //objD._Time = cbTime.ValueMember; 
-              
+
             }
 
         }
