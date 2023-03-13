@@ -152,7 +152,7 @@ namespace BayWynCouriersWinForm
 
             // Gets the data and populates the Data grid with values
             dr = ds.Tables[0].Rows[0];
-            dataGridEditContracts.DataSource = ds.Tables[0];
+           // dataGridEditContracts.DataSource = ds.Tables[0];
         }
         private void btnCreateContract_Click(object sender, EventArgs e)
         {
@@ -204,8 +204,8 @@ namespace BayWynCouriersWinForm
         }
         private void ClearDGEditContracts()
         {
-            dataGridEditContracts.DataSource = null;
-            dataGridEditContracts.Rows.Clear();
+            //dataGridEditContracts.DataSource = null;
+            //dataGridEditContracts.Rows.Clear();
         }
 
         private void BtnAssignments_Click(object sender, EventArgs e)
@@ -241,7 +241,6 @@ namespace BayWynCouriersWinForm
         {
             Deliveries objD = new Deliveries();
             DateTime date = DatePicker.Value;
-            DateTime time = cbTime;
 
             objD.Date = date;
 

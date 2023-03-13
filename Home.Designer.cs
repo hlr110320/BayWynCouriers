@@ -406,7 +406,6 @@
             // tabC2
             // 
             this.tabC2.BackColor = System.Drawing.Color.Lavender;
-            this.tabC2.Controls.Add(this.dataGridViewContracts);
             this.tabC2.Location = new System.Drawing.Point(4, 37);
             this.tabC2.Name = "tabC2";
             this.tabC2.Padding = new System.Windows.Forms.Padding(3);
@@ -432,17 +431,6 @@
             this.lbClientRef.TabIndex = 13;
             this.lbClientRef.Text = "Client Reference:";
             // 
-            // lbCRN
-            // 
-            this.lbCRN.AutoSize = true;
-            this.lbCRN.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lbCRN.Location = new System.Drawing.Point(1047, 47);
-            this.lbCRN.MaximumSize = new System.Drawing.Size(20, 20);
-            this.lbCRN.MinimumSize = new System.Drawing.Size(20, 20);
-            this.lbCRN.Name = "lbCRN";
-            this.lbCRN.Size = new System.Drawing.Size(20, 20);
-            this.lbCRN.TabIndex = 5;
-            // 
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
@@ -451,7 +439,6 @@
             this.panelDeliveries.Controls.Add(this.dataGridBookSlots);
             this.panelDeliveries.Controls.Add(this.dataGridView1);
             this.panelDeliveries.Controls.Add(this.btnBookDel);
-            this.panelDeliveries.Controls.Add(this.label7);
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
             this.panelDeliveries.Name = "panelDeliveries";
