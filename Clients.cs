@@ -3,6 +3,7 @@ using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
@@ -19,6 +20,7 @@ namespace BayWynCouriersWinForm
         private DateTime _ClientStartDate;
         private int _ClientRunTotal;
         private int _CourierRuns;
+        internal static object cbBName;
 
         // Declares a ClientID property of type int
         public int ClientID
@@ -160,13 +162,13 @@ namespace BayWynCouriersWinForm
             string connnectionString = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
-            string sql = "INSERT INTO Clients (ClientName, ClientAdd, ClientPhone, ClientEmail, ClientInfo, ContractType, ClientStartDate, CourierRuns) VALUES('" + _ClientName + "','" + _ClientAdd + "','" + _ClientPhone + "','" + _ClientEmail + "','" + _ClientInfo + "','" + _ContractType + "','" + _ClientStartDate + "','" + _CourierRuns + "')";
+            string sql = "INSERT INTO Clients (ClientName, ClientAdd, ClientPhone, ClientEmail, ClientInfo, ContractType, ClientStartDate, ContractedCourierRuns) VALUES('" + _ClientName + "','" + _ClientAdd + "','" + _ClientPhone + "','" + _ClientEmail + "','" + _ClientInfo + "','" + _ContractType + "','" + _ClientStartDate + "','" + _CourierRuns + "')";
             OleDbCommand command = new OleDbCommand(sql, connection);
             connection.Open();
             reader = command.ExecuteReader();
             connection.Close();
 
-            MessageBox.Show("New client added.");
+            MessageBox.Show("New client contract added!");
         }
         public DataSet ViewContracts()
         {
@@ -189,9 +191,26 @@ namespace BayWynCouriersWinForm
             //Returns the filled dataset of clients to the be accessed
             return dsVC;
         }
+        public void UpdateClients(System.Data.DataSet ds)
+        {
+            OleDbConnection con = new OleDbConnection();    
+            OleDbCommand cmUC = new OleDbCommand();
+            cmUC.Connection = con;
+            OleDbDataAdapter daUC = new OleDbDataAdapter(cmUC);
+            con.Close();
+           OleDbCommandBuilder cb = new OleDbCommandBuilder(daUC);
+            cb.DataAdapter.Update(ds.Tables[0]);
+        }
+
+
+        /// <summary>
+        /// The SortedList ViewClients method is used to get a list of the Client names from the database. 
+        /// This is used to populate the business name combo box, so
+        /// the user can select a business name when booking a delivery. 
+        /// </summary>
+        /// <returns></returns>
         public SortedList ViewClients()
         {
-
             // Getting and opening the connection string
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbConnection con = new OleDbConnection(bwcCon);
@@ -201,6 +220,7 @@ namespace BayWynCouriersWinForm
             OleDbCommand cmVC = new OleDbCommand();
             cmVC.Connection = con;
             cmVC.CommandType = CommandType.Text;
+            // Selects all from the ClientName column in the Clients table
             cmVC.CommandText = "Select ClientName from Clients";
             OleDbDataAdapter da = new OleDbDataAdapter(cmVC);
             OleDbDataReader dr = cmVC.ExecuteReader();

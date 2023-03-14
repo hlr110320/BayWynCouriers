@@ -13,7 +13,7 @@ namespace BayWynCouriersWinForm
         Clients objC;
         Clients objVC;
         Reports objR;
-
+        Reports objEC;
         DataRow dr;
         DataSet ds;
 
@@ -136,23 +136,28 @@ namespace BayWynCouriersWinForm
                 tbCourierRuns.Hide();
                 ContractRuns.Hide();
                 tabContracts.TabPages.Remove(tabContracts.TabPages[2]);
-
             }
+
             ClearDGViewContracts();
+
+            // Calls the update view contracts method to refresh the contracts datagrid from the database
+            UpdateViewContracts();
+
+
+
+
+        }
+
+        // The method to update the datagrid with the clients table
+        private void UpdateViewContracts()
+        {
             objVC = new Clients();
             ds = objVC.ViewContracts();
 
             // Gets the data and populates the Data grid with values
             dr = ds.Tables[0].Rows[0];
-            dataGridViewContracts.DataSource = ds.Tables[0];
-
-            ClearDGEditContracts();
-            objVC = new Clients();
-            ds = objVC.ViewContracts();
-
-            // Gets the data and populates the Data grid with values
-            dr = ds.Tables[0].Rows[0];
-           // dataGridEditContracts.DataSource = ds.Tables[0];
+            DGViewContracts.DataSource = ds.Tables[0];
+            DGEditContracts.DataSource = ds.Tables[0];
         }
         private void btnCreateContract_Click(object sender, EventArgs e)
         {
@@ -199,22 +204,21 @@ namespace BayWynCouriersWinForm
 
         private void ClearDGViewContracts()
         {
-            dataGridViewContracts.DataSource = null;
-            dataGridViewContracts.Rows.Clear();
+            DGViewContracts.DataSource = null;
+            DGViewContracts.Rows.Clear();
         }
+
         private void ClearDGEditContracts()
         {
-            //dataGridEditContracts.DataSource = null;
-            //dataGridEditContracts.Rows.Clear();
+            DGEditContracts.DataSource = null;
+            DGEditContracts.Rows.Clear();
         }
 
         private void BtnAssignments_Click(object sender, EventArgs e)
         {
             HidePanels();
             panelAssignments.Show();
-
         }
-
 
         private void BtnDeliveries_Click(object sender, EventArgs e)
         {
@@ -234,7 +238,6 @@ namespace BayWynCouriersWinForm
 
             objD.Date = date;
 
-            dataGridBookSlots.DataSource = objD.ViewSlots();
         }
 
         private void DatePicker_ValueChanged(object sender, EventArgs e)
@@ -387,6 +390,29 @@ namespace BayWynCouriersWinForm
 
         private void Home_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void cbBName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Clients objC = new Clients();
+            cbBName.DataSource= objC;
+
+            cbBName.Items.AddRange((object[])objC.ViewClients().Values);
+                
+            
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveEC_Click(object sender, EventArgs e)
+        {
+
+
+
 
         }
     }

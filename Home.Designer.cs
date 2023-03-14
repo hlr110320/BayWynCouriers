@@ -36,6 +36,8 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnDeliveries = new System.Windows.Forms.Button();
             this.btnAssignments = new System.Windows.Forms.Button();
+            this.IconPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelClients = new System.Windows.Forms.Panel();
             this.tabContracts = new System.Windows.Forms.TabControl();
             this.tabC1 = new System.Windows.Forms.TabPage();
@@ -55,6 +57,7 @@
             this.lbBAdd = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.tabC2 = new System.Windows.Forms.TabPage();
+            this.DGViewContracts = new System.Windows.Forms.DataGridView();
             this.tabC3 = new System.Windows.Forms.TabPage();
             this.lbClientRef = new System.Windows.Forms.Label();
             this.lbCRN = new System.Windows.Forms.Label();
@@ -80,13 +83,19 @@
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.IconPanel = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.DGEditContracts = new System.Windows.Forms.DataGridView();
+            this.btnSaveEC = new System.Windows.Forms.Button();
             this.panelBar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.IconPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelClients.SuspendLayout();
             this.tabContracts.SuspendLayout();
             this.tabC1.SuspendLayout();
+            this.tabC2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).BeginInit();
+            this.tabC3.SuspendLayout();
             this.panelDeliveries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,8 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
             this.panelAssignments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.IconPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGEditContracts)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -224,17 +232,38 @@
             this.btnAssignments.UseVisualStyleBackColor = true;
             this.btnAssignments.Click += new System.EventHandler(this.BtnAssignments_Click);
             // 
+            // IconPanel
+            // 
+            this.IconPanel.Controls.Add(this.pictureBox1);
+            this.IconPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IconPanel.Location = new System.Drawing.Point(0, 0);
+            this.IconPanel.Name = "IconPanel";
+            this.IconPanel.Size = new System.Drawing.Size(220, 249);
+            this.IconPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.Image = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.InitialImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 154);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelClients
             // 
             this.panelClients.Controls.Add(this.tabContracts);
             this.panelClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelClients.Location = new System.Drawing.Point(220, 0);
             this.panelClients.Name = "panelClients";
-            this.panelClients.Size = new System.Drawing.Size(1187, 900);
+            this.panelClients.Size = new System.Drawing.Size(1350, 900);
             this.panelClients.TabIndex = 2;
             // 
             // tabContracts
             // 
+            this.tabContracts.AllowDrop = true;
             this.tabContracts.Controls.Add(this.tabC1);
             this.tabContracts.Controls.Add(this.tabC2);
             this.tabContracts.Controls.Add(this.tabC3);
@@ -425,18 +454,36 @@
             // tabC2
             // 
             this.tabC2.BackColor = System.Drawing.Color.Lavender;
+            this.tabC2.Controls.Add(this.btnRefresh);
+            this.tabC2.Controls.Add(this.DGViewContracts);
             this.tabC2.Location = new System.Drawing.Point(4, 37);
             this.tabC2.Name = "tabC2";
             this.tabC2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC2.Size = new System.Drawing.Size(1319, 1009);
+            this.tabC2.Size = new System.Drawing.Size(1319, 859);
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
             // 
+            // DGViewContracts
+            // 
+            this.DGViewContracts.AllowUserToDeleteRows = false;
+            this.DGViewContracts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGViewContracts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DGViewContracts.GridColor = System.Drawing.SystemColors.Control;
+            this.DGViewContracts.Location = new System.Drawing.Point(3, 3);
+            this.DGViewContracts.Name = "DGViewContracts";
+            this.DGViewContracts.RowHeadersWidth = 62;
+            this.DGViewContracts.RowTemplate.Height = 28;
+            this.DGViewContracts.Size = new System.Drawing.Size(1181, 853);
+            this.DGViewContracts.TabIndex = 0;
+            // 
             // tabC3
             // 
+            this.tabC3.Controls.Add(this.btnSaveEC);
+            this.tabC3.Controls.Add(this.DGEditContracts);
             this.tabC3.Location = new System.Drawing.Point(4, 37);
             this.tabC3.Name = "tabC3";
-            this.tabC3.Size = new System.Drawing.Size(1319, 1009);
+            this.tabC3.Size = new System.Drawing.Size(1319, 859);
             this.tabC3.TabIndex = 2;
             this.tabC3.Text = "Edit Contracts";
             this.tabC3.UseVisualStyleBackColor = true;
@@ -468,7 +515,7 @@
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
             this.panelDeliveries.Name = "panelDeliveries";
-            this.panelDeliveries.Size = new System.Drawing.Size(1187, 900);
+            this.panelDeliveries.Size = new System.Drawing.Size(1350, 900);
             this.panelDeliveries.TabIndex = 15;
             // 
             // cbBName
@@ -479,6 +526,7 @@
             this.cbBName.Size = new System.Drawing.Size(354, 36);
             this.cbBName.TabIndex = 5;
             this.cbBName.Text = "Please choose";
+            this.cbBName.SelectedIndexChanged += new System.EventHandler(this.cbBName_SelectedIndexChanged);
             // 
             // DatePicker
             // 
@@ -491,7 +539,7 @@
             // dataGridBookSlots
             // 
             this.dataGridBookSlots.ColumnHeadersHeight = 34;
-            this.dataGridBookSlots.Location = new System.Drawing.Point(0, 0);
+            this.dataGridBookSlots.Location = new System.Drawing.Point(117, 231);
             this.dataGridBookSlots.Name = "dataGridBookSlots";
             this.dataGridBookSlots.RowHeadersWidth = 62;
             this.dataGridBookSlots.Size = new System.Drawing.Size(240, 150);
@@ -500,7 +548,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeight = 34;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(396, 231);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
@@ -583,7 +631,7 @@
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
-            this.panelReports.Location = new System.Drawing.Point(134, 0);
+            this.panelReports.Location = new System.Drawing.Point(216, 0);
             this.panelReports.Name = "panelReports";
             this.panelReports.Size = new System.Drawing.Size(1358, 1050);
             this.panelReports.TabIndex = 16;
@@ -641,7 +689,7 @@
             this.panelAssignments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAssignments.Location = new System.Drawing.Point(220, 0);
             this.panelAssignments.Name = "panelAssignments";
-            this.panelAssignments.Size = new System.Drawing.Size(1187, 900);
+            this.panelAssignments.Size = new System.Drawing.Size(1350, 900);
             this.panelAssignments.TabIndex = 17;
             // 
             // cbAssignments
@@ -695,25 +743,47 @@
             this.dataGridAssignments.Size = new System.Drawing.Size(607, 427);
             this.dataGridAssignments.TabIndex = 6;
             // 
-            // pictureBox1
+            // btnRefresh
             // 
-            this.pictureBox1.ErrorImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
-            this.pictureBox1.Image = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
-            this.pictureBox1.InitialImage = global::BayWynCouriersWinForm.Properties.Resources.LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 154);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.Location = new System.Drawing.Point(1202, 20);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 45);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // IconPanel
+            // DGEditContracts
             // 
-            this.IconPanel.Controls.Add(this.pictureBox1);
-            this.IconPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IconPanel.Location = new System.Drawing.Point(0, 0);
-            this.IconPanel.Name = "IconPanel";
-            this.IconPanel.Size = new System.Drawing.Size(220, 249);
-            this.IconPanel.TabIndex = 0;
+            this.DGEditContracts.AllowUserToDeleteRows = false;
+            this.DGEditContracts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGEditContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGEditContracts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DGEditContracts.GridColor = System.Drawing.SystemColors.Control;
+            this.DGEditContracts.Location = new System.Drawing.Point(0, 0);
+            this.DGEditContracts.Name = "DGEditContracts";
+            this.DGEditContracts.RowHeadersWidth = 62;
+            this.DGEditContracts.RowTemplate.Height = 28;
+            this.DGEditContracts.Size = new System.Drawing.Size(1181, 859);
+            this.DGEditContracts.TabIndex = 1;
+            // 
+            // btnSaveEC
+            // 
+            this.btnSaveEC.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSaveEC.FlatAppearance.BorderSize = 0;
+            this.btnSaveEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveEC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSaveEC.Location = new System.Drawing.Point(1202, 31);
+            this.btnSaveEC.Name = "btnSaveEC";
+            this.btnSaveEC.Size = new System.Drawing.Size(90, 45);
+            this.btnSaveEC.TabIndex = 17;
+            this.btnSaveEC.Text = "Save";
+            this.btnSaveEC.UseVisualStyleBackColor = false;
+            this.btnSaveEC.Click += new System.EventHandler(this.btnSaveEC_Click);
             // 
             // Home
             // 
@@ -721,7 +791,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1407, 900);
+            this.ClientSize = new System.Drawing.Size(1570, 900);
             this.Controls.Add(this.panelClients);
             this.Controls.Add(this.panelDeliveries);
             this.Controls.Add(this.panelAssignments);
@@ -739,10 +809,15 @@
             this.panelBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.IconPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelClients.ResumeLayout(false);
             this.tabContracts.ResumeLayout(false);
             this.tabC1.ResumeLayout(false);
             this.tabC1.PerformLayout();
+            this.tabC2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).EndInit();
+            this.tabC3.ResumeLayout(false);
             this.panelDeliveries.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -750,8 +825,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
             this.panelAssignments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.IconPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGEditContracts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -798,15 +872,6 @@
         private System.Windows.Forms.TabPage tabC2;
         private System.Windows.Forms.DataGridView dataGridViewContracts;
         private System.Windows.Forms.TabPage tabC3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientAddDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientInfoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contractTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientStartDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientRunTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -823,6 +888,10 @@
         private System.Windows.Forms.Button btnCreateContract;
         private System.Windows.Forms.Panel IconPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView DGViewContracts;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DataGridView DGEditContracts;
+        private System.Windows.Forms.Button btnSaveEC;
     }
 }
 

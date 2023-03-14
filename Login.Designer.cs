@@ -63,9 +63,9 @@
             // 
             this.tbUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tbUserName.ForeColor = System.Drawing.Color.Black;
-            this.tbUserName.Location = new System.Drawing.Point(237, 103);
+            this.tbUserName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserName.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbUserName.Location = new System.Drawing.Point(237, 97);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(5);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(199, 27);
@@ -75,10 +75,10 @@
             // 
             this.tbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tbPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbPassword.Location = new System.Drawing.Point(237, 182);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tbPassword.Location = new System.Drawing.Point(237, 175);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(1);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(199, 27);
