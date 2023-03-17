@@ -57,8 +57,8 @@
             this.lbBAdd = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.tabC2 = new System.Windows.Forms.TabPage();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.DGViewContracts = new System.Windows.Forms.DataGridView();
-            this.tabC3 = new System.Windows.Forms.TabPage();
             this.lbClientRef = new System.Windows.Forms.Label();
             this.lbCRN = new System.Windows.Forms.Label();
             this.panelDeliveries = new System.Windows.Forms.Panel();
@@ -83,9 +83,7 @@
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.DGEditContracts = new System.Windows.Forms.DataGridView();
-            this.btnSaveEC = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panelBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.IconPanel.SuspendLayout();
@@ -95,7 +93,6 @@
             this.tabC1.SuspendLayout();
             this.tabC2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).BeginInit();
-            this.tabC3.SuspendLayout();
             this.panelDeliveries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
             this.panelAssignments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGEditContracts)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -266,7 +262,6 @@
             this.tabContracts.AllowDrop = true;
             this.tabContracts.Controls.Add(this.tabC1);
             this.tabContracts.Controls.Add(this.tabC2);
-            this.tabContracts.Controls.Add(this.tabC3);
             this.tabContracts.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabContracts.Location = new System.Drawing.Point(0, 0);
             this.tabContracts.Name = "tabContracts";
@@ -454,6 +449,7 @@
             // tabC2
             // 
             this.tabC2.BackColor = System.Drawing.Color.Lavender;
+            this.tabC2.Controls.Add(this.btnSave);
             this.tabC2.Controls.Add(this.btnRefresh);
             this.tabC2.Controls.Add(this.DGViewContracts);
             this.tabC2.Location = new System.Drawing.Point(4, 37);
@@ -463,30 +459,35 @@
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.Location = new System.Drawing.Point(729, 38);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 45);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // DGViewContracts
             // 
             this.DGViewContracts.AllowUserToDeleteRows = false;
+            this.DGViewContracts.AllowUserToOrderColumns = true;
+            this.DGViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.DGViewContracts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGViewContracts.Dock = System.Windows.Forms.DockStyle.Left;
-            this.DGViewContracts.GridColor = System.Drawing.SystemColors.Control;
+            this.DGViewContracts.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGViewContracts.Location = new System.Drawing.Point(3, 3);
             this.DGViewContracts.Name = "DGViewContracts";
             this.DGViewContracts.RowHeadersWidth = 62;
             this.DGViewContracts.RowTemplate.Height = 28;
-            this.DGViewContracts.Size = new System.Drawing.Size(1181, 853);
+            this.DGViewContracts.Size = new System.Drawing.Size(653, 853);
             this.DGViewContracts.TabIndex = 0;
-            // 
-            // tabC3
-            // 
-            this.tabC3.Controls.Add(this.btnSaveEC);
-            this.tabC3.Controls.Add(this.DGEditContracts);
-            this.tabC3.Location = new System.Drawing.Point(4, 37);
-            this.tabC3.Name = "tabC3";
-            this.tabC3.Size = new System.Drawing.Size(1319, 859);
-            this.tabC3.TabIndex = 2;
-            this.tabC3.Text = "Edit Contracts";
-            this.tabC3.UseVisualStyleBackColor = true;
             // 
             // lbClientRef
             // 
@@ -743,47 +744,19 @@
             this.dataGridAssignments.Size = new System.Drawing.Size(607, 427);
             this.dataGridAssignments.TabIndex = 6;
             // 
-            // btnRefresh
+            // btnSave
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRefresh.Location = new System.Drawing.Point(1202, 20);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(90, 45);
-            this.btnRefresh.TabIndex = 16;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // DGEditContracts
-            // 
-            this.DGEditContracts.AllowUserToDeleteRows = false;
-            this.DGEditContracts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DGEditContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGEditContracts.Dock = System.Windows.Forms.DockStyle.Left;
-            this.DGEditContracts.GridColor = System.Drawing.SystemColors.Control;
-            this.DGEditContracts.Location = new System.Drawing.Point(0, 0);
-            this.DGEditContracts.Name = "DGEditContracts";
-            this.DGEditContracts.RowHeadersWidth = 62;
-            this.DGEditContracts.RowTemplate.Height = 28;
-            this.DGEditContracts.Size = new System.Drawing.Size(1181, 859);
-            this.DGEditContracts.TabIndex = 1;
-            // 
-            // btnSaveEC
-            // 
-            this.btnSaveEC.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSaveEC.FlatAppearance.BorderSize = 0;
-            this.btnSaveEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveEC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSaveEC.Location = new System.Drawing.Point(1202, 31);
-            this.btnSaveEC.Name = "btnSaveEC";
-            this.btnSaveEC.Size = new System.Drawing.Size(90, 45);
-            this.btnSaveEC.TabIndex = 17;
-            this.btnSaveEC.Text = "Save";
-            this.btnSaveEC.UseVisualStyleBackColor = false;
-            this.btnSaveEC.Click += new System.EventHandler(this.btnSaveEC_Click);
+            this.btnSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(729, 108);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 45);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Home
             // 
@@ -817,7 +790,6 @@
             this.tabC1.PerformLayout();
             this.tabC2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).EndInit();
-            this.tabC3.ResumeLayout(false);
             this.panelDeliveries.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -825,7 +797,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
             this.panelAssignments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGEditContracts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -871,7 +842,6 @@
         private System.Windows.Forms.TabPage tabC1;
         private System.Windows.Forms.TabPage tabC2;
         private System.Windows.Forms.DataGridView dataGridViewContracts;
-        private System.Windows.Forms.TabPage tabC3;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -890,8 +860,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView DGViewContracts;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.DataGridView DGEditContracts;
-        private System.Windows.Forms.Button btnSaveEC;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

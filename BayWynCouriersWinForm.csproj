@@ -86,6 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assignments.cs" />
+    <Compile Include="bwcDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clients.cs" />
     <Compile Include="Couriers.cs" />
     <Compile Include="Deliveries.cs" />
@@ -121,6 +126,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bwcDataSet.xsc">
+      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bwcDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bwcDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bwcDataSet.xss">
+      <DependentUpon>bwcDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

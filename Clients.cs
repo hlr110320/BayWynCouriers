@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
@@ -21,6 +22,8 @@ namespace BayWynCouriersWinForm
         private int _ClientRunTotal;
         private int _CourierRuns;
         internal static object cbBName;
+        internal DataSet ds;
+        internal OleDbDataAdapter daVC;
 
         // Declares a ClientID property of type int
         public int ClientID
@@ -172,36 +175,22 @@ namespace BayWynCouriersWinForm
         }
         public DataSet ViewContracts()
         {
-            DataSet dsVC = new DataSet();
-
-            // Getting and opening the connection string
+            ds = new DataSet();
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
-            OleDbConnection con = new OleDbConnection(bwcCon);
-            con.Open();
+            OleDbDataAdapter daVC = new OleDbDataAdapter("Select * from Clients", bwcCon);
+            OleDbCommandBuilder builder = new OleDbCommandBuilder(daVC);
+            daVC.Fill(ds, "Clients");
 
-            // Setting the sql command and adapter to access the all contract data from the database
-            OleDbCommand cmVC = new OleDbCommand();
-            cmVC.Connection = con;
-            cmVC.CommandType = CommandType.Text;
-            cmVC.CommandText = "Select * from Clients";
-            OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC);
-            daVC.Fill(dsVC);
-            con.Close();
-
-            //Returns the filled dataset of clients to the be accessed
-            return dsVC;
+            return ds;
         }
-        public void UpdateClients(System.Data.DataSet ds)
+
+        public void SaveContracts()
+
         {
-            OleDbConnection con = new OleDbConnection();    
-            OleDbCommand cmUC = new OleDbCommand();
-            cmUC.Connection = con;
-            OleDbDataAdapter daUC = new OleDbDataAdapter(cmUC);
-            con.Close();
-           OleDbCommandBuilder cb = new OleDbCommandBuilder(daUC);
-            cb.DataAdapter.Update(ds.Tables[0]);
-        }
 
+            daVC.Update(ds, "Clients");
+
+        }
 
         /// <summary>
         /// The SortedList ViewClients method is used to get a list of the Client names from the database. 

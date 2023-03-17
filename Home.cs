@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Data;
 using System.Data.OleDb;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
@@ -135,29 +136,25 @@ namespace BayWynCouriersWinForm
                 cbClientType.Hide();
                 tbCourierRuns.Hide();
                 ContractRuns.Hide();
-                tabContracts.TabPages.Remove(tabContracts.TabPages[2]);
+                this.dataGridViewContracts.ReadOnly = true;
             }
 
-            ClearDGViewContracts();
+            ClearDGContracts();
 
             // Calls the update view contracts method to refresh the contracts datagrid from the database
-            UpdateViewContracts();
-
-
-
+            ViewContractsDG();
 
         }
 
         // The method to update the datagrid with the clients table
-        private void UpdateViewContracts()
+        private void ViewContractsDG()
         {
             objVC = new Clients();
-            ds = objVC.ViewContracts();
 
-            // Gets the data and populates the Data grid with values
-            dr = ds.Tables[0].Rows[0];
-            DGViewContracts.DataSource = ds.Tables[0];
-            DGEditContracts.DataSource = ds.Tables[0];
+            ds = objVC.ds;
+            DGViewContracts.DataSource = ds;
+            DGViewContracts.DataMember = ("Clients");
+
         }
         private void btnCreateContract_Click(object sender, EventArgs e)
         {
@@ -202,17 +199,27 @@ namespace BayWynCouriersWinForm
             tbBTel.Text = "";
         }
 
-        private void ClearDGViewContracts()
+        private void ClearDGContracts()
         {
             DGViewContracts.DataSource = null;
             DGViewContracts.Rows.Clear();
         }
 
-        private void ClearDGEditContracts()
+        //Click event to call the ViewContractsDG method which will refresh the datagrid with the current data in the 
+        // clients table
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            DGEditContracts.DataSource = null;
-            DGEditContracts.Rows.Clear();
+            ViewContractsDG();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+           DataTable dt = (DataTable)DGViewContracts.DataSource;
+            objVC = new Clients();
+            objVC.UpdateContracts(dt);
+
+        }
+
 
         private void BtnAssignments_Click(object sender, EventArgs e)
         {
@@ -383,9 +390,7 @@ namespace BayWynCouriersWinForm
                 //objD._ClientName = cbBName.Text;
                 //objD._Date = DatePicker.Value;
                 //objD._Time = cbTime.ValueMember; 
-
             }
-
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -398,22 +403,9 @@ namespace BayWynCouriersWinForm
             Clients objC = new Clients();
             cbBName.DataSource= objC;
 
-            cbBName.Items.AddRange((object[])objC.ViewClients().Values);
-                
-            
+            cbBName.Items.AddRange((object[])objC.ViewClients().Values);  
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnSaveEC_Click(object sender, EventArgs e)
-        {
-
-
-
-
-        }
     }
 }
