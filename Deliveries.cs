@@ -31,7 +31,6 @@ namespace BayWynCouriersWinForm
         }
 
 
-
         public string Name
         {
             get
@@ -56,7 +55,6 @@ namespace BayWynCouriersWinForm
             }
         }
 
- 
         public DateTime Time
 
         {
@@ -88,7 +86,7 @@ namespace BayWynCouriersWinForm
             string connnectionString = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
-            string sql = "INSERT INTO Deliveries (Date, Time, ClientID) VALUES('" + _Date + "','" + _Time + "','" + _ClientID + "')";
+            string sql = "INSERT INTO Deliveries (Date, Time, ClientIName VALUES('" + _Date + "','" + _Time + "','" + _Name + "')";
             OleDbCommand command = new OleDbCommand(sql, connection);
             connection.Open();
             reader = command.ExecuteReader();

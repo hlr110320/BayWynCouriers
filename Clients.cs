@@ -2,9 +2,7 @@
 using System.Collections;
 using System.Configuration;
 using System.Data;
-using System.Data.Common;
 using System.Data.OleDb;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
@@ -22,7 +20,7 @@ namespace BayWynCouriersWinForm
         private int _ClientRunTotal;
         private int _CourierRuns;
         internal static object cbBName;
-        internal DataSet ds;
+        internal DataSet dsVC;
         internal OleDbDataAdapter daVC;
 
         // Declares a ClientID property of type int
@@ -175,20 +173,28 @@ namespace BayWynCouriersWinForm
         }
         public DataSet ViewContracts()
         {
-            ds = new DataSet();
+            DataSet dsVC = new DataSet();
+            // Getting and opening the connection string
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
-            OleDbDataAdapter daVC = new OleDbDataAdapter("Select * from Clients", bwcCon);
-            OleDbCommandBuilder builder = new OleDbCommandBuilder(daVC);
-            daVC.Fill(ds, "Clients");
+            OleDbConnection con = new OleDbConnection(bwcCon);
+            con.Open();
+            // Setting the sql command and adapter to access the all contract data from the database
+            OleDbCommand cmVC = new OleDbCommand();
+            cmVC.Connection = con;
+            cmVC.CommandType = CommandType.Text;
+            cmVC.CommandText = "Select * from Clients";
+            OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC);
+            daVC.Fill(dsVC);
 
-            return ds;
+            //Returns the filled dataset of clients to the be accessed
+            return dsVC;
         }
 
         public void SaveContracts()
 
         {
-
-            daVC.Update(ds, "Clients");
+            ;
+            daVC.Update(dsVC);
 
         }
 
@@ -198,34 +204,47 @@ namespace BayWynCouriersWinForm
         /// the user can select a business name when booking a delivery. 
         /// </summary>
         /// <returns></returns>
-        public SortedList ViewClients()
-        {
-            // Getting and opening the connection string
-            string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
-            OleDbConnection con = new OleDbConnection(bwcCon);
-            con.Open();
+        /// 
+        /* XXX: This 
+        does not work and needs rewriting. Unable to ret <mbp> */
 
-            // Setting the sql command and adapter to access the all contract data from the database
-            OleDbCommand cmVC = new OleDbCommand();
-            cmVC.Connection = con;
-            cmVC.CommandType = CommandType.Text;
-            // Selects all from the ClientName column in the Clients table
-            cmVC.CommandText = "Select ClientName from Clients";
-            OleDbDataAdapter da = new OleDbDataAdapter(cmVC);
-            OleDbDataReader dr = cmVC.ExecuteReader();
+        //public SortedList ViewClients()
+        //{
+        //    DataSet DS = new DataSet();
+        //    Getting and opening the connection string
+        //    string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
+        //    OleDbConnection con = new OleDbConnection(bwcCon);
+        //    con.Open();
 
-            SortedList clients = new SortedList();
-            while (dr.Read())
-            {
-                clients.Add(dr[0], dr[2]);
-            }
+        //    Setting the sql command and adapter to access the all contract data from the database
 
-            dr.Close();
-            con.Close();
+        //   OleDbCommand cmVC = new OleDbCommand();
+        //    cmVC.Connection = con;
+        //    cmVC.CommandType = CommandType.Text;
+        //    Selects all from the ClientName column in the Clients table
+        //    cmVC.CommandText = "Select * from Clients";
+        //    OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC);
+        //    daVC.Fill(DS);
 
-            //Returns the filled dataset of clients
-            return clients;
-        }
+        //    OleDbDataReader dr = cmVC.ExecuteReader();
+
+        //    SortedList clients = new SortedList();
+
+
+        //    while (dr.Read())
+        //    {
+
+        //        clients.Add(dr[0], dr[1]);
+        //    }
+
+        //    dr.Close();
+        //    con.Close();
+
+        //    Returns the filled dataset of clients
+        //    return clients;
+
 
     }
+
 }
+

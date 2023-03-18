@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 
 
@@ -33,7 +32,7 @@ namespace BayWynCouriersWinForm
 
             // Open connection to the database
             con.Open();
- 
+
             //Initialises database command and query and fills the datatable with the returned results
             OleDbCommand cmdLogin = new OleDbCommand();
             OleDbDataAdapter daLogin = new OleDbDataAdapter(cmdLogin);

@@ -23,22 +23,30 @@ namespace BayWynCouriersWinForm
         /// <returns>The dataset of unassigned deliveries</returns>
         public DataSet GetAssignments()
         {
+            // Initialises a new dataset
             DataSet dsA = new DataSet();
 
             // Getting and opening the connection string
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbConnection con = new OleDbConnection(bwcCon);
+
+            //Opens the connection
             con.Open();
 
-            // Setting the sql command and adapter
+            // Setting the database command and adapter
             OleDbCommand cmA = new OleDbCommand();
             cmA.Connection = con;
             cmA.CommandType = CommandType.Text;
-            cmA.CommandText = "Select Deliveries.DeliveryID, Deliveries.Date, Deliveries.Time, Deliveries.CourierID, Deliveries.ClientID from Deliveries Inner Join Clients On Deliveries.ClientID = Clients.ClientID WHERE CourierID Is NULL";
-            //Where CourierID Is Null";
+            // SQL statement for getting all uinassigned deliveries
+            cmA.CommandText = "Select Deliveries.DeliveryID, Deliveries.Date, Deliveries.ClientID, Clients.ClientName FROM Deliveries Inner Join Clients On Deliveries.ClientID = Clients.ClientID WHERE SlotID IS NULL";
+            
+            //Initialies a new data adapter
             OleDbDataAdapter dA = new OleDbDataAdapter(cmA);
 
+            //Fills the data adapter with the dataset returned from the database
             dA.Fill(dsA);
+
+            //Closed the connection to the database
             con.Close();
 
             return dsA;

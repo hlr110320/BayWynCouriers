@@ -1,10 +1,8 @@
 ﻿using System;
-using System.ComponentModel.Design;
+using System.Collections;
 using System.Data;
 using System.Data.OleDb;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace BayWynCouriersWinForm
 {
@@ -150,11 +148,11 @@ namespace BayWynCouriersWinForm
         private void ViewContractsDG()
         {
             objVC = new Clients();
+            ds = objVC.ViewContracts();
 
-            ds = objVC.ds;
-            DGViewContracts.DataSource = ds;
-            DGViewContracts.DataMember = ("Clients");
-
+            // Gets the data and populates the Data grid with values
+            //  dr = ds.Tables[0].Rows[0];
+            DGViewContracts.DataSource = ds.Tables[0];
         }
         private void btnCreateContract_Click(object sender, EventArgs e)
         {
@@ -214,9 +212,8 @@ namespace BayWynCouriersWinForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           DataTable dt = (DataTable)DGViewContracts.DataSource;
-            objVC = new Clients();
-            objVC.UpdateContracts(dt);
+            objVC.SaveContracts();
+
 
         }
 
@@ -234,15 +231,14 @@ namespace BayWynCouriersWinForm
 
             DateTime date = DatePicker.Value;
 
-            //Clients objVC = new Clients();
+            Clients objVC = new Clients();
 
-            //cbBName.DataSource = objVC.ViewClients();
+
             //SortedList clients = new SortedList();
             //clients = objVC.ViewClients();
             //cbBName.Items.Add(clients);
 
             Deliveries objD = new Deliveries();
-
             objD.Date = date;
 
         }
@@ -254,7 +250,7 @@ namespace BayWynCouriersWinForm
 
             objD.Date = date;
 
-            dataGridBookSlots.DataSource = objD.ViewSlots();
+            dgBookDelivery.DataSource = objD.ViewSlots();
         }
         private void BtnGenReport_Click(object sender, EventArgs e)
         {
@@ -386,26 +382,40 @@ namespace BayWynCouriersWinForm
                 // Creates a new instance of the Deliveries class
                 Deliveries objD = new Deliveries();
 
-                // Sets the client class parameters with the values inputted on the form
-                //objD._ClientName = cbBName.Text;
-                //objD._Date = DatePicker.Value;
-                //objD._Time = cbTime.ValueMember; 
+                //  Sets the client class parameters with the values inputted on the form
+                objD.Name = cbBName.Text;
+                objD.Date = DatePicker.Value;
             }
+
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bwcDataSet.Clients' table. You can move, or remove it, as needed.
+            this.clientsTableAdapter.Fill(this.bwcDataSet.Clients);
 
         }
 
-        private void cbBName_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbBName_Click(object sender, EventArgs e)
         {
-            Clients objC = new Clients();
-            cbBName.DataSource= objC;
+            /* XXX: This needs rewriting. It is intended to populate the combo box with the client name column values. Unable to get it to work so far. <mbp> */
 
-            cbBName.Items.AddRange((object[])objC.ViewClients().Values);  
+            //// Clients objC = new Clients();
+            //// SortedList clientsList = new SortedList();
+            //// clientsList = objC.ViewClients();
+            //// cbBName.DataSource = objC.ViewClients();
+            ////// cbBName.DataSource = IList();
+            //// cbBName.Items.AddRange(clientsList);  
         }
 
+        private void cbAssignments_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void panelAssignments_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

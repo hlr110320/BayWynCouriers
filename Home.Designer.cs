@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBar = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLoggedUser = new System.Windows.Forms.Panel();
             this.lbUser = new System.Windows.Forms.Label();
             this.btnContracts = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
@@ -57,16 +58,17 @@
             this.lbBAdd = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.tabC2 = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.DGViewContracts = new System.Windows.Forms.DataGridView();
-            this.lbClientRef = new System.Windows.Forms.Label();
-            this.lbCRN = new System.Windows.Forms.Label();
             this.panelDeliveries = new System.Windows.Forms.Panel();
             this.cbBName = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.dataGridBookSlots = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgBookDelivery = new System.Windows.Forms.DataGridView();
             this.btnBookDel = new System.Windows.Forms.Button();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bwcDataSet = new BayWynCouriersWinForm.bwcDataSet();
+            this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deliveryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,9 +85,9 @@
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.clientsTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.ClientsTableAdapter();
             this.panelBar.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelLoggedUser.SuspendLayout();
             this.IconPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelClients.SuspendLayout();
@@ -94,8 +96,10 @@
             this.tabC2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).BeginInit();
             this.panelDeliveries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookDelivery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
             this.panelReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
             this.panelAssignments.SuspendLayout();
@@ -106,7 +110,7 @@
             // 
             this.panelBar.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelBar.Controls.Add(this.btnLogout);
-            this.panelBar.Controls.Add(this.panel1);
+            this.panelBar.Controls.Add(this.panelLoggedUser);
             this.panelBar.Controls.Add(this.btnContracts);
             this.panelBar.Controls.Add(this.btnReports);
             this.panelBar.Controls.Add(this.btnDeliveries);
@@ -116,7 +120,7 @@
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(220, 900);
+            this.panelBar.Size = new System.Drawing.Size(220, 701);
             this.panelBar.TabIndex = 0;
             // 
             // btnLogout
@@ -138,15 +142,15 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel1
+            // panelLoggedUser
             // 
-            this.panel1.Controls.Add(this.lbUser);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 489);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 165);
-            this.panel1.TabIndex = 6;
+            this.panelLoggedUser.Controls.Add(this.lbUser);
+            this.panelLoggedUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLoggedUser.Location = new System.Drawing.Point(0, 489);
+            this.panelLoggedUser.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLoggedUser.Name = "panelLoggedUser";
+            this.panelLoggedUser.Size = new System.Drawing.Size(220, 165);
+            this.panelLoggedUser.TabIndex = 6;
             // 
             // lbUser
             // 
@@ -155,7 +159,7 @@
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbUser.Location = new System.Drawing.Point(10, 86);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(0, 21);
+            this.lbUser.Size = new System.Drawing.Size(0, 13);
             this.lbUser.TabIndex = 5;
             // 
             // btnContracts
@@ -254,7 +258,7 @@
             this.panelClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelClients.Location = new System.Drawing.Point(220, 0);
             this.panelClients.Name = "panelClients";
-            this.panelClients.Size = new System.Drawing.Size(1350, 900);
+            this.panelClients.Size = new System.Drawing.Size(1064, 701);
             this.panelClients.TabIndex = 2;
             // 
             // tabContracts
@@ -266,7 +270,7 @@
             this.tabContracts.Location = new System.Drawing.Point(0, 0);
             this.tabContracts.Name = "tabContracts";
             this.tabContracts.SelectedIndex = 0;
-            this.tabContracts.Size = new System.Drawing.Size(1327, 900);
+            this.tabContracts.Size = new System.Drawing.Size(1327, 701);
             this.tabContracts.TabIndex = 7;
             // 
             // tabC1
@@ -288,10 +292,10 @@
             this.tabC1.Controls.Add(this.lbBEmail);
             this.tabC1.Controls.Add(this.lbBAdd);
             this.tabC1.Controls.Add(this.lbName);
-            this.tabC1.Location = new System.Drawing.Point(4, 37);
+            this.tabC1.Location = new System.Drawing.Point(4, 26);
             this.tabC1.Name = "tabC1";
             this.tabC1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC1.Size = new System.Drawing.Size(1319, 859);
+            this.tabC1.Size = new System.Drawing.Size(1319, 671);
             this.tabC1.TabIndex = 0;
             this.tabC1.Text = "Create New Contract";
             // 
@@ -319,7 +323,7 @@
             "Non Contracted"});
             this.cbClientType.Location = new System.Drawing.Point(90, 20);
             this.cbClientType.Name = "cbClientType";
-            this.cbClientType.Size = new System.Drawing.Size(263, 36);
+            this.cbClientType.Size = new System.Drawing.Size(263, 25);
             this.cbClientType.TabIndex = 8;
             this.cbClientType.Text = "Client Type";
             // 
@@ -329,7 +333,7 @@
             this.tbCourierRuns.Location = new System.Drawing.Point(90, 84);
             this.tbCourierRuns.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbCourierRuns.Name = "tbCourierRuns";
-            this.tbCourierRuns.Size = new System.Drawing.Size(263, 27);
+            this.tbCourierRuns.Size = new System.Drawing.Size(263, 18);
             this.tbCourierRuns.TabIndex = 9;
             // 
             // ContractRuns
@@ -337,7 +341,7 @@
             this.ContractRuns.AutoSize = true;
             this.ContractRuns.Location = new System.Drawing.Point(93, 59);
             this.ContractRuns.Name = "ContractRuns";
-            this.ContractRuns.Size = new System.Drawing.Size(127, 28);
+            this.ContractRuns.Size = new System.Drawing.Size(91, 19);
             this.ContractRuns.TabIndex = 15;
             this.ContractRuns.Text = "Courier Runs:";
             // 
@@ -361,7 +365,7 @@
             this.tbBEmail.Location = new System.Drawing.Point(90, 332);
             this.tbBEmail.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBEmail.Name = "tbBEmail";
-            this.tbBEmail.Size = new System.Drawing.Size(830, 27);
+            this.tbBEmail.Size = new System.Drawing.Size(830, 18);
             this.tbBEmail.TabIndex = 13;
             // 
             // tbBTel
@@ -370,7 +374,7 @@
             this.tbBTel.Location = new System.Drawing.Point(90, 276);
             this.tbBTel.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBTel.Name = "tbBTel";
-            this.tbBTel.Size = new System.Drawing.Size(830, 27);
+            this.tbBTel.Size = new System.Drawing.Size(830, 18);
             this.tbBTel.TabIndex = 12;
             // 
             // tbBNotes
@@ -398,7 +402,7 @@
             this.tbBName.Location = new System.Drawing.Point(90, 139);
             this.tbBName.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBName.Name = "tbBName";
-            this.tbBName.Size = new System.Drawing.Size(830, 27);
+            this.tbBName.Size = new System.Drawing.Size(830, 18);
             this.tbBName.TabIndex = 10;
             // 
             // lbNotes
@@ -406,7 +410,7 @@
             this.lbNotes.AutoSize = true;
             this.lbNotes.Location = new System.Drawing.Point(93, 359);
             this.lbNotes.Name = "lbNotes";
-            this.lbNotes.Size = new System.Drawing.Size(68, 28);
+            this.lbNotes.Size = new System.Drawing.Size(48, 19);
             this.lbNotes.TabIndex = 4;
             this.lbNotes.Text = "Notes:";
             // 
@@ -415,7 +419,7 @@
             this.lbTel.AutoSize = true;
             this.lbTel.Location = new System.Drawing.Point(93, 249);
             this.lbTel.Name = "lbTel";
-            this.lbTel.Size = new System.Drawing.Size(105, 28);
+            this.lbTel.Size = new System.Drawing.Size(74, 19);
             this.lbTel.TabIndex = 3;
             this.lbTel.Text = "Telephone:";
             // 
@@ -424,7 +428,7 @@
             this.lbBEmail.AutoSize = true;
             this.lbBEmail.Location = new System.Drawing.Point(93, 304);
             this.lbBEmail.Name = "lbBEmail";
-            this.lbBEmail.Size = new System.Drawing.Size(63, 28);
+            this.lbBEmail.Size = new System.Drawing.Size(44, 19);
             this.lbBEmail.TabIndex = 2;
             this.lbBEmail.Text = "Email:";
             // 
@@ -433,7 +437,7 @@
             this.lbBAdd.AutoSize = true;
             this.lbBAdd.Location = new System.Drawing.Point(93, 169);
             this.lbBAdd.Name = "lbBAdd";
-            this.lbBAdd.Size = new System.Drawing.Size(163, 28);
+            this.lbBAdd.Size = new System.Drawing.Size(117, 19);
             this.lbBAdd.TabIndex = 1;
             this.lbBAdd.Text = "Business Address:";
             // 
@@ -442,7 +446,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Location = new System.Drawing.Point(93, 114);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(145, 28);
+            this.lbName.Size = new System.Drawing.Size(104, 19);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Business Name:";
             // 
@@ -452,12 +456,26 @@
             this.tabC2.Controls.Add(this.btnSave);
             this.tabC2.Controls.Add(this.btnRefresh);
             this.tabC2.Controls.Add(this.DGViewContracts);
-            this.tabC2.Location = new System.Drawing.Point(4, 37);
+            this.tabC2.Location = new System.Drawing.Point(4, 26);
             this.tabC2.Name = "tabC2";
             this.tabC2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC2.Size = new System.Drawing.Size(1319, 859);
+            this.tabC2.Size = new System.Drawing.Size(1319, 870);
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(729, 108);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 45);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRefresh
             // 
@@ -486,74 +504,48 @@
             this.DGViewContracts.Name = "DGViewContracts";
             this.DGViewContracts.RowHeadersWidth = 62;
             this.DGViewContracts.RowTemplate.Height = 28;
-            this.DGViewContracts.Size = new System.Drawing.Size(653, 853);
+            this.DGViewContracts.Size = new System.Drawing.Size(653, 864);
             this.DGViewContracts.TabIndex = 0;
-            // 
-            // lbClientRef
-            // 
-            this.lbClientRef.AutoSize = true;
-            this.lbClientRef.Location = new System.Drawing.Point(1042, 28);
-            this.lbClientRef.Name = "lbClientRef";
-            this.lbClientRef.Size = new System.Drawing.Size(155, 28);
-            this.lbClientRef.TabIndex = 13;
-            this.lbClientRef.Text = "Client Reference:";
-            // 
-            // lbCRN
-            // 
-            this.lbCRN.Location = new System.Drawing.Point(0, 0);
-            this.lbCRN.Name = "lbCRN";
-            this.lbCRN.Size = new System.Drawing.Size(100, 23);
-            this.lbCRN.TabIndex = 18;
             // 
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
             this.panelDeliveries.Controls.Add(this.cbBName);
             this.panelDeliveries.Controls.Add(this.DatePicker);
-            this.panelDeliveries.Controls.Add(this.dataGridBookSlots);
-            this.panelDeliveries.Controls.Add(this.dataGridView1);
+            this.panelDeliveries.Controls.Add(this.dgBookDelivery);
             this.panelDeliveries.Controls.Add(this.btnBookDel);
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
             this.panelDeliveries.Name = "panelDeliveries";
-            this.panelDeliveries.Size = new System.Drawing.Size(1350, 900);
+            this.panelDeliveries.Size = new System.Drawing.Size(1064, 701);
             this.panelDeliveries.TabIndex = 15;
             // 
             // cbBName
             // 
+            this.cbBName.AllowDrop = true;
             this.cbBName.FormattingEnabled = true;
             this.cbBName.Location = new System.Drawing.Point(90, 121);
             this.cbBName.Name = "cbBName";
-            this.cbBName.Size = new System.Drawing.Size(354, 36);
+            this.cbBName.Size = new System.Drawing.Size(354, 25);
             this.cbBName.TabIndex = 5;
-            this.cbBName.Text = "Please choose";
-            this.cbBName.SelectedIndexChanged += new System.EventHandler(this.cbBName_SelectedIndexChanged);
+            this.cbBName.Click += new System.EventHandler(this.cbBName_Click);
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(666, 121);
+            this.DatePicker.Location = new System.Drawing.Point(488, 123);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(200, 34);
+            this.DatePicker.Size = new System.Drawing.Size(200, 25);
             this.DatePicker.TabIndex = 7;
             this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
             // 
-            // dataGridBookSlots
+            // dgBookDelivery
             // 
-            this.dataGridBookSlots.ColumnHeadersHeight = 34;
-            this.dataGridBookSlots.Location = new System.Drawing.Point(117, 231);
-            this.dataGridBookSlots.Name = "dataGridBookSlots";
-            this.dataGridBookSlots.RowHeadersWidth = 62;
-            this.dataGridBookSlots.Size = new System.Drawing.Size(240, 150);
-            this.dataGridBookSlots.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 34;
-            this.dataGridView1.Location = new System.Drawing.Point(396, 231);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 9;
+            this.dgBookDelivery.ColumnHeadersHeight = 34;
+            this.dgBookDelivery.Location = new System.Drawing.Point(102, 231);
+            this.dgBookDelivery.Name = "dgBookDelivery";
+            this.dgBookDelivery.RowHeadersWidth = 62;
+            this.dgBookDelivery.Size = new System.Drawing.Size(875, 467);
+            this.dgBookDelivery.TabIndex = 9;
             // 
             // btnBookDel
             // 
@@ -561,13 +553,28 @@
             this.btnBookDel.FlatAppearance.BorderSize = 0;
             this.btnBookDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookDel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBookDel.Location = new System.Drawing.Point(794, 322);
+            this.btnBookDel.Location = new System.Drawing.Point(780, 116);
             this.btnBookDel.Name = "btnBookDel";
             this.btnBookDel.Size = new System.Drawing.Size(120, 45);
             this.btnBookDel.TabIndex = 8;
             this.btnBookDel.Text = "Book Delivery";
             this.btnBookDel.UseVisualStyleBackColor = false;
             this.btnBookDel.Click += new System.EventHandler(this.btnBookDel_Click);
+            // 
+            // clientsBindingSource
+            // 
+            this.clientsBindingSource.DataMember = "Clients";
+            this.clientsBindingSource.DataSource = this.bwcDataSet;
+            // 
+            // bwcDataSet
+            // 
+            this.bwcDataSet.DataSetName = "bwcDataSet";
+            this.bwcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientsBindingSource1
+            // 
+            this.clientsBindingSource1.DataMember = "Clients";
+            this.clientsBindingSource1.DataSource = this.bwcDataSet;
             // 
             // deliveryIDDataGridViewTextBoxColumn
             // 
@@ -628,13 +635,15 @@
             // panelReports
             // 
             this.panelReports.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelReports.AutoSize = true;
+            this.panelReports.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelReports.BackColor = System.Drawing.Color.Lavender;
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
             this.panelReports.Location = new System.Drawing.Point(216, 0);
             this.panelReports.Name = "panelReports";
-            this.panelReports.Size = new System.Drawing.Size(1358, 1050);
+            this.panelReports.Size = new System.Drawing.Size(1303, 848);
             this.panelReports.TabIndex = 16;
             // 
             // btnGenReport
@@ -658,7 +667,7 @@
             this.cbReports.FormattingEnabled = true;
             this.cbReports.Location = new System.Drawing.Point(52, 53);
             this.cbReports.Name = "cbReports";
-            this.cbReports.Size = new System.Drawing.Size(966, 36);
+            this.cbReports.Size = new System.Drawing.Size(966, 25);
             this.cbReports.TabIndex = 15;
             this.cbReports.Text = "Choose a report";
             // 
@@ -666,22 +675,21 @@
             // 
             this.dataGridReports.AllowUserToDeleteRows = false;
             this.dataGridReports.AllowUserToOrderColumns = true;
-            this.dataGridReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridReports.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReports.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dataGridReports.Location = new System.Drawing.Point(52, 119);
+            this.dataGridReports.Location = new System.Drawing.Point(52, 45);
             this.dataGridReports.Name = "dataGridReports";
             this.dataGridReports.ReadOnly = true;
             this.dataGridReports.RowHeadersWidth = 62;
-            this.dataGridReports.Size = new System.Drawing.Size(2406, 1838);
+            this.dataGridReports.Size = new System.Drawing.Size(1200, 800);
             this.dataGridReports.TabIndex = 6;
             // 
             // panelAssignments
             // 
+            this.panelAssignments.AutoSize = true;
+            this.panelAssignments.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelAssignments.BackColor = System.Drawing.Color.Lavender;
             this.panelAssignments.Controls.Add(this.cbAssignments);
             this.panelAssignments.Controls.Add(this.btnAssignmentsSave);
@@ -690,17 +698,19 @@
             this.panelAssignments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAssignments.Location = new System.Drawing.Point(220, 0);
             this.panelAssignments.Name = "panelAssignments";
-            this.panelAssignments.Size = new System.Drawing.Size(1350, 900);
+            this.panelAssignments.Size = new System.Drawing.Size(1064, 701);
             this.panelAssignments.TabIndex = 17;
+            this.panelAssignments.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAssignments_Paint);
             // 
             // cbAssignments
             // 
             this.cbAssignments.FormattingEnabled = true;
-            this.cbAssignments.Location = new System.Drawing.Point(53, 30);
+            this.cbAssignments.Location = new System.Drawing.Point(75, 57);
             this.cbAssignments.Name = "cbAssignments";
-            this.cbAssignments.Size = new System.Drawing.Size(121, 36);
+            this.cbAssignments.Size = new System.Drawing.Size(356, 25);
             this.cbAssignments.TabIndex = 9;
             this.cbAssignments.Text = "Please select";
+            this.cbAssignments.SelectedIndexChanged += new System.EventHandler(this.cbAssignments_SelectedIndexChanged);
             this.cbAssignments.Click += new System.EventHandler(this.CbAssignments_Click);
             // 
             // btnAssignmentsSave
@@ -709,7 +719,7 @@
             this.btnAssignmentsSave.FlatAppearance.BorderSize = 0;
             this.btnAssignmentsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignmentsSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAssignmentsSave.Location = new System.Drawing.Point(351, 12);
+            this.btnAssignmentsSave.Location = new System.Drawing.Point(563, 54);
             this.btnAssignmentsSave.Name = "btnAssignmentsSave";
             this.btnAssignmentsSave.Size = new System.Drawing.Size(120, 45);
             this.btnAssignmentsSave.TabIndex = 8;
@@ -722,7 +732,7 @@
             this.btnAssignmentsLoad.FlatAppearance.BorderSize = 0;
             this.btnAssignmentsLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignmentsLoad.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAssignmentsLoad.Location = new System.Drawing.Point(209, 12);
+            this.btnAssignmentsLoad.Location = new System.Drawing.Point(437, 54);
             this.btnAssignmentsLoad.Name = "btnAssignmentsLoad";
             this.btnAssignmentsLoad.Size = new System.Drawing.Size(120, 45);
             this.btnAssignmentsLoad.TabIndex = 7;
@@ -734,54 +744,46 @@
             // 
             this.dataGridAssignments.AllowUserToDeleteRows = false;
             this.dataGridAssignments.AllowUserToOrderColumns = true;
+            this.dataGridAssignments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridAssignments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridAssignments.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridAssignments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAssignments.Location = new System.Drawing.Point(53, 75);
+            this.dataGridAssignments.Location = new System.Drawing.Point(20, 123);
             this.dataGridAssignments.Name = "dataGridAssignments";
             this.dataGridAssignments.ReadOnly = true;
             this.dataGridAssignments.RowHeadersWidth = 62;
-            this.dataGridAssignments.Size = new System.Drawing.Size(607, 427);
+            this.dataGridAssignments.Size = new System.Drawing.Size(994, 563);
             this.dataGridAssignments.TabIndex = 6;
             // 
-            // btnSave
+            // clientsTableAdapter
             // 
-            this.btnSave.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(729, 108);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 45);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.clientsTableAdapter.ClearBeforeFill = true;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1570, 900);
-            this.Controls.Add(this.panelClients);
-            this.Controls.Add(this.panelDeliveries);
+            this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.panelAssignments);
+            this.Controls.Add(this.panelDeliveries);
+            this.Controls.Add(this.panelClients);
             this.Controls.Add(this.panelBar);
             this.Controls.Add(this.panelReports);
-            this.Controls.Add(this.lbClientRef);
-            this.Controls.Add(this.lbCRN);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bay Wyn Couriers";
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelBar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelLoggedUser.ResumeLayout(false);
+            this.panelLoggedUser.PerformLayout();
             this.IconPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelClients.ResumeLayout(false);
@@ -791,8 +793,10 @@
             this.tabC2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).EndInit();
             this.panelDeliveries.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBookSlots)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBookDelivery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
             this.panelReports.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
             this.panelAssignments.ResumeLayout(false);
@@ -809,13 +813,11 @@
         private System.Windows.Forms.Button btnAssignments;
         private System.Windows.Forms.Button btnContracts;
         private System.Windows.Forms.Panel panelClients;
-        private System.Windows.Forms.Label lbClientRef;
         private System.Windows.Forms.TextBox tbBEmail;
         private System.Windows.Forms.TextBox tbBTel;
         private System.Windows.Forms.TextBox tbBNotes;
         private System.Windows.Forms.TextBox tbBAdd;
         private System.Windows.Forms.TextBox tbBName;
-        private System.Windows.Forms.Label lbCRN;
         private System.Windows.Forms.Label lbNotes;
         private System.Windows.Forms.Label lbTel;
         private System.Windows.Forms.Label lbBEmail;
@@ -843,8 +845,8 @@
         private System.Windows.Forms.TabPage tabC2;
         private System.Windows.Forms.DataGridView dataGridViewContracts;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panelLoggedUser;
+        private System.Windows.Forms.DataGridView dgBookDelivery;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
@@ -852,7 +854,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridBookSlots;
         private System.Windows.Forms.DateTimePicker DatePicker;
         private System.Windows.Forms.ComboBox cbBName;
         private System.Windows.Forms.Button btnCreateContract;
@@ -861,6 +862,10 @@
         private System.Windows.Forms.DataGridView DGViewContracts;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSave;
+        private bwcDataSet bwcDataSet;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
+        private bwcDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
+        private System.Windows.Forms.BindingSource clientsBindingSource1;
     }
 }
 
