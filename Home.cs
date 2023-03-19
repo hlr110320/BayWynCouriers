@@ -3,6 +3,7 @@ using System.Collections;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BayWynCouriersWinForm
 {
@@ -229,18 +230,19 @@ namespace BayWynCouriersWinForm
             HidePanels();
             panelDeliveries.Show();
 
+            BindcbBName();
+
             DateTime date = DatePicker.Value;
-
-            Clients objVC = new Clients();
-
-
-            //SortedList clients = new SortedList();
-            //clients = objVC.ViewClients();
-            //cbBName.Items.Add(clients);
 
             Deliveries objD = new Deliveries();
             objD.Date = date;
+        }
 
+        private void BindcbBName()
+        {
+            ds = bwcDataSet;
+            cbBName.DataSource = ds.Tables["Clients"];
+            cbBName.DisplayMember = "ClientName";
         }
 
         private void DatePicker_ValueChanged(object sender, EventArgs e)
@@ -248,9 +250,7 @@ namespace BayWynCouriersWinForm
             Deliveries objD = new Deliveries();
             DateTime date = DatePicker.Value;
 
-            objD.Date = date;
-
-            dgBookDelivery.DataSource = objD.ViewSlots();
+            objD.Date = date; 
         }
         private void BtnGenReport_Click(object sender, EventArgs e)
         {
@@ -309,17 +309,21 @@ namespace BayWynCouriersWinForm
 
             // Checks the see which option selected in the combo box and gets the corresponding data from the assignmnets class
             objA = new Assignments();
-
+    
+            // IF statement for checking that a report is selected.
             if (cbAssignments.Text == "Please select")
             {
                 MessageBox.Show("Please select a choice from the combo box.");
             }
             else
             {
+                // Calls the GetAssignments method in the Assignments class
                 if (cbAssignments.Text == "Get Unassigned Deliveries")
                 {
                     ds = objA.GetAssignments();
                 }
+
+                //Calls the GetUndelivered method in the Assignments class
 
                 else if (cbAssignments.Text == "Get Undelivered Assignments")
                 {
@@ -343,7 +347,6 @@ namespace BayWynCouriersWinForm
         // Method to clear the assignments datagrid
         private void ClearDGAssignments()
         {
-
             dataGridAssignments.DataSource = null;
             dataGridAssignments.Rows.Clear();
         }
@@ -376,6 +379,11 @@ namespace BayWynCouriersWinForm
             {
                 MessageBox.Show("Please select a business");
             }
+            //If statement to provide an error message if client type is default and only adds a new client if aa type is selected
+            if (tbDestination.Text == "")
+            {
+                MessageBox.Show("Please input a destination");
+            }
 
             else
             {
@@ -385,27 +393,19 @@ namespace BayWynCouriersWinForm
                 //  Sets the client class parameters with the values inputted on the form
                 objD.Name = cbBName.Text;
                 objD.Date = DatePicker.Value;
-            }
+                objD.Destination = tbDestination.Text;
 
+                objD.AddNewDelivery();
+            }
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bwcDataSet.Deliveries' table. You can move, or remove it, as needed.
+          //  this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
             // TODO: This line of code loads data into the 'bwcDataSet.Clients' table. You can move, or remove it, as needed.
             this.clientsTableAdapter.Fill(this.bwcDataSet.Clients);
 
-        }
-
-        private void cbBName_Click(object sender, EventArgs e)
-        {
-            /* XXX: This needs rewriting. It is intended to populate the combo box with the client name column values. Unable to get it to work so far. <mbp> */
-
-            //// Clients objC = new Clients();
-            //// SortedList clientsList = new SortedList();
-            //// clientsList = objC.ViewClients();
-            //// cbBName.DataSource = objC.ViewClients();
-            ////// cbBName.DataSource = IList();
-            //// cbBName.Items.AddRange(clientsList);  
         }
 
         private void cbAssignments_SelectedIndexChanged(object sender, EventArgs e)
@@ -414,6 +414,11 @@ namespace BayWynCouriersWinForm
         }
 
         private void panelAssignments_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbBName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

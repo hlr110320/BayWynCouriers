@@ -64,7 +64,6 @@
             this.panelDeliveries = new System.Windows.Forms.Panel();
             this.cbBName = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.dgBookDelivery = new System.Windows.Forms.DataGridView();
             this.btnBookDel = new System.Windows.Forms.Button();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bwcDataSet = new BayWynCouriersWinForm.bwcDataSet();
@@ -82,10 +81,19 @@
             this.dataGridReports = new System.Windows.Forms.DataGridView();
             this.panelAssignments = new System.Windows.Forms.Panel();
             this.cbAssignments = new System.Windows.Forms.ComboBox();
+            this.clientsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAssignmentsSave = new System.Windows.Forms.Button();
             this.btnAssignmentsLoad = new System.Windows.Forms.Button();
             this.dataGridAssignments = new System.Windows.Forms.DataGridView();
+            this.clientsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.clientsTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.ClientsTableAdapter();
+            this.clientsDeliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deliveriesTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.DeliveriesTableAdapter();
+            this.tbDestination = new System.Windows.Forms.TextBox();
+            this.lbDeliveryDate = new System.Windows.Forms.Label();
+            this.lbClient = new System.Windows.Forms.Label();
+            this.lbDestination = new System.Windows.Forms.Label();
             this.panelBar.SuspendLayout();
             this.panelLoggedUser.SuspendLayout();
             this.IconPanel.SuspendLayout();
@@ -96,14 +104,17 @@
             this.tabC2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).BeginInit();
             this.panelDeliveries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookDelivery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
             this.panelReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).BeginInit();
             this.panelAssignments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -133,7 +144,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.Location = new System.Drawing.Point(0, 654);
+            this.btnLogout.Location = new System.Drawing.Point(0, 594);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(220, 60);
             this.btnLogout.TabIndex = 0;
@@ -149,7 +160,7 @@
             this.panelLoggedUser.Location = new System.Drawing.Point(0, 489);
             this.panelLoggedUser.Margin = new System.Windows.Forms.Padding(0);
             this.panelLoggedUser.Name = "panelLoggedUser";
-            this.panelLoggedUser.Size = new System.Drawing.Size(220, 165);
+            this.panelLoggedUser.Size = new System.Drawing.Size(220, 105);
             this.panelLoggedUser.TabIndex = 6;
             // 
             // lbUser
@@ -159,7 +170,7 @@
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbUser.Location = new System.Drawing.Point(10, 86);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(0, 13);
+            this.lbUser.Size = new System.Drawing.Size(0, 21);
             this.lbUser.TabIndex = 5;
             // 
             // btnContracts
@@ -292,10 +303,10 @@
             this.tabC1.Controls.Add(this.lbBEmail);
             this.tabC1.Controls.Add(this.lbBAdd);
             this.tabC1.Controls.Add(this.lbName);
-            this.tabC1.Location = new System.Drawing.Point(4, 26);
+            this.tabC1.Location = new System.Drawing.Point(4, 37);
             this.tabC1.Name = "tabC1";
             this.tabC1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC1.Size = new System.Drawing.Size(1319, 671);
+            this.tabC1.Size = new System.Drawing.Size(1319, 660);
             this.tabC1.TabIndex = 0;
             this.tabC1.Text = "Create New Contract";
             // 
@@ -323,7 +334,7 @@
             "Non Contracted"});
             this.cbClientType.Location = new System.Drawing.Point(90, 20);
             this.cbClientType.Name = "cbClientType";
-            this.cbClientType.Size = new System.Drawing.Size(263, 25);
+            this.cbClientType.Size = new System.Drawing.Size(263, 36);
             this.cbClientType.TabIndex = 8;
             this.cbClientType.Text = "Client Type";
             // 
@@ -333,7 +344,7 @@
             this.tbCourierRuns.Location = new System.Drawing.Point(90, 84);
             this.tbCourierRuns.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbCourierRuns.Name = "tbCourierRuns";
-            this.tbCourierRuns.Size = new System.Drawing.Size(263, 18);
+            this.tbCourierRuns.Size = new System.Drawing.Size(263, 27);
             this.tbCourierRuns.TabIndex = 9;
             // 
             // ContractRuns
@@ -341,7 +352,7 @@
             this.ContractRuns.AutoSize = true;
             this.ContractRuns.Location = new System.Drawing.Point(93, 59);
             this.ContractRuns.Name = "ContractRuns";
-            this.ContractRuns.Size = new System.Drawing.Size(91, 19);
+            this.ContractRuns.Size = new System.Drawing.Size(127, 28);
             this.ContractRuns.TabIndex = 15;
             this.ContractRuns.Text = "Courier Runs:";
             // 
@@ -365,7 +376,7 @@
             this.tbBEmail.Location = new System.Drawing.Point(90, 332);
             this.tbBEmail.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBEmail.Name = "tbBEmail";
-            this.tbBEmail.Size = new System.Drawing.Size(830, 18);
+            this.tbBEmail.Size = new System.Drawing.Size(830, 27);
             this.tbBEmail.TabIndex = 13;
             // 
             // tbBTel
@@ -374,7 +385,7 @@
             this.tbBTel.Location = new System.Drawing.Point(90, 276);
             this.tbBTel.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBTel.Name = "tbBTel";
-            this.tbBTel.Size = new System.Drawing.Size(830, 18);
+            this.tbBTel.Size = new System.Drawing.Size(830, 27);
             this.tbBTel.TabIndex = 12;
             // 
             // tbBNotes
@@ -402,7 +413,7 @@
             this.tbBName.Location = new System.Drawing.Point(90, 139);
             this.tbBName.MinimumSize = new System.Drawing.Size(100, 25);
             this.tbBName.Name = "tbBName";
-            this.tbBName.Size = new System.Drawing.Size(830, 18);
+            this.tbBName.Size = new System.Drawing.Size(830, 27);
             this.tbBName.TabIndex = 10;
             // 
             // lbNotes
@@ -410,7 +421,7 @@
             this.lbNotes.AutoSize = true;
             this.lbNotes.Location = new System.Drawing.Point(93, 359);
             this.lbNotes.Name = "lbNotes";
-            this.lbNotes.Size = new System.Drawing.Size(48, 19);
+            this.lbNotes.Size = new System.Drawing.Size(68, 28);
             this.lbNotes.TabIndex = 4;
             this.lbNotes.Text = "Notes:";
             // 
@@ -419,7 +430,7 @@
             this.lbTel.AutoSize = true;
             this.lbTel.Location = new System.Drawing.Point(93, 249);
             this.lbTel.Name = "lbTel";
-            this.lbTel.Size = new System.Drawing.Size(74, 19);
+            this.lbTel.Size = new System.Drawing.Size(105, 28);
             this.lbTel.TabIndex = 3;
             this.lbTel.Text = "Telephone:";
             // 
@@ -428,7 +439,7 @@
             this.lbBEmail.AutoSize = true;
             this.lbBEmail.Location = new System.Drawing.Point(93, 304);
             this.lbBEmail.Name = "lbBEmail";
-            this.lbBEmail.Size = new System.Drawing.Size(44, 19);
+            this.lbBEmail.Size = new System.Drawing.Size(63, 28);
             this.lbBEmail.TabIndex = 2;
             this.lbBEmail.Text = "Email:";
             // 
@@ -437,7 +448,7 @@
             this.lbBAdd.AutoSize = true;
             this.lbBAdd.Location = new System.Drawing.Point(93, 169);
             this.lbBAdd.Name = "lbBAdd";
-            this.lbBAdd.Size = new System.Drawing.Size(117, 19);
+            this.lbBAdd.Size = new System.Drawing.Size(163, 28);
             this.lbBAdd.TabIndex = 1;
             this.lbBAdd.Text = "Business Address:";
             // 
@@ -446,7 +457,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Location = new System.Drawing.Point(93, 114);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(104, 19);
+            this.lbName.Size = new System.Drawing.Size(145, 28);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Business Name:";
             // 
@@ -456,10 +467,10 @@
             this.tabC2.Controls.Add(this.btnSave);
             this.tabC2.Controls.Add(this.btnRefresh);
             this.tabC2.Controls.Add(this.DGViewContracts);
-            this.tabC2.Location = new System.Drawing.Point(4, 26);
+            this.tabC2.Location = new System.Drawing.Point(4, 37);
             this.tabC2.Name = "tabC2";
             this.tabC2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC2.Size = new System.Drawing.Size(1319, 870);
+            this.tabC2.Size = new System.Drawing.Size(1319, 660);
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
             // 
@@ -504,15 +515,18 @@
             this.DGViewContracts.Name = "DGViewContracts";
             this.DGViewContracts.RowHeadersWidth = 62;
             this.DGViewContracts.RowTemplate.Height = 28;
-            this.DGViewContracts.Size = new System.Drawing.Size(653, 864);
+            this.DGViewContracts.Size = new System.Drawing.Size(653, 654);
             this.DGViewContracts.TabIndex = 0;
             // 
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
+            this.panelDeliveries.Controls.Add(this.lbDestination);
+            this.panelDeliveries.Controls.Add(this.lbClient);
+            this.panelDeliveries.Controls.Add(this.lbDeliveryDate);
+            this.panelDeliveries.Controls.Add(this.tbDestination);
             this.panelDeliveries.Controls.Add(this.cbBName);
             this.panelDeliveries.Controls.Add(this.DatePicker);
-            this.panelDeliveries.Controls.Add(this.dgBookDelivery);
             this.panelDeliveries.Controls.Add(this.btnBookDel);
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
@@ -524,28 +538,19 @@
             // 
             this.cbBName.AllowDrop = true;
             this.cbBName.FormattingEnabled = true;
-            this.cbBName.Location = new System.Drawing.Point(90, 121);
+            this.cbBName.Location = new System.Drawing.Point(90, 184);
             this.cbBName.Name = "cbBName";
-            this.cbBName.Size = new System.Drawing.Size(354, 25);
+            this.cbBName.Size = new System.Drawing.Size(354, 36);
             this.cbBName.TabIndex = 5;
-            this.cbBName.Click += new System.EventHandler(this.cbBName_Click);
+            this.cbBName.SelectedIndexChanged += new System.EventHandler(this.cbBName_SelectedIndexChanged);
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(488, 123);
+            this.DatePicker.Location = new System.Drawing.Point(90, 270);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(200, 25);
+            this.DatePicker.Size = new System.Drawing.Size(200, 34);
             this.DatePicker.TabIndex = 7;
             this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
-            // 
-            // dgBookDelivery
-            // 
-            this.dgBookDelivery.ColumnHeadersHeight = 34;
-            this.dgBookDelivery.Location = new System.Drawing.Point(102, 231);
-            this.dgBookDelivery.Name = "dgBookDelivery";
-            this.dgBookDelivery.RowHeadersWidth = 62;
-            this.dgBookDelivery.Size = new System.Drawing.Size(875, 467);
-            this.dgBookDelivery.TabIndex = 9;
             // 
             // btnBookDel
             // 
@@ -553,7 +558,7 @@
             this.btnBookDel.FlatAppearance.BorderSize = 0;
             this.btnBookDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookDel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBookDel.Location = new System.Drawing.Point(780, 116);
+            this.btnBookDel.Location = new System.Drawing.Point(324, 444);
             this.btnBookDel.Name = "btnBookDel";
             this.btnBookDel.Size = new System.Drawing.Size(120, 45);
             this.btnBookDel.TabIndex = 8;
@@ -667,7 +672,7 @@
             this.cbReports.FormattingEnabled = true;
             this.cbReports.Location = new System.Drawing.Point(52, 53);
             this.cbReports.Name = "cbReports";
-            this.cbReports.Size = new System.Drawing.Size(966, 25);
+            this.cbReports.Size = new System.Drawing.Size(966, 36);
             this.cbReports.TabIndex = 15;
             this.cbReports.Text = "Choose a report";
             // 
@@ -704,14 +709,27 @@
             // 
             // cbAssignments
             // 
+            this.cbAssignments.AllowDrop = true;
+            this.cbAssignments.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbAssignments.DataBindings.Add(new System.Windows.Forms.Binding("ValueMember", this.clientsBindingSource3, "ClientName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbAssignments.DataSource = this.clientsBindingSource4;
             this.cbAssignments.FormattingEnabled = true;
             this.cbAssignments.Location = new System.Drawing.Point(75, 57);
             this.cbAssignments.Name = "cbAssignments";
-            this.cbAssignments.Size = new System.Drawing.Size(356, 25);
+            this.cbAssignments.Size = new System.Drawing.Size(356, 36);
             this.cbAssignments.TabIndex = 9;
-            this.cbAssignments.Text = "Please select";
             this.cbAssignments.SelectedIndexChanged += new System.EventHandler(this.cbAssignments_SelectedIndexChanged);
             this.cbAssignments.Click += new System.EventHandler(this.CbAssignments_Click);
+            // 
+            // clientsBindingSource3
+            // 
+            this.clientsBindingSource3.DataMember = "Clients";
+            this.clientsBindingSource3.DataSource = this.bwcDataSet;
+            // 
+            // clientsBindingSource4
+            // 
+            this.clientsBindingSource4.DataMember = "Clients";
+            this.clientsBindingSource4.DataSource = this.bwcDataSet;
             // 
             // btnAssignmentsSave
             // 
@@ -756,20 +774,68 @@
             this.dataGridAssignments.Size = new System.Drawing.Size(994, 563);
             this.dataGridAssignments.TabIndex = 6;
             // 
+            // clientsBindingSource2
+            // 
+            this.clientsBindingSource2.DataMember = "Clients";
+            this.clientsBindingSource2.DataSource = this.bwcDataSet;
+            // 
             // clientsTableAdapter
             // 
             this.clientsTableAdapter.ClearBeforeFill = true;
             // 
+            // clientsDeliveriesBindingSource
+            // 
+            this.clientsDeliveriesBindingSource.DataMember = "ClientsDeliveries";
+            this.clientsDeliveriesBindingSource.DataSource = this.clientsBindingSource2;
+            // 
+            // deliveriesTableAdapter
+            // 
+            this.deliveriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbDestination
+            // 
+            this.tbDestination.Location = new System.Drawing.Point(90, 354);
+            this.tbDestination.Name = "tbDestination";
+            this.tbDestination.Size = new System.Drawing.Size(799, 34);
+            this.tbDestination.TabIndex = 9;
+            // 
+            // lbDeliveryDate
+            // 
+            this.lbDeliveryDate.AutoSize = true;
+            this.lbDeliveryDate.Location = new System.Drawing.Point(89, 231);
+            this.lbDeliveryDate.Name = "lbDeliveryDate";
+            this.lbDeliveryDate.Size = new System.Drawing.Size(133, 28);
+            this.lbDeliveryDate.TabIndex = 10;
+            this.lbDeliveryDate.Text = "Delivery Date:";
+            // 
+            // lbClient
+            // 
+            this.lbClient.AutoSize = true;
+            this.lbClient.Location = new System.Drawing.Point(89, 145);
+            this.lbClient.Name = "lbClient";
+            this.lbClient.Size = new System.Drawing.Size(66, 28);
+            this.lbClient.TabIndex = 11;
+            this.lbClient.Text = "Client:";
+            // 
+            // lbDestination
+            // 
+            this.lbDestination.AutoSize = true;
+            this.lbDestination.Location = new System.Drawing.Point(89, 315);
+            this.lbDestination.Name = "lbDestination";
+            this.lbDestination.Size = new System.Drawing.Size(116, 28);
+            this.lbDestination.TabIndex = 12;
+            this.lbDestination.Text = "Destination:";
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1284, 701);
-            this.Controls.Add(this.panelAssignments);
             this.Controls.Add(this.panelDeliveries);
+            this.Controls.Add(this.panelAssignments);
             this.Controls.Add(this.panelClients);
             this.Controls.Add(this.panelBar);
             this.Controls.Add(this.panelReports);
@@ -793,14 +859,18 @@
             this.tabC2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGViewContracts)).EndInit();
             this.panelDeliveries.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgBookDelivery)).EndInit();
+            this.panelDeliveries.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
             this.panelReports.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReports)).EndInit();
             this.panelAssignments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -846,7 +916,6 @@
         private System.Windows.Forms.DataGridView dataGridViewContracts;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panelLoggedUser;
-        private System.Windows.Forms.DataGridView dgBookDelivery;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
@@ -866,6 +935,15 @@
         private System.Windows.Forms.BindingSource clientsBindingSource;
         private bwcDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
         private System.Windows.Forms.BindingSource clientsBindingSource1;
+        private System.Windows.Forms.BindingSource clientsBindingSource3;
+        private System.Windows.Forms.BindingSource clientsBindingSource2;
+        private System.Windows.Forms.BindingSource clientsDeliveriesBindingSource;
+        private bwcDataSetTableAdapters.DeliveriesTableAdapter deliveriesTableAdapter;
+        private System.Windows.Forms.BindingSource clientsBindingSource4;
+        private System.Windows.Forms.Label lbDestination;
+        private System.Windows.Forms.Label lbClient;
+        private System.Windows.Forms.Label lbDeliveryDate;
+        private System.Windows.Forms.TextBox tbDestination;
     }
 }
 

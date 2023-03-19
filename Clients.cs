@@ -193,7 +193,6 @@ namespace BayWynCouriersWinForm
         public void SaveContracts()
 
         {
-            ;
             daVC.Update(dsVC);
 
         }
@@ -208,43 +207,31 @@ namespace BayWynCouriersWinForm
         /* XXX: This 
         does not work and needs rewriting. Unable to ret <mbp> */
 
-        //public SortedList ViewClients()
-        //{
-        //    DataSet DS = new DataSet();
-        //    Getting and opening the connection string
-        //    string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
-        //    OleDbConnection con = new OleDbConnection(bwcCon);
-        //    con.Open();
+        public DataSet ViewClients()
+        {
+            DataSet dsVC = new DataSet();
+            // Getting and opening the connection string
+            string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(bwcCon);
+            con.Open();
 
-        //    Setting the sql command and adapter to access the all contract data from the database
+            // Setting the sql command and adapter to access the all contract data from the database
 
-        //   OleDbCommand cmVC = new OleDbCommand();
-        //    cmVC.Connection = con;
-        //    cmVC.CommandType = CommandType.Text;
-        //    Selects all from the ClientName column in the Clients table
-        //    cmVC.CommandText = "Select * from Clients";
-        //    OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC);
-        //    daVC.Fill(DS);
+            OleDbCommand cmVC = new OleDbCommand();
+            cmVC.Connection = con;
+            cmVC.CommandType = CommandType.Text;
+            // Selects all from the ClientName column in the Clients table
+            cmVC.CommandText = "Select ClientName FROM Clients";
+            using (OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC))
+            {
+                daVC.Fill(dsVC);
+            }
 
-        //    OleDbDataReader dr = cmVC.ExecuteReader();
+            con.Close();
+            // Returns the filled dataset of clients
+            return dsVC;
 
-        //    SortedList clients = new SortedList();
-
-
-        //    while (dr.Read())
-        //    {
-
-        //        clients.Add(dr[0], dr[1]);
-        //    }
-
-        //    dr.Close();
-        //    con.Close();
-
-        //    Returns the filled dataset of clients
-        //    return clients;
-
-
+        }
     }
-
 }
 

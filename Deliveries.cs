@@ -15,6 +15,7 @@ namespace BayWynCouriersWinForm
         private DateTime _Time;
         private string _Name;
         private int _ClientPhone;
+        private string _Destination;
 
         // Declares a ClientID property of type int
         public int ClientID
@@ -81,12 +82,26 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        // Declare a ClientPhone property of type int
+        public string Destination
+        {
+            get
+            {
+                return _Destination;
+            }
+            set
+            {
+                
+                _Destination = value;
+            }
+        }
+
         public void AddNewDelivery()
         {
             string connnectionString = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
-            string sql = "INSERT INTO Deliveries (Date, Time, ClientIName VALUES('" + _Date + "','" + _Time + "','" + _Name + "')";
+            string sql = "INSERT INTO Deliveries (Date, ClientName, Destination VALUES('" + _Date + "','" + _Name + "','" + _Destination + "')";
             OleDbCommand command = new OleDbCommand(sql, connection);
             connection.Open();
             reader = command.ExecuteReader();

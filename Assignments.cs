@@ -49,31 +49,34 @@ namespace BayWynCouriersWinForm
             //Closed the connection to the database
             con.Close();
 
+            //Returns the dataset from the class
             return dsA;
         }
 
-        //public DataSet AcceptAssignments()
-        //{
-        //    DataSet ds = new DataSet();
+        public DataSet AcceptAssignments()
+        {
+            // Initialises a new dataset
+            DataSet ds = new DataSet();
 
-        //    // Getting and opening the connection string
-        //    string bwcCon = ConfigurationManager.ConnectionStrings["BayWynCouriersWinForm.Properties.Settings.bwcCon"].ConnectionString;
-        //    OleDbConnection con = new OleDbConnection(bwcCon);
-        //    con.Open();
+            // Getting and opening the connection string
+            string bwcCon = ConfigurationManager.ConnectionStrings["BayWynCouriersWinForm.Properties.Settings.bwcCon"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(bwcCon);
+            con.Open();
 
-        //    // Setting the sql command and adapter
-        //    OleDbCommand cmA = new OleDbCommand();
-        //    cmA.Connection = con;
-        //    cmA.CommandType = CommandType.Text;
-        //    cmA.CommandText = "Select * from Deliveries where CourierID Is NULL";
-        //    OleDbDataAdapter dA = new OleDbDataAdapter(cmA);
+            // Setting the database command and adapter
+            OleDbCommand cmA = new OleDbCommand();
+            cmA.Connection = con;
+            cmA.CommandType = CommandType.Text;
+            // SQL statement for accepting a delivery
+            cmA.CommandText = "Select * from Deliveries where SlotID Is NULL";
+            OleDbDataAdapter dA = new OleDbDataAdapter(cmA);
 
-        //    dA.Fill(ds);
-        //    con.Close();
+            dA.Fill(ds);
+            con.Close();
 
-        //    return ds;
+            return ds;
 
-        //}
+        }
 
 
         /// <summary>
@@ -93,7 +96,7 @@ namespace BayWynCouriersWinForm
             OleDbCommand cmU = new OleDbCommand();
             cmU.Connection = con;
             cmU.CommandType = CommandType.Text;
-            cmU.CommandText = "Select From Deliveries, Clients, Slots, Couriers WHERE Deliveries.Delivered Is NULL";
+            cmU.CommandText = "SELECT Deliveries.DeliveryID, Deliveries.Date, Deliveries.ClientID, Deliveries.Delivered, Deliveries.Destination, Clients.ClientID, Clients.ClientName, Slots.SlotID, FROM Deliveries, Clients, Slots, Couriers WHERE Deliveries.Delivered IS NULL";
             OleDbDataAdapter daU = new OleDbDataAdapter(cmU);
 
             daU.Fill(dsU);
