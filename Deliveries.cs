@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
@@ -95,18 +96,28 @@ namespace BayWynCouriersWinForm
                 _Destination = value;
             }
         }
-
+        /// <summary>
+        /// Method to add a new delivery 
+        /// </summary>
         public void AddNewDelivery()
         {
+            // Sets the connection
             string connnectionString = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
-            string sql = "INSERT INTO Deliveries (Date, ClientName, Destination VALUES('" + _Date + "','" + _Name + "','" + _Destination + "')";
+
+            // XXX: SQL Statement works except for the client ID
+            string sql = "SELECT ClientID FROM Clients WHERE ClientName = '" + _Name + "' AND INSERT INTO Deliveries (Date, ClientID, Destination) VALUES ('" + _Date + "', ClientID,'" + _Destination + "')";
+            
+            // Sets a new command and inserts the sql statement and connection string
             OleDbCommand command = new OleDbCommand(sql, connection);
+            //Opens the connection
             connection.Open();
             reader = command.ExecuteReader();
+            // Closed the connection
             connection.Close();
 
+            // Window to show delivery added successfully
             MessageBox.Show("New delivery added.");
         }
         public DataSet ViewSlots()

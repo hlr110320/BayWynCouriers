@@ -96,12 +96,16 @@ namespace BayWynCouriersWinForm
             OleDbCommand cmU = new OleDbCommand();
             cmU.Connection = con;
             cmU.CommandType = CommandType.Text;
-            cmU.CommandText = "SELECT Deliveries.DeliveryID, Deliveries.Date, Deliveries.ClientID, Deliveries.Delivered, Deliveries.Destination, Clients.ClientID, Clients.ClientName, Slots.SlotID, FROM Deliveries, Clients, Slots, Couriers WHERE Deliveries.Delivered IS NULL";
+            cmU.CommandText = "SELECT * FROM Deliveries WHERE Delivered = 0";
             OleDbDataAdapter daU = new OleDbDataAdapter(cmU);
 
+            // Fills the dataadaprted with the dataset returned from the database
             daU.Fill(dsU);
+
+            //Closes the connection
             con.Close();
 
+            //Returns the dataset
             return dsU;
         }
 

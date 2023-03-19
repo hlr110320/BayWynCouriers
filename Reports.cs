@@ -15,6 +15,7 @@ namespace BayWynCouriersWinForm
         private static string MonthAssignmentsReport = "Month Courier Assignments";
         private static string AllAssignmentsMonthReport = "All assignments for given month";
         private static string MonthContractValueReport = "Value of contracts for given month";
+        private static string CourierID;
 
         public string ChosenReport;
 
@@ -55,6 +56,18 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        public string _CourierID
+        {
+            get
+            {
+                return CourierID;
+            }
+
+            set
+            {
+                CourierID = value;
+            }
+        }
 
         /// <summary>
         /// A report to get all todays deliveries for chosen courier

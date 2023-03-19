@@ -90,7 +90,7 @@
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lbUserName.Location = new System.Drawing.Point(233, 62);
+            this.lbUserName.Location = new System.Drawing.Point(233, 67);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(111, 30);
@@ -103,7 +103,7 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lbPassword.Location = new System.Drawing.Point(237, 141);
+            this.lbPassword.Location = new System.Drawing.Point(237, 146);
             this.lbPassword.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(103, 30);
@@ -127,7 +127,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 344);
+            this.panel1.Size = new System.Drawing.Size(177, 344);
             this.panel1.TabIndex = 6;
             // 
             // pictureBox1

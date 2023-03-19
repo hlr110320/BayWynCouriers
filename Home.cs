@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace BayWynCouriersWinForm
         Reports objEC;
         DataRow dr;
         DataSet ds;
+        DataSet ds1;
 
         private readonly OleDbConnection con = new OleDbConnection();
         public Home()
@@ -77,7 +79,6 @@ namespace BayWynCouriersWinForm
         /// </summary>
         private void HideForAl3()
         {
-            btnReports.Hide();
             btnContracts.Hide();
             btnDeliveries.Hide();
         }
@@ -109,7 +110,6 @@ namespace BayWynCouriersWinForm
             {
                 cbReports.Items.Clear();
                 cbReports.Items.AddRange(Reports.getAl1Reports());
-
             }
             else if (User.AccessLevel == 2)
             {
@@ -123,14 +123,19 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        // Client event for the Contracts button
         private void BtnContracts_Click(object sender, EventArgs e)
         {
+            // Calls the hide panels method to hide all panels
             HidePanels();
 
+            //Shows the clients panel
             panelClients.Show();
 
+            //Checks if access level is 3
             if (User.AccessLevel == 3)
             {
+                // Shows and hides the appropriate controls
                 ContractRuns.Show();
                 cbClientType.Hide();
                 tbCourierRuns.Hide();
@@ -138,6 +143,7 @@ namespace BayWynCouriersWinForm
                 this.dataGridViewContracts.ReadOnly = true;
             }
 
+            // Calls the ClearDGContracts method to clear the datagridview
             ClearDGContracts();
 
             // Calls the update view contracts method to refresh the contracts datagrid from the database
@@ -152,7 +158,7 @@ namespace BayWynCouriersWinForm
             ds = objVC.ViewContracts();
 
             // Gets the data and populates the Data grid with values
-            //  dr = ds.Tables[0].Rows[0];
+            dr = ds.Tables[0].Rows[0];
             DGViewContracts.DataSource = ds.Tables[0];
         }
         private void btnCreateContract_Click(object sender, EventArgs e)
@@ -198,6 +204,7 @@ namespace BayWynCouriersWinForm
             tbBTel.Text = "";
         }
 
+        // Clears the datagrid view
         private void ClearDGContracts()
         {
             DGViewContracts.DataSource = null;
@@ -213,9 +220,9 @@ namespace BayWynCouriersWinForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            objVC.SaveContracts();
 
-
+            DGViewContracts.Update();
+             
         }
 
 
@@ -245,6 +252,13 @@ namespace BayWynCouriersWinForm
             cbBName.DisplayMember = "ClientName";
         }
 
+        private void BindcbCouriers()
+        {
+            ds1 = bwcDataSet;
+            cbCouriers.DataSource = ds.Tables["Couriers"];
+            cbCouriers.DisplayMember = "CourierID";
+        }
+
         private void DatePicker_ValueChanged(object sender, EventArgs e)
         {
             Deliveries objD = new Deliveries();
@@ -262,6 +276,8 @@ namespace BayWynCouriersWinForm
 
             string chosenReport = cbReports.Text;
             objR._ChosenReport = chosenReport;
+            string courier = cbCouriers.Text;
+            objR._CourierID = courier;
 
 
             if (cbReports.Text == "Choose a report")
@@ -401,8 +417,10 @@ namespace BayWynCouriersWinForm
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bwcDataSet.Couriers' table. You can move, or remove it, as needed.
+            this.couriersTableAdapter.Fill(this.bwcDataSet.Couriers);
             // TODO: This line of code loads data into the 'bwcDataSet.Deliveries' table. You can move, or remove it, as needed.
-          //  this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
+            //  this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
             // TODO: This line of code loads data into the 'bwcDataSet.Clients' table. You can move, or remove it, as needed.
             this.clientsTableAdapter.Fill(this.bwcDataSet.Clients);
 

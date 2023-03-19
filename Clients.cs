@@ -3,12 +3,16 @@ using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
 {
     class Clients
     {
+        /// <summary>
+        ///  Initialisation of properties and variables of the clients class
+        /// </summary>
         private int _ClientID;
         private string _ClientName;
         private string _ClientAdd;
@@ -22,6 +26,7 @@ namespace BayWynCouriersWinForm
         internal static object cbBName;
         internal DataSet dsVC;
         internal OleDbDataAdapter daVC;
+
 
         // Declares a ClientID property of type int
         public int ClientID
@@ -63,7 +68,7 @@ namespace BayWynCouriersWinForm
             }
         }
 
-        // Declare a ClientPhone property of type stering
+        // Declare a ClientPhone property of type string
         public string ClientPhone
         {
             get
@@ -146,6 +151,7 @@ namespace BayWynCouriersWinForm
                 _ClientRunTotal = value;
             }
         }
+        // Declares a CourierRuns property of type int
         public int CourierRuns
         {
             get
@@ -158,17 +164,25 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        /// <summary>
+        /// Method to add a new contract using the data input on the 'create new contract' screen
+        /// </summary>
         public void AddNewContract()
         {
+            // Getting the connection string
             string connnectionString = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
+
+            // Setting up the reader and database connection
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
+            // Setting the SQL command
             string sql = "INSERT INTO Clients (ClientName, ClientAdd, ClientPhone, ClientEmail, ClientInfo, ContractType, ClientStartDate, ContractedCourierRuns) VALUES('" + _ClientName + "','" + _ClientAdd + "','" + _ClientPhone + "','" + _ClientEmail + "','" + _ClientInfo + "','" + _ContractType + "','" + _ClientStartDate + "','" + _CourierRuns + "')";
             OleDbCommand command = new OleDbCommand(sql, connection);
             connection.Open();
             reader = command.ExecuteReader();
             connection.Close();
 
+            // Messagebox to show new client contract added
             MessageBox.Show("New client contract added!");
         }
         public DataSet ViewContracts()
@@ -178,11 +192,14 @@ namespace BayWynCouriersWinForm
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
             OleDbConnection con = new OleDbConnection(bwcCon);
             con.Open();
-            // Setting the sql command and adapter to access the all contract data from the database
+            // Setting the sql command and adapter to access all contract data from the database
             OleDbCommand cmVC = new OleDbCommand();
             cmVC.Connection = con;
             cmVC.CommandType = CommandType.Text;
+            // SQL command
             cmVC.CommandText = "Select * from Clients";
+
+            //Sets a dataadapted and fills it with the dataset rturned from the database query
             OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC);
             daVC.Fill(dsVC);
 
@@ -193,7 +210,9 @@ namespace BayWynCouriersWinForm
         public void SaveContracts()
 
         {
-            daVC.Update(dsVC);
+            //  daVC.Update(dsVC)
+
+
 
         }
 
@@ -204,9 +223,6 @@ namespace BayWynCouriersWinForm
         /// </summary>
         /// <returns></returns>
         /// 
-        /* XXX: This 
-        does not work and needs rewriting. Unable to ret <mbp> */
-
         public DataSet ViewClients()
         {
             DataSet dsVC = new DataSet();

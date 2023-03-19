@@ -94,6 +94,23 @@
             this.lbDeliveryDate = new System.Windows.Forms.Label();
             this.lbClient = new System.Windows.Forms.Label();
             this.lbDestination = new System.Windows.Forms.Label();
+            this.clientsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientAddDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientInfoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractedCourierRunsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courierRunsToDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courierRunsCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbCouriers = new System.Windows.Forms.ComboBox();
+            this.couriersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.couriersTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.CouriersTableAdapter();
+            this.couriersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.panelBar.SuspendLayout();
             this.panelLoggedUser.SuspendLayout();
             this.IconPanel.SuspendLayout();
@@ -115,6 +132,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -175,6 +196,7 @@
             // 
             // btnContracts
             // 
+            this.btnContracts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnContracts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnContracts.FlatAppearance.BorderSize = 0;
             this.btnContracts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -193,6 +215,7 @@
             // 
             // btnReports
             // 
+            this.btnReports.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnReports.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReports.FlatAppearance.BorderSize = 0;
             this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -210,6 +233,7 @@
             // 
             // btnDeliveries
             // 
+            this.btnDeliveries.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDeliveries.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDeliveries.FlatAppearance.BorderSize = 0;
             this.btnDeliveries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -227,6 +251,7 @@
             // 
             // btnAssignments
             // 
+            this.btnAssignments.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAssignments.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAssignments.FlatAppearance.BorderSize = 0;
             this.btnAssignments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -281,7 +306,8 @@
             this.tabContracts.Location = new System.Drawing.Point(0, 0);
             this.tabContracts.Name = "tabContracts";
             this.tabContracts.SelectedIndex = 0;
-            this.tabContracts.Size = new System.Drawing.Size(1327, 701);
+            this.tabContracts.Size = new System.Drawing.Size(1052, 701);
+            this.tabContracts.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabContracts.TabIndex = 7;
             // 
             // tabC1
@@ -306,7 +332,7 @@
             this.tabC1.Location = new System.Drawing.Point(4, 37);
             this.tabC1.Name = "tabC1";
             this.tabC1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC1.Size = new System.Drawing.Size(1319, 660);
+            this.tabC1.Size = new System.Drawing.Size(1044, 660);
             this.tabC1.TabIndex = 0;
             this.tabC1.Text = "Create New Contract";
             // 
@@ -470,7 +496,7 @@
             this.tabC2.Location = new System.Drawing.Point(4, 37);
             this.tabC2.Name = "tabC2";
             this.tabC2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC2.Size = new System.Drawing.Size(1319, 660);
+            this.tabC2.Size = new System.Drawing.Size(1044, 660);
             this.tabC2.TabIndex = 1;
             this.tabC2.Text = "View Contracts";
             // 
@@ -480,7 +506,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(729, 108);
+            this.btnSave.Location = new System.Drawing.Point(920, 128);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 45);
             this.btnSave.TabIndex = 17;
@@ -494,7 +520,7 @@
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRefresh.Location = new System.Drawing.Point(729, 38);
+            this.btnRefresh.Location = new System.Drawing.Point(920, 58);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(90, 45);
             this.btnRefresh.TabIndex = 16;
@@ -506,16 +532,30 @@
             // 
             this.DGViewContracts.AllowUserToDeleteRows = false;
             this.DGViewContracts.AllowUserToOrderColumns = true;
+            this.DGViewContracts.AutoGenerateColumns = false;
             this.DGViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.DGViewContracts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGViewContracts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientIDDataGridViewTextBoxColumn,
+            this.clientNameDataGridViewTextBoxColumn,
+            this.clientAddDataGridViewTextBoxColumn,
+            this.clientPhoneDataGridViewTextBoxColumn,
+            this.clientEmailDataGridViewTextBoxColumn,
+            this.clientInfoDataGridViewTextBoxColumn,
+            this.contractTypeDataGridViewTextBoxColumn,
+            this.clientStartDateDataGridViewTextBoxColumn,
+            this.contractedCourierRunsDataGridViewTextBoxColumn,
+            this.courierRunsToDateDataGridViewTextBoxColumn,
+            this.courierRunsCostDataGridViewTextBoxColumn});
+            this.DGViewContracts.DataSource = this.clientsBindingSource6;
             this.DGViewContracts.Dock = System.Windows.Forms.DockStyle.Left;
             this.DGViewContracts.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGViewContracts.Location = new System.Drawing.Point(3, 3);
             this.DGViewContracts.Name = "DGViewContracts";
             this.DGViewContracts.RowHeadersWidth = 62;
             this.DGViewContracts.RowTemplate.Height = 28;
-            this.DGViewContracts.Size = new System.Drawing.Size(653, 654);
+            this.DGViewContracts.Size = new System.Drawing.Size(892, 654);
             this.DGViewContracts.TabIndex = 0;
             // 
             // panelDeliveries
@@ -639,16 +679,17 @@
             // 
             // panelReports
             // 
-            this.panelReports.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelReports.AutoSize = true;
             this.panelReports.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelReports.BackColor = System.Drawing.Color.Lavender;
+            this.panelReports.Controls.Add(this.cbCouriers);
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
-            this.panelReports.Location = new System.Drawing.Point(216, 0);
+            this.panelReports.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelReports.Location = new System.Drawing.Point(220, 0);
             this.panelReports.Name = "panelReports";
-            this.panelReports.Size = new System.Drawing.Size(1303, 848);
+            this.panelReports.Size = new System.Drawing.Size(1025, 701);
             this.panelReports.TabIndex = 16;
             // 
             // btnGenReport
@@ -657,9 +698,9 @@
             this.btnGenReport.FlatAppearance.BorderSize = 0;
             this.btnGenReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenReport.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGenReport.Location = new System.Drawing.Point(1158, 47);
+            this.btnGenReport.Location = new System.Drawing.Point(861, 37);
             this.btnGenReport.Name = "btnGenReport";
-            this.btnGenReport.Size = new System.Drawing.Size(142, 55);
+            this.btnGenReport.Size = new System.Drawing.Size(153, 62);
             this.btnGenReport.TabIndex = 5;
             this.btnGenReport.Text = "Generate";
             this.btnGenReport.UseVisualStyleBackColor = false;
@@ -672,7 +713,7 @@
             this.cbReports.FormattingEnabled = true;
             this.cbReports.Location = new System.Drawing.Point(52, 53);
             this.cbReports.Name = "cbReports";
-            this.cbReports.Size = new System.Drawing.Size(966, 36);
+            this.cbReports.Size = new System.Drawing.Size(609, 36);
             this.cbReports.TabIndex = 15;
             this.cbReports.Text = "Choose a report";
             // 
@@ -684,11 +725,11 @@
             this.dataGridReports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReports.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dataGridReports.Location = new System.Drawing.Point(52, 45);
+            this.dataGridReports.Location = new System.Drawing.Point(48, 115);
             this.dataGridReports.Name = "dataGridReports";
             this.dataGridReports.ReadOnly = true;
             this.dataGridReports.RowHeadersWidth = 62;
-            this.dataGridReports.Size = new System.Drawing.Size(1200, 800);
+            this.dataGridReports.Size = new System.Drawing.Size(974, 539);
             this.dataGridReports.TabIndex = 6;
             // 
             // panelAssignments
@@ -711,8 +752,6 @@
             // 
             this.cbAssignments.AllowDrop = true;
             this.cbAssignments.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbAssignments.DataBindings.Add(new System.Windows.Forms.Binding("ValueMember", this.clientsBindingSource3, "ClientName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbAssignments.DataSource = this.clientsBindingSource4;
             this.cbAssignments.FormattingEnabled = true;
             this.cbAssignments.Location = new System.Drawing.Point(75, 57);
             this.cbAssignments.Name = "cbAssignments";
@@ -826,6 +865,130 @@
             this.lbDestination.TabIndex = 12;
             this.lbDestination.Text = "Destination:";
             // 
+            // clientsBindingSource5
+            // 
+            this.clientsBindingSource5.DataMember = "Clients";
+            this.clientsBindingSource5.DataSource = this.bwcDataSet;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // clientNameDataGridViewTextBoxColumn
+            // 
+            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
+            this.clientNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientAddDataGridViewTextBoxColumn
+            // 
+            this.clientAddDataGridViewTextBoxColumn.DataPropertyName = "ClientAdd";
+            this.clientAddDataGridViewTextBoxColumn.HeaderText = "ClientAdd";
+            this.clientAddDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientAddDataGridViewTextBoxColumn.Name = "clientAddDataGridViewTextBoxColumn";
+            this.clientAddDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // clientPhoneDataGridViewTextBoxColumn
+            // 
+            this.clientPhoneDataGridViewTextBoxColumn.DataPropertyName = "ClientPhone";
+            this.clientPhoneDataGridViewTextBoxColumn.HeaderText = "ClientPhone";
+            this.clientPhoneDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientPhoneDataGridViewTextBoxColumn.Name = "clientPhoneDataGridViewTextBoxColumn";
+            this.clientPhoneDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // clientEmailDataGridViewTextBoxColumn
+            // 
+            this.clientEmailDataGridViewTextBoxColumn.DataPropertyName = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
+            this.clientEmailDataGridViewTextBoxColumn.Width = 145;
+            // 
+            // clientInfoDataGridViewTextBoxColumn
+            // 
+            this.clientInfoDataGridViewTextBoxColumn.DataPropertyName = "ClientInfo";
+            this.clientInfoDataGridViewTextBoxColumn.HeaderText = "ClientInfo";
+            this.clientInfoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientInfoDataGridViewTextBoxColumn.Name = "clientInfoDataGridViewTextBoxColumn";
+            this.clientInfoDataGridViewTextBoxColumn.Width = 132;
+            // 
+            // contractTypeDataGridViewTextBoxColumn
+            // 
+            this.contractTypeDataGridViewTextBoxColumn.DataPropertyName = "ContractType";
+            this.contractTypeDataGridViewTextBoxColumn.HeaderText = "ContractType";
+            this.contractTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.contractTypeDataGridViewTextBoxColumn.Name = "contractTypeDataGridViewTextBoxColumn";
+            this.contractTypeDataGridViewTextBoxColumn.Width = 164;
+            // 
+            // clientStartDateDataGridViewTextBoxColumn
+            // 
+            this.clientStartDateDataGridViewTextBoxColumn.DataPropertyName = "ClientStartDate";
+            this.clientStartDateDataGridViewTextBoxColumn.HeaderText = "ClientStartDate";
+            this.clientStartDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientStartDateDataGridViewTextBoxColumn.Name = "clientStartDateDataGridViewTextBoxColumn";
+            this.clientStartDateDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // contractedCourierRunsDataGridViewTextBoxColumn
+            // 
+            this.contractedCourierRunsDataGridViewTextBoxColumn.DataPropertyName = "ContractedCourierRuns";
+            this.contractedCourierRunsDataGridViewTextBoxColumn.HeaderText = "ContractedCourierRuns";
+            this.contractedCourierRunsDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.contractedCourierRunsDataGridViewTextBoxColumn.Name = "contractedCourierRunsDataGridViewTextBoxColumn";
+            this.contractedCourierRunsDataGridViewTextBoxColumn.Width = 251;
+            // 
+            // courierRunsToDateDataGridViewTextBoxColumn
+            // 
+            this.courierRunsToDateDataGridViewTextBoxColumn.DataPropertyName = "CourierRunsToDate";
+            this.courierRunsToDateDataGridViewTextBoxColumn.HeaderText = "CourierRunsToDate";
+            this.courierRunsToDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.courierRunsToDateDataGridViewTextBoxColumn.Name = "courierRunsToDateDataGridViewTextBoxColumn";
+            this.courierRunsToDateDataGridViewTextBoxColumn.Width = 215;
+            // 
+            // courierRunsCostDataGridViewTextBoxColumn
+            // 
+            this.courierRunsCostDataGridViewTextBoxColumn.DataPropertyName = "CourierRunsCost";
+            this.courierRunsCostDataGridViewTextBoxColumn.HeaderText = "CourierRunsCost";
+            this.courierRunsCostDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.courierRunsCostDataGridViewTextBoxColumn.Name = "courierRunsCostDataGridViewTextBoxColumn";
+            this.courierRunsCostDataGridViewTextBoxColumn.Width = 193;
+            // 
+            // cbCouriers
+            // 
+            this.cbCouriers.BackColor = System.Drawing.Color.Lavender;
+            this.cbCouriers.DataSource = this.couriersBindingSource1;
+            this.cbCouriers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCouriers.FormattingEnabled = true;
+            this.cbCouriers.Location = new System.Drawing.Point(684, 54);
+            this.cbCouriers.Name = "cbCouriers";
+            this.cbCouriers.Size = new System.Drawing.Size(154, 36);
+            this.cbCouriers.TabIndex = 16;
+            this.cbCouriers.UseWaitCursor = true;
+            // 
+            // couriersBindingSource
+            // 
+            this.couriersBindingSource.DataMember = "Couriers";
+            this.couriersBindingSource.DataSource = this.bwcDataSet;
+            // 
+            // couriersTableAdapter
+            // 
+            this.couriersTableAdapter.ClearBeforeFill = true;
+            // 
+            // couriersBindingSource1
+            // 
+            this.couriersBindingSource1.DataMember = "Couriers";
+            this.couriersBindingSource1.DataSource = this.bwcDataSet;
+            // 
+            // clientsBindingSource6
+            // 
+            this.clientsBindingSource6.DataMember = "Clients";
+            this.clientsBindingSource6.DataSource = this.bwcDataSet;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -834,11 +997,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1284, 701);
-            this.Controls.Add(this.panelDeliveries);
-            this.Controls.Add(this.panelAssignments);
-            this.Controls.Add(this.panelClients);
-            this.Controls.Add(this.panelBar);
             this.Controls.Add(this.panelReports);
+            this.Controls.Add(this.panelDeliveries);
+            this.Controls.Add(this.panelClients);
+            this.Controls.Add(this.panelAssignments);
+            this.Controls.Add(this.panelBar);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
@@ -871,6 +1034,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAssignments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -944,6 +1111,23 @@
         private System.Windows.Forms.Label lbClient;
         private System.Windows.Forms.Label lbDeliveryDate;
         private System.Windows.Forms.TextBox tbDestination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientAddDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientInfoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contractTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientStartDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contractedCourierRunsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courierRunsToDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courierRunsCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource clientsBindingSource5;
+        private System.Windows.Forms.ComboBox cbCouriers;
+        private System.Windows.Forms.BindingSource couriersBindingSource;
+        private bwcDataSetTableAdapters.CouriersTableAdapter couriersTableAdapter;
+        private System.Windows.Forms.BindingSource couriersBindingSource1;
+        private System.Windows.Forms.BindingSource clientsBindingSource6;
     }
 }
 
