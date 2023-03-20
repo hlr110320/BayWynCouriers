@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
@@ -189,6 +187,7 @@ namespace BayWynCouriersWinForm
         // Method to retrieve all contracts from the database
         public DataSet ViewContracts()
         {
+            DataTable dtVC = new DataTable();
             DataSet dsVC = new DataSet();
             // Getting and opening the connection string
             string bwcCon = ConfigurationManager.ConnectionStrings["bwcCon"].ConnectionString;
@@ -213,11 +212,11 @@ namespace BayWynCouriersWinForm
         // TODO: Implement functionality to save the datagrid - davc.update doesnt work
         public void SaveContracts()
         {
-            //  daVC.Update(dsVC)
+            daVC.Update(dsVC);
         }
 
         /// <summary>
-        /// The SortedList ViewClients method is used to get a list of the Client names from the database. 
+        /// The ViewClients method is used to get a list of Client names from the database. 
         /// This is used to populate the business name combo box, so
         /// the user can select a business name when booking a delivery. 
         /// </summary>

@@ -75,6 +75,8 @@
             this.clientsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.bwcDataSet = new BayWynCouriersWinForm.bwcDataSet();
             this.panelDeliveries = new System.Windows.Forms.Panel();
+            this.tabDeliveries = new System.Windows.Forms.TabControl();
+            this.tD1 = new System.Windows.Forms.TabPage();
             this.lbDestination = new System.Windows.Forms.Label();
             this.lbClient = new System.Windows.Forms.Label();
             this.lbDeliveryDate = new System.Windows.Forms.Label();
@@ -82,6 +84,9 @@
             this.cbBName = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.btnBookDel = new System.Windows.Forms.Button();
+            this.tD2 = new System.Windows.Forms.TabPage();
+            this.dgViewDeliveries = new System.Windows.Forms.DataGridView();
+            this.bwcDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deliveryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,6 +116,16 @@
             this.clientsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.couriersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.couriersTableAdapter = new BayWynCouriersWinForm.bwcDataSetTableAdapters.CouriersTableAdapter();
+            this.deliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deliveryIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slotIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.deliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bwcDataSet1 = new BayWynCouriersWinForm.bwcDataSet();
+            this.clientsBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsBindingSource8 = new System.Windows.Forms.BindingSource(this.components);
             this.panelBar.SuspendLayout();
             this.panelLoggedUser.SuspendLayout();
             this.IconPanel.SuspendLayout();
@@ -123,6 +138,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).BeginInit();
             this.panelDeliveries.SuspendLayout();
+            this.tabDeliveries.SuspendLayout();
+            this.tD1.SuspendLayout();
+            this.tD2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewDeliveries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
             this.panelReports.SuspendLayout();
@@ -136,6 +156,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource8)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -659,23 +683,45 @@
             // panelDeliveries
             // 
             this.panelDeliveries.BackColor = System.Drawing.Color.Lavender;
-            this.panelDeliveries.Controls.Add(this.lbDestination);
-            this.panelDeliveries.Controls.Add(this.lbClient);
-            this.panelDeliveries.Controls.Add(this.lbDeliveryDate);
-            this.panelDeliveries.Controls.Add(this.tbDestination);
-            this.panelDeliveries.Controls.Add(this.cbBName);
-            this.panelDeliveries.Controls.Add(this.DatePicker);
-            this.panelDeliveries.Controls.Add(this.btnBookDel);
+            this.panelDeliveries.Controls.Add(this.tabDeliveries);
             this.panelDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeliveries.Location = new System.Drawing.Point(220, 0);
             this.panelDeliveries.Name = "panelDeliveries";
             this.panelDeliveries.Size = new System.Drawing.Size(1064, 701);
             this.panelDeliveries.TabIndex = 15;
             // 
+            // tabDeliveries
+            // 
+            this.tabDeliveries.Controls.Add(this.tD1);
+            this.tabDeliveries.Controls.Add(this.tD2);
+            this.tabDeliveries.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabDeliveries.Location = new System.Drawing.Point(0, 0);
+            this.tabDeliveries.Name = "tabDeliveries";
+            this.tabDeliveries.SelectedIndex = 0;
+            this.tabDeliveries.Size = new System.Drawing.Size(1052, 701);
+            this.tabDeliveries.TabIndex = 13;
+            // 
+            // tD1
+            // 
+            this.tD1.BackColor = System.Drawing.Color.Lavender;
+            this.tD1.Controls.Add(this.lbDestination);
+            this.tD1.Controls.Add(this.lbClient);
+            this.tD1.Controls.Add(this.lbDeliveryDate);
+            this.tD1.Controls.Add(this.tbDestination);
+            this.tD1.Controls.Add(this.cbBName);
+            this.tD1.Controls.Add(this.DatePicker);
+            this.tD1.Controls.Add(this.btnBookDel);
+            this.tD1.Location = new System.Drawing.Point(4, 37);
+            this.tD1.Name = "tD1";
+            this.tD1.Padding = new System.Windows.Forms.Padding(3);
+            this.tD1.Size = new System.Drawing.Size(1044, 660);
+            this.tD1.TabIndex = 0;
+            this.tD1.Text = "Add Delivery";
+            // 
             // lbDestination
             // 
             this.lbDestination.AutoSize = true;
-            this.lbDestination.Location = new System.Drawing.Point(89, 315);
+            this.lbDestination.Location = new System.Drawing.Point(85, 278);
             this.lbDestination.Name = "lbDestination";
             this.lbDestination.Size = new System.Drawing.Size(116, 28);
             this.lbDestination.TabIndex = 12;
@@ -684,7 +730,7 @@
             // lbClient
             // 
             this.lbClient.AutoSize = true;
-            this.lbClient.Location = new System.Drawing.Point(89, 145);
+            this.lbClient.Location = new System.Drawing.Point(85, 108);
             this.lbClient.Name = "lbClient";
             this.lbClient.Size = new System.Drawing.Size(66, 28);
             this.lbClient.TabIndex = 11;
@@ -693,7 +739,7 @@
             // lbDeliveryDate
             // 
             this.lbDeliveryDate.AutoSize = true;
-            this.lbDeliveryDate.Location = new System.Drawing.Point(89, 231);
+            this.lbDeliveryDate.Location = new System.Drawing.Point(85, 194);
             this.lbDeliveryDate.Name = "lbDeliveryDate";
             this.lbDeliveryDate.Size = new System.Drawing.Size(133, 28);
             this.lbDeliveryDate.TabIndex = 10;
@@ -701,23 +747,25 @@
             // 
             // tbDestination
             // 
-            this.tbDestination.Location = new System.Drawing.Point(90, 354);
+            this.tbDestination.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbDestination.Location = new System.Drawing.Point(86, 317);
             this.tbDestination.Name = "tbDestination";
-            this.tbDestination.Size = new System.Drawing.Size(799, 34);
+            this.tbDestination.Size = new System.Drawing.Size(799, 27);
             this.tbDestination.TabIndex = 9;
             // 
             // cbBName
             // 
             this.cbBName.AllowDrop = true;
             this.cbBName.FormattingEnabled = true;
-            this.cbBName.Location = new System.Drawing.Point(90, 184);
+            this.cbBName.Location = new System.Drawing.Point(86, 147);
             this.cbBName.Name = "cbBName";
             this.cbBName.Size = new System.Drawing.Size(354, 36);
             this.cbBName.TabIndex = 5;
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(90, 270);
+            this.DatePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DatePicker.Location = new System.Drawing.Point(86, 233);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.Size = new System.Drawing.Size(200, 34);
             this.DatePicker.TabIndex = 7;
@@ -729,13 +777,52 @@
             this.btnBookDel.FlatAppearance.BorderSize = 0;
             this.btnBookDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookDel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBookDel.Location = new System.Drawing.Point(324, 444);
+            this.btnBookDel.Location = new System.Drawing.Point(320, 407);
             this.btnBookDel.Name = "btnBookDel";
             this.btnBookDel.Size = new System.Drawing.Size(120, 45);
             this.btnBookDel.TabIndex = 8;
             this.btnBookDel.Text = "Book Delivery";
             this.btnBookDel.UseVisualStyleBackColor = false;
             this.btnBookDel.Click += new System.EventHandler(this.btnBookDel_Click);
+            // 
+            // tD2
+            // 
+            this.tD2.Controls.Add(this.dgViewDeliveries);
+            this.tD2.Location = new System.Drawing.Point(4, 37);
+            this.tD2.Name = "tD2";
+            this.tD2.Padding = new System.Windows.Forms.Padding(3);
+            this.tD2.Size = new System.Drawing.Size(1044, 660);
+            this.tD2.TabIndex = 1;
+            this.tD2.Text = "View Deliveries";
+            this.tD2.UseVisualStyleBackColor = true;
+            // 
+            // dgViewDeliveries
+            // 
+            this.dgViewDeliveries.AllowUserToOrderColumns = true;
+            this.dgViewDeliveries.AutoGenerateColumns = false;
+            this.dgViewDeliveries.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgViewDeliveries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgViewDeliveries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.deliveryIDDataGridViewTextBoxColumn1,
+            this.dateDataGridViewTextBoxColumn1,
+            this.slotIDDataGridViewTextBoxColumn,
+            this.clientIDDataGridViewTextBoxColumn2,
+            this.assignedDataGridViewCheckBoxColumn,
+            this.deliveredDataGridViewCheckBoxColumn});
+            this.dgViewDeliveries.DataSource = this.deliveriesBindingSource;
+            this.dgViewDeliveries.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgViewDeliveries.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgViewDeliveries.Location = new System.Drawing.Point(3, 3);
+            this.dgViewDeliveries.Name = "dgViewDeliveries";
+            this.dgViewDeliveries.RowHeadersWidth = 62;
+            this.dgViewDeliveries.RowTemplate.Height = 28;
+            this.dgViewDeliveries.Size = new System.Drawing.Size(1038, 654);
+            this.dgViewDeliveries.TabIndex = 0;
+            // 
+            // bwcDataSetBindingSource
+            // 
+            this.bwcDataSetBindingSource.DataSource = this.bwcDataSet;
+            this.bwcDataSetBindingSource.Position = 0;
             // 
             // clientsBindingSource
             // 
@@ -812,16 +899,16 @@
             this.panelReports.Controls.Add(this.btnGenReport);
             this.panelReports.Controls.Add(this.cbReports);
             this.panelReports.Controls.Add(this.dataGridReports);
-            this.panelReports.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelReports.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelReports.Location = new System.Drawing.Point(220, 0);
             this.panelReports.Name = "panelReports";
-            this.panelReports.Size = new System.Drawing.Size(1025, 701);
+            this.panelReports.Size = new System.Drawing.Size(1064, 701);
             this.panelReports.TabIndex = 16;
             // 
             // cbCouriers
             // 
             this.cbCouriers.BackColor = System.Drawing.Color.Lavender;
-            this.cbCouriers.DataSource = this.couriersBindingSource1;
+            this.cbCouriers.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.cbCouriers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCouriers.FormattingEnabled = true;
             this.cbCouriers.Location = new System.Drawing.Point(684, 54);
@@ -986,6 +1073,74 @@
             // 
             this.couriersTableAdapter.ClearBeforeFill = true;
             // 
+            // deliveriesBindingSource
+            // 
+            this.deliveriesBindingSource.DataMember = "Deliveries";
+            this.deliveriesBindingSource.DataSource = this.bwcDataSetBindingSource;
+            // 
+            // deliveryIDDataGridViewTextBoxColumn1
+            // 
+            this.deliveryIDDataGridViewTextBoxColumn1.DataPropertyName = "DeliveryID";
+            this.deliveryIDDataGridViewTextBoxColumn1.HeaderText = "DeliveryID";
+            this.deliveryIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.deliveryIDDataGridViewTextBoxColumn1.Name = "deliveryIDDataGridViewTextBoxColumn1";
+            this.deliveryIDDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dateDataGridViewTextBoxColumn1
+            // 
+            this.dateDataGridViewTextBoxColumn1.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
+            this.dateDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // slotIDDataGridViewTextBoxColumn
+            // 
+            this.slotIDDataGridViewTextBoxColumn.DataPropertyName = "SlotID";
+            this.slotIDDataGridViewTextBoxColumn.HeaderText = "SlotID";
+            this.slotIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.slotIDDataGridViewTextBoxColumn.Name = "slotIDDataGridViewTextBoxColumn";
+            this.slotIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientIDDataGridViewTextBoxColumn2
+            // 
+            this.clientIDDataGridViewTextBoxColumn2.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn2.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.clientIDDataGridViewTextBoxColumn2.Name = "clientIDDataGridViewTextBoxColumn2";
+            this.clientIDDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // assignedDataGridViewCheckBoxColumn
+            // 
+            this.assignedDataGridViewCheckBoxColumn.DataPropertyName = "Assigned";
+            this.assignedDataGridViewCheckBoxColumn.HeaderText = "Assigned";
+            this.assignedDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.assignedDataGridViewCheckBoxColumn.Name = "assignedDataGridViewCheckBoxColumn";
+            this.assignedDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // deliveredDataGridViewCheckBoxColumn
+            // 
+            this.deliveredDataGridViewCheckBoxColumn.DataPropertyName = "Delivered";
+            this.deliveredDataGridViewCheckBoxColumn.HeaderText = "Delivered";
+            this.deliveredDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.deliveredDataGridViewCheckBoxColumn.Name = "deliveredDataGridViewCheckBoxColumn";
+            this.deliveredDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // bwcDataSet1
+            // 
+            this.bwcDataSet1.DataSetName = "bwcDataSet";
+            this.bwcDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientsBindingSource7
+            // 
+            this.clientsBindingSource7.DataMember = "Clients";
+            this.clientsBindingSource7.DataSource = this.bwcDataSet1;
+            // 
+            // clientsBindingSource8
+            // 
+            this.clientsBindingSource8.DataMember = "Clients";
+            this.clientsBindingSource8.DataSource = this.bwcDataSet1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -1021,7 +1176,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet)).EndInit();
             this.panelDeliveries.ResumeLayout(false);
-            this.panelDeliveries.PerformLayout();
+            this.tabDeliveries.ResumeLayout(false);
+            this.tD1.ResumeLayout(false);
+            this.tD1.PerformLayout();
+            this.tD2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewDeliveries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
             this.panelReports.ResumeLayout(false);
@@ -1035,6 +1195,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsDeliveriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.couriersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bwcDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1125,6 +1289,21 @@
         private bwcDataSetTableAdapters.CouriersTableAdapter couriersTableAdapter;
         private System.Windows.Forms.BindingSource couriersBindingSource1;
         private System.Windows.Forms.BindingSource clientsBindingSource6;
+        private System.Windows.Forms.TabControl tabDeliveries;
+        private System.Windows.Forms.TabPage tD1;
+        private System.Windows.Forms.TabPage tD2;
+        private System.Windows.Forms.DataGridView dgViewDeliveries;
+        private System.Windows.Forms.BindingSource bwcDataSetBindingSource;
+        private System.Windows.Forms.BindingSource deliveriesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slotIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn assignedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn deliveredDataGridViewCheckBoxColumn;
+        private bwcDataSet bwcDataSet1;
+        private System.Windows.Forms.BindingSource clientsBindingSource7;
+        private System.Windows.Forms.BindingSource clientsBindingSource8;
     }
 }
 

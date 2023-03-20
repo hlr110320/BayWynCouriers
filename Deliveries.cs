@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace BayWynCouriersWinForm
@@ -32,7 +31,7 @@ namespace BayWynCouriersWinForm
             }
         }
 
-
+        // Declares a name property of type string
         public string Name
         {
             get
@@ -44,7 +43,7 @@ namespace BayWynCouriersWinForm
                 _Name = value;
             }
         }
-
+        // Declares a Date property of type DateTime
         public DateTime Date
         {
             get
@@ -57,6 +56,7 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        // Declares a Time property of type DateTime
         public DateTime Time
 
         {
@@ -92,7 +92,7 @@ namespace BayWynCouriersWinForm
             }
             set
             {
-                
+
                 _Destination = value;
             }
         }
@@ -106,9 +106,13 @@ namespace BayWynCouriersWinForm
             OleDbDataReader reader;
             OleDbConnection connection = new OleDbConnection(connnectionString);
 
+
             // XXX: SQL Statement works except for the client ID
-            string sql = "SELECT ClientID FROM Clients WHERE ClientName = '" + _Name + "' AND INSERT INTO Deliveries (Date, ClientID, Destination) VALUES ('" + _Date + "', ClientID,'" + _Destination + "')";
-            
+            //     string sql = "SELECT ClientID FROM Clients WHERE ClientName = '" + _Name + "' AND INSERT INTO Deliveries (Date, ClientID, Destination) VALUES ('" + _Date + "', ClientID,'" + _Destination + "')";
+            string sql = "SELECT ClientID, ClientName FROM Clients WHERE ClientName = '" + _Name + "' AND INSERT INTO Deliveries (Date, ClientID, Destination) VALUES ('" + _Date + "', Clients.ClientID,'" + _Destination + "')";
+            // string sql = "INSERT INTO Deliveries (Date, ClientID, Destination) VALUES ('" + _Date + "', ClientID,'" + _Destination + "') SELECT ClientID FROM Clients WHERE ClientName = '" + _Name + "'";
+
+
             // Sets a new command and inserts the sql statement and connection string
             OleDbCommand command = new OleDbCommand(sql, connection);
             //Opens the connection

@@ -24,6 +24,7 @@ namespace BayWynCouriersWinForm
         {
             InitializeComponent();
 
+            //Hides all panels for user access control
             HidePanels();
 
             // Checks the user access level to set form controls
@@ -140,7 +141,8 @@ namespace BayWynCouriersWinForm
                 cbClientType.Hide();
                 tbCourierRuns.Hide();
                 ContractRuns.Hide();
-                this.dataGridViewContracts.ReadOnly = true;
+                this.DGViewContracts.ReadOnly = true;
+                btnSave.Hide();
             }
 
             // Calls the ClearDGContracts method to clear the datagridview
@@ -148,22 +150,17 @@ namespace BayWynCouriersWinForm
 
             // Calls the update view contracts method to refresh the contracts datagrid from the database
             ViewContractsDG();
-
         }
 
         // The method to update the datagrid with the clients table
         private void ViewContractsDG()
         {
-            objVC = new Clients();
-            ds = objVC.ViewContracts();
-
-            // Gets the data and populates the Data grid with values
-            dr = ds.Tables[0].Rows[0];
-            DGViewContracts.DataSource = ds.Tables[0];
+            DGViewContracts.DataSource = bwcDataSet.Clients;
         }
+
+        // Click event for the create contract button
         private void btnCreateContract_Click(object sender, EventArgs e)
         {
-
             //If statement to provide an error message if client type is default and only adds a new client if aa type is selected
             if (cbClientType.Text == "Client Type")
             {
@@ -220,45 +217,58 @@ namespace BayWynCouriersWinForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            DGViewContracts.Update();
-             
+            
+            bwcDataSet.Clients.AcceptChanges();
         }
 
-
+        // Click event for the assignments button
         private void BtnAssignments_Click(object sender, EventArgs e)
         {
+            // Hides all panels
             HidePanels();
+            // Shows the assignments panel
             panelAssignments.Show();
         }
 
+        //Click event for the deliveries button
         private void BtnDeliveries_Click(object sender, EventArgs e)
         {
             HidePanels();
             panelDeliveries.Show();
-
-            BindcbBName();
-
-            DateTime date = DatePicker.Value;
-
-            Deliveries objD = new Deliveries();
-            objD.Date = date;
+            ViewDeliveriesDG();
+            BindcbCouriers();
         }
 
-        //Method to bind the cbName combobox to the database
+        // Method to get the date from the datepicker and set in the deliveries class
+        private void GetDate()
+        { 
+            // Assigns the DatePicker value as the variable date of type DateTime
+            DateTime date = DatePicker.Value;
 
+            // Calls a new instance of the deliveries class
+            Deliveries objD = new Deliveries();
+            // Assigns the local date variable to the Date variable in the deliveries class
+            objD.Date = date;
+        }
+        //Method to bind the cbName combobox to the database
         private void BindcbBName()
         {
             ds = bwcDataSet;
             cbBName.DataSource = ds.Tables["Clients"];
             cbBName.DisplayMember = "ClientName";
         }
-        
-        //Method to bind the cbCouriers combobox to the database
 
+        //Method to bind the deliveries data grid view to the deliveries table of the database
+        private void ViewDeliveriesDG()
+        {
+            ds = bwcDataSet;
+            dgViewDeliveries.DataSource = ds.Tables["Deliveries"];
+        }
+
+        //Method to bind the cbCouriers combobox to the database
         private void BindcbCouriers()
         {
-            ds1 = bwcDataSet;
+       
             cbCouriers.DataSource = ds.Tables["Couriers"];
             cbCouriers.DisplayMember = "CourierID";
         }
@@ -285,7 +295,6 @@ namespace BayWynCouriersWinForm
             objR._CourierID = courier;
 
             // If statements to check which report has been selected and sets the property accordingly
-
             if (cbReports.Text == "Choose a report")
             {
                 MessageBox.Show("Please select a choice from the combo box.");
@@ -346,7 +355,6 @@ namespace BayWynCouriersWinForm
                 }
 
                 //Calls the GetUndelivered method in the Assignments class
-
                 else if (cbAssignments.Text == "Get Undelivered Assignments")
                 {
                     ds = objA.GetUndelivered();
@@ -406,27 +414,29 @@ namespace BayWynCouriersWinForm
             {
                 MessageBox.Show("Please input a destination");
             }
-
             else
             {
                 // Creates a new instance of the Deliveries class
                 Deliveries objD = new Deliveries();
 
-                //  Sets the client class parameters with the values inputted on the form
+                //  Sets the client class parameters with the values input on the form
                 objD.Name = cbBName.Text;
                 objD.Date = DatePicker.Value;
                 objD.Destination = tbDestination.Text;
 
+                // Calls the emethod to add a new delivery from the deliveries class
                 objD.AddNewDelivery();
             }
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bwcDataSet1.Clients' table. You can move, or remove it, as needed.
+            this.clientsTableAdapter.Fill(this.bwcDataSet1.Clients);
+            // TODO: This line of code loads data into the 'bwcDataSet.Deliveries' table. You can move, or remove it, as needed.
+            //    this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
             // TODO: This line of code loads data into the 'bwcDataSet.Couriers' table. You can move, or remove it, as needed.
             this.couriersTableAdapter.Fill(this.bwcDataSet.Couriers);
-            // TODO: This line of code loads data into the 'bwcDataSet.Deliveries' table. You can move, or remove it, as needed.
-            //  this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
             // TODO: This line of code loads data into the 'bwcDataSet.Clients' table. You can move, or remove it, as needed.
             this.clientsTableAdapter.Fill(this.bwcDataSet.Clients);
 

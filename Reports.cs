@@ -90,8 +90,7 @@ namespace BayWynCouriersWinForm
             OleDbCommand cmR = new OleDbCommand();
             cmR.Connection = con;
             cmR.CommandType = CommandType.Text;
-            cmR.CommandText = "Select * from Deliveries, Couriers, WHERE Deliveries.CourierID = Couriers.CourierID AND Deliveries.Date = " + Today + "'";
-            //+ cID + "" ;
+            cmR.CommandText = "Select * FROM Deliveries, Couriers WHERE CourierID = '" + _CourierID + "' AND Deliveries.CourierID = Couriers.CourierID AND Deliveries.Date = " + Today + "'";
             OleDbDataAdapter daR = new OleDbDataAdapter(cmR);
             daR.Fill(dsR);
             con.Close();
