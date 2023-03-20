@@ -56,6 +56,7 @@ namespace BayWynCouriersWinForm
             }
         }
 
+        // Sets a CourierID as type string
         public string _CourierID
         {
             get
@@ -125,6 +126,8 @@ namespace BayWynCouriersWinForm
             return dsR;
         }
 
+
+        // Method to retrieve all assignments for month
         public DataSet GetAllAssignmentsMonthReport()
         {
             DataSet dsR = new DataSet();

@@ -185,6 +185,8 @@ namespace BayWynCouriersWinForm
             // Messagebox to show new client contract added
             MessageBox.Show("New client contract added!");
         }
+
+        // Method to retrieve all contracts from the database
         public DataSet ViewContracts()
         {
             DataSet dsVC = new DataSet();
@@ -207,13 +209,11 @@ namespace BayWynCouriersWinForm
             return dsVC;
         }
 
-        public void SaveContracts()
 
+        // TODO: Implement functionality to save the datagrid - davc.update doesnt work
+        public void SaveContracts()
         {
             //  daVC.Update(dsVC)
-
-
-
         }
 
         /// <summary>
@@ -238,15 +238,16 @@ namespace BayWynCouriersWinForm
             cmVC.CommandType = CommandType.Text;
             // Selects all from the ClientName column in the Clients table
             cmVC.CommandText = "Select ClientName FROM Clients";
+
             using (OleDbDataAdapter daVC = new OleDbDataAdapter(cmVC))
             {
                 daVC.Fill(dsVC);
             }
 
+            //Closes the connection
             con.Close();
             // Returns the filled dataset of clients
             return dsVC;
-
         }
     }
 }

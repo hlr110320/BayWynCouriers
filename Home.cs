@@ -245,12 +245,16 @@ namespace BayWynCouriersWinForm
             objD.Date = date;
         }
 
+        //Method to bind the cbName combobox to the database
+
         private void BindcbBName()
         {
             ds = bwcDataSet;
             cbBName.DataSource = ds.Tables["Clients"];
             cbBName.DisplayMember = "ClientName";
         }
+        
+        //Method to bind the cbCouriers combobox to the database
 
         private void BindcbCouriers()
         {
@@ -259,6 +263,7 @@ namespace BayWynCouriersWinForm
             cbCouriers.DisplayMember = "CourierID";
         }
 
+        // Assignes the datapicker value to the date property in the Deliveries Class
         private void DatePicker_ValueChanged(object sender, EventArgs e)
         {
             Deliveries objD = new Deliveries();
@@ -279,6 +284,7 @@ namespace BayWynCouriersWinForm
             string courier = cbCouriers.Text;
             objR._CourierID = courier;
 
+            // If statements to check which report has been selected and sets the property accordingly
 
             if (cbReports.Text == "Choose a report")
             {
@@ -423,21 +429,6 @@ namespace BayWynCouriersWinForm
             //  this.deliveriesTableAdapter.Fill(this.bwcDataSet.Deliveries);
             // TODO: This line of code loads data into the 'bwcDataSet.Clients' table. You can move, or remove it, as needed.
             this.clientsTableAdapter.Fill(this.bwcDataSet.Clients);
-
-        }
-
-        private void cbAssignments_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelAssignments_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cbBName_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

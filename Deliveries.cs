@@ -83,7 +83,7 @@ namespace BayWynCouriersWinForm
             }
         }
 
-        // Declare a ClientPhone property of type int
+        // Declare a Destination property of type string
         public string Destination
         {
             get
@@ -120,6 +120,11 @@ namespace BayWynCouriersWinForm
             // Window to show delivery added successfully
             MessageBox.Show("New delivery added.");
         }
+
+        /// <summary>
+        /// TODO: Fix the view slots section to show all available slots for courier for day
+        /// </summary>
+        /// <returns></returns>
         public DataSet ViewSlots()
         {
             DataSet dsVS = new DataSet();

@@ -67,13 +67,18 @@ namespace BayWynCouriersWinForm
             OleDbCommand cmA = new OleDbCommand();
             cmA.Connection = con;
             cmA.CommandType = CommandType.Text;
+
             // SQL statement for accepting a delivery
             cmA.CommandText = "Select * from Deliveries where SlotID Is NULL";
-            OleDbDataAdapter dA = new OleDbDataAdapter(cmA);
 
+            // Creates and fills the data adapter with the command
+            OleDbDataAdapter dA = new OleDbDataAdapter(cmA);
             dA.Fill(ds);
+
+            // Closes the connection
             con.Close();
 
+            // Returns the dataset
             return ds;
 
         }
